@@ -1,0 +1,1804 @@
+{
+  "data": [
+    {
+      "year": 2011,
+      "Rank": "1",
+      "Name": "Harvard University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "2",
+      "Name": "California Institute of Technology",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "3",
+      "Name": "Massachusetts Institute of Technology",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "4",
+      "Name": "Stanford University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "5",
+      "Name": "Princeton University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "6",
+      "Name": "University of Cambridge",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "6",
+      "Name": "University of Oxford",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "8",
+      "Name": "University of California, Berkeley",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "9",
+      "Name": "Imperial College London",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "10",
+      "Name": "Yale University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "11",
+      "Name": "University of California, Los Angeles",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "12",
+      "Name": "The University of Chicago",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "13",
+      "Name": "Johns Hopkins University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "14",
+      "Name": "Cornell University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "15",
+      "Name": "ETH Zurich",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "15",
+      "Name": "University of Michigan-Ann Arbor",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "17",
+      "Name": "University of Toronto",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "18",
+      "Name": "Columbia University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "19",
+      "Name": "University of Pennsylvania",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "20",
+      "Name": "Carnegie Mellon University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "21",
+      "Name": "University of Hong Kong",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "22",
+      "Name": "UCL",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "23",
+      "Name": "University of Washington",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "24",
+      "Name": "Duke University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "25",
+      "Name": "Northwestern University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "26",
+      "Name": "The University of Tokyo",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "27",
+      "Name": "Georgia Institute of Technology",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "28",
+      "Name": "Pohang University of Science and Technology (POSTECH)",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "29",
+      "Name": "University of California, Santa Barbara",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "30",
+      "Name": "University of North Carolina at Chapel Hill",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "30",
+      "Name": "University of British Columbia",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "32",
+      "Name": "University of California, San Diego",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "33",
+      "Name": "University of Illinois at Urbana-Champaign",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "34",
+      "Name": "National University of Singapore",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "35",
+      "Name": "McGill University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "36",
+      "Name": "University of Melbourne",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "37",
+      "Name": "Peking University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "38",
+      "Name": "Washington University in St Louis",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "39",
+      "Name": "École Polytechnique – Institut Polytechnique de Paris",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "40",
+      "Name": "University of Edinburgh",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "41",
+      "Name": "The Hong Kong University of Science and Technology",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "42",
+      "Name": "École Normale Supérieure",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "43",
+      "Name": "University of Wisconsin",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "43",
+      "Name": "University of Göttingen",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "43",
+      "Name": "Karolinska Institute",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "43",
+      "Name": "Australian National University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "47",
+      "Name": "Rice University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "48",
+      "Name": "École Polytechnique Fédérale de Lausanne",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "49",
+      "Name": "University of California, Irvine",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "49",
+      "Name": "University of Science and Technology of China",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "51",
+      "Name": "Vanderbilt University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "52",
+      "Name": "University of Minnesota",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "53",
+      "Name": "Tufts University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "54",
+      "Name": "University of California, Davis",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "55",
+      "Name": "Brown University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "56",
+      "Name": "University of Massachusetts",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "57",
+      "Name": "Kyoto University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "58",
+      "Name": "Tsinghua University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "59",
+      "Name": "Boston University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "60",
+      "Name": "New York University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "61",
+      "Name": "LMU Munich",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "61",
+      "Name": "Emory University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "63",
+      "Name": "University of Notre Dame",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "64",
+      "Name": "University of Pittsburgh-Pittsburgh campus",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "65",
+      "Name": "Case Western Reserve University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "66",
+      "Name": "Ohio State University (Main campus)",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "67",
+      "Name": "University of Colorado Boulder",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "68",
+      "Name": "University of Bristol",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "68",
+      "Name": "University of California, Santa Cruz",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "68",
+      "Name": "Yeshiva University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "71",
+      "Name": "The University of Sydney",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "72",
+      "Name": "University of Virginia (Main campus)",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "73",
+      "Name": "University of Adelaide",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "73",
+      "Name": "University of Southern California",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "75",
+      "Name": "William & Mary",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "76",
+      "Name": "Trinity College Dublin",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "77",
+      "Name": "King’s College London",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "78",
+      "Name": "Stony Brook University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "79",
+      "Name": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "79",
+      "Name": "University of Sussex",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "81",
+      "Name": "University of York",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "81",
+      "Name": "The University of Queensland",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "83",
+      "Name": "Universität Heidelberg",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "83",
+      "Name": "University of Utah",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "85",
+      "Name": "Durham University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "86",
+      "Name": "London School of Economics and Political Science",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "87",
+      "Name": "University of Manchester",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "88",
+      "Name": "Royal Holloway, University of London",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "89",
+      "Name": "Lund University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "90",
+      "Name": "University of Zurich",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "90",
+      "Name": "University of Southampton",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "90",
+      "Name": "Wake Forest University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "93",
+      "Name": "McMaster University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "94",
+      "Name": "University College Dublin",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "95",
+      "Name": "University of Basel",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "95",
+      "Name": "George Washington University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "95",
+      "Name": "University of Arizona",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "98",
+      "Name": "University of Maryland, College Park",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "99",
+      "Name": "Dartmouth College",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "100",
+      "Name": "École Normale Supérieure de Lyon",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "101",
+      "Name": "Technical University of Munich",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "102",
+      "Name": "University of Helsinki",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "103",
+      "Name": "University of St Andrews",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "104",
+      "Name": "Rensselaer Polytechnic Institute",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "105",
+      "Name": "Rutgers University–New Brunswick",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "106",
+      "Name": "Purdue University West Lafayette",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "107",
+      "Name": "University of Cape Town",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "107",
+      "Name": "National Tsing Hua University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "109",
+      "Name": "Seoul National University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "109",
+      "Name": "Penn State (Main campus)",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "111",
+      "Name": "Hong Kong Baptist University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "112",
+      "Name": "Tokyo Institute of Technology",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "112",
+      "Name": "Bilkent University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "114",
+      "Name": "Eindhoven University of Technology",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "115",
+      "Name": "National Taiwan University (NTU)",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "115",
+      "Name": "University of Hawai’i at Mānoa",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "117",
+      "Name": "University of California, Riverside",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "118",
+      "Name": "University of Geneva",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "119",
+      "Name": "KU Leuven",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "120",
+      "Name": "Queen Mary University of London",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "120",
+      "Name": "Nanjing University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "122",
+      "Name": "Technical University of Denmark",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "122",
+      "Name": "Michigan State University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "124",
+      "Name": "Ghent University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "124",
+      "Name": "Lancaster University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "124",
+      "Name": "Leiden University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "127",
+      "Name": "University of Alberta",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "128",
+      "Name": "University of Glasgow",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "129",
+      "Name": "Stockholm University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "130",
+      "Name": "University of Victoria",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "130",
+      "Name": "The University of Osaka",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "132",
+      "Name": "Tohoku University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "132",
+      "Name": "University of Iowa",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "132",
+      "Name": "University of Freiburg",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "135",
+      "Name": "University of Bergen",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "136",
+      "Name": "University of Lausanne",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "137",
+      "Name": "University of Sheffield",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "138",
+      "Name": "Université de Montréal",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "139",
+      "Name": "Vrije Universiteit Amsterdam",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "140",
+      "Name": "Pierre and Marie Curie University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "140",
+      "Name": "University of Dundee",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "142",
+      "Name": "University of Barcelona",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "143",
+      "Name": "Utrecht University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "144",
+      "Name": "Wageningen University & Research",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "145",
+      "Name": "University of Birmingham",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "145",
+      "Name": "University of Auckland",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "147",
+      "Name": "Alexandria University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "147",
+      "Name": "Uppsala University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "149",
+      "Name": "University of Aberdeen",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "149",
+      "Name": "The Hong Kong Polytechnic University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "151",
+      "Name": "Delft University of Technology",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "152",
+      "Name": "Birkbeck, University of London",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "152",
+      "Name": "Newcastle University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "152",
+      "Name": "UNSW Sydney",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "155",
+      "Name": "Pompeu Fabra University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "156",
+      "Name": "Indiana University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "156",
+      "Name": "Iowa State University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "158",
+      "Name": "Georgia Health Sciences University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "159",
+      "Name": "University of Delaware",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "159",
+      "Name": "Erasmus University Rotterdam",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "161",
+      "Name": "Arizona State University (Tempe)",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "161",
+      "Name": "Boston College",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "163",
+      "Name": "National Sun Yat-Sen University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "164",
+      "Name": "Georgetown University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "165",
+      "Name": "University of Liverpool",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "165",
+      "Name": "University of Amsterdam",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "167",
+      "Name": "Aarhus University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "168",
+      "Name": "University of Würzburg",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "168",
+      "Name": "University of Leeds",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "170",
+      "Name": "University of Groningen",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "171",
+      "Name": "Sun Yat-sen University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "172",
+      "Name": "Goethe University Frankfurt",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "173",
+      "Name": "Bielefeld University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "174",
+      "Name": "University of Nottingham",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "174",
+      "Name": "University of East Anglia",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "174",
+      "Name": "Nanyang Technological University, Singapore",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "177",
+      "Name": "University of Copenhagen",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "178",
+      "Name": "University of Bonn",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "178",
+      "Name": "Humboldt University of Berlin",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "178",
+      "Name": "Monash University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "181",
+      "Name": "National Chiao Tung University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "182",
+      "Name": "RWTH Aachen University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "183",
+      "Name": "Middle East Technical University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "184",
+      "Name": "University of Exeter",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "185",
+      "Name": "University of Twente",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "186",
+      "Name": "University of Konstanz",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "187",
+      "Name": "University of Innsbruck",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "187",
+      "Name": "Karlsruhe Institute of Technology",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "189",
+      "Name": "University of Tübingen",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "190",
+      "Name": "University of Cincinnati – Uptown",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "190",
+      "Name": "Drexel University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "190",
+      "Name": "Yonsei University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "193",
+      "Name": "Dalhousie University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "193",
+      "Name": "KTH Royal Institute of Technology",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "195",
+      "Name": "University of Vienna",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "196",
+      "Name": "Kent State University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "197",
+      "Name": "Zhejiang University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "197",
+      "Name": "University of Illinois Chicago",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "199",
+      "Name": "Simon Fraser University",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    },
+    {
+      "year": 2011,
+      "Rank": "199",
+      "Name": "Swedish University of Agricultural Sciences",
+      "No. of FTE students": "",
+      "No. of students per staff": "",
+      "International students": "",
+      "Female:Male ratio": ""
+    }
+  ]
+}

@@ -1,0 +1,801 @@
+year,Rank,Name,No. of FTE students,No. of students per staff,International students,Female:Male ratio
+2016,1,California Institute of Technology,"2,243",6.9,26%,33 : 67
+2016,2,University of Oxford,"19,920",11.6,34%,46 : 54
+2016,3,Stanford University,"15,596",7.8,22%,42 : 58
+2016,4,University of Cambridge,"18,810",11.8,34%,46 : 54
+2016,5,Massachusetts Institute of Technology,"11,074",9.0,33%,37 : 63
+2016,6,Harvard University,"20,152",8.9,25%,
+2016,7,Princeton University,"7,929",8.4,27%,45 : 55
+2016,8,Imperial College London,"15,060",11.7,51%,37 : 63
+2016,9,ETH Zurich,"18,178",14.7,37%,31 : 69
+2016,10,The University of Chicago,"14,221",6.9,20%,42 : 58
+2016,11,Johns Hopkins University,"15,128",3.6,23%,50 : 50
+2016,12,Yale University,"11,751",4.4,20%,50 : 50
+2016,13,"University of California, Berkeley","36,186",16.4,15%,50 : 50
+2016,14,UCL,"26,605",10.7,46%,56 : 44
+2016,15,Columbia University,"25,055",5.9,28%,
+2016,16,"University of California, Los Angeles","38,206",10.3,15%,52 : 48
+2016,17,University of Pennsylvania,"20,376",6.5,20%,51 : 49
+2016,18,Cornell University,"21,424",10.2,19%,48 : 52
+2016,19,University of Toronto,"66,198",19.5,15%,
+2016,20,Duke University,"15,172",4.8,17%,49 : 51
+2016,21,University of Michigan-Ann Arbor,"41,786",9.0,16%,48 : 52
+2016,22,Carnegie Mellon University,"11,885",13.1,35%,39 : 61
+2016,23,London School of Economics and Political Science,"9,235",12.1,70%,53 : 47
+2016,24,University of Edinburgh,"25,775",14.1,36%,58 : 42
+2016,25,Northwestern University,"18,334",13.8,15%,48 : 52
+2016,26,National University of Singapore,"31,592",15.5,34%,49 : 51
+2016,27,King’s College London,"21,395",11.4,37%,61 : 39
+2016,28,Karolinska Institute,"7,774",11.5,22%,70 : 30
+2016,29,LMU Munich,"35,691",15.5,13%,62 : 38
+2016,30,New York University,"42,056",6.8,19%,55 : 45
+2016,31,École Polytechnique Fédérale de Lausanne,"9,666",10.5,54%,27 : 73
+2016,32,University of Washington,"44,020",11.8,13%,53 : 47
+2016,33,University of Melbourne,"40,128",23.7,35%,55 : 45
+2016,34,University of British Columbia,"50,152",17.6,25%,54 : 46
+2016,35,KU Leuven,"42,503",41.9,18%,54 : 46
+2016,36,University of Illinois at Urbana-Champaign,"42,727",18.7,20%,47 : 53
+2016,37,Universität Heidelberg,"28,881",24.5,17%,55 : 45
+2016,38,McGill University,"31,326",13.7,23%,56 : 44
+2016, =39,"University of California, San Diego","27,233",6.5,11%,48 : 52
+2016, =39,"University of California, Santa Barbara","22,020",27.3,11%,52 : 48
+2016,41,Georgia Institute of Technology,"19,967",20.1,26%,31 : 69
+2016,42,Peking University,"40,148",8.3,14%,
+2016,43,The University of Tokyo,"26,199",5.7,10%,
+2016, =44,"University of California, Davis","35,364",13.9,13%,54 : 46
+2016, =44,University of Hong Kong,"19,835",17.6,38%,53 : 47
+2016,46,University of Texas at Austin,"49,427",17.4,9%,51 : 49
+2016, =47,Tsinghua University,"39,763",13.7,10%,32 : 68
+2016, =47,Wageningen University & Research,"9,248",17.0,21%,56 : 44
+2016,49,Humboldt University of Berlin,"29,987",52.5,16%,
+2016,50,University of Wisconsin-Madison,"39,655",10.8,11%,51 : 49
+2016,51,Brown University,"8,653",10.1,19%,
+2016,52,Australian National University,"14,604",19.2,35%,52 : 48
+2016,53,Technical University of Munich,"35,565",31.5,20%,33 : 67
+2016,54,École Normale Supérieure,"2,400",7.9,20%,46 : 54
+2016,55,"Nanyang Technological University, Singapore","25,028",16.2,33%,48 : 52
+2016, =56,University of Manchester,"34,940",15.3,34%,52 : 48
+2016, =56,The University of Sydney,"41,868",20.2,28%,57 : 43
+2016,58,University of Amsterdam,"24,570",14.4,11%,53 : 47
+2016,59,The Hong Kong University of Science and Technology,"11,385",23.8,36%,
+2016, =60,The University of Queensland,"34,718",32.7,27%,53 : 47
+2016, =60,Washington University in St Louis,"12,528",5.7,17%,0 : 100
+2016,62,Utrecht University,"30,779",15.4,7%,59 : 41
+2016,63,University of North Carolina at Chapel Hill,"26,518",7.3,8%,58 : 42
+2016,64,Boston University,"24,789",8.6,17%,58 : 42
+2016, =65,Delft University of Technology,"15,920",19.4,25%,26 : 74
+2016, =65,University of Minnesota,"46,825",18.0,12%,52 : 48
+2016,67,Leiden University,"21,222",17.1,9%,59 : 41
+2016,68,University of Southern California,"36,534",12.9,20%,52 : 48
+2016,69,University of Bristol,"17,905",14.0,25%,53 : 47
+2016,70,Durham University,"15,490",15.7,24%,54 : 46
+2016,71,Erasmus University Rotterdam,"20,580",18.9,17%,48 : 52
+2016,72,Free University of Berlin,"33,062",39.3,20%,58 : 42
+2016,73,Monash University,"50,882",40.5,36%,56 : 44
+2016,74,University of Groningen,"24,556",25.6,11%,52 : 48
+2016,75,Penn State (Main campus),"44,501",12.4,12%,46 : 54
+2016, =76,University of Glasgow,"22,615",16.0,29%,57 : 43
+2016, =76,University of Helsinki,"23,505",15.1,6%,66 : 34
+2016,78,University of Tübingen,"28,327",38.9,12%,58 : 42
+2016,79,University of Pittsburgh-Pittsburgh campus,"26,485",5.8,10%,51 : 49
+2016,80,University of Warwick,"18,530",16.6,37%,48 : 52
+2016,81,Uppsala University,"25,266",18.2,12%,57 : 43
+2016, =82,University of Copenhagen,"27,545",4.1,19%,67 : 33
+2016, =82,UNSW Sydney,"38,309",25.9,32%,47 : 53
+2016,84,University of Freiburg,"26,467",31.2,16%,52 : 48
+2016,85,Seoul National University,"26,389",13.9,10%,
+2016,86,University of St Andrews,"8,340",12.7,47%,56 : 44
+2016,87,Vanderbilt University,"12,161",3.6,9%,52 : 48
+2016, =88,Kyoto University,"22,809",5.6,7%,
+2016, =88,Maastricht University,"15,626",18.9,48%,56 : 44
+2016, =90,Emory University,"12,338",4.5,18%,56 : 44
+2016, =90,Lund University,"28,251",11.5,15%,
+2016, =90,Ohio State University (Main campus),"51,462",13.4,12%,49 : 51
+2016,93,University of Exeter,"17,755",18.8,28%,54 : 46
+2016, =94,University of Bonn,"32,474",70.4,12%,55 : 45
+2016, =94,Georgetown University,"15,408",8.5,14%,53 : 47
+2016, =94,McMaster University,"23,823",19.3,15%,53 : 47
+2016,97,University of Sheffield,"23,310",15.4,31%,50 : 50
+2016,98,Queen Mary University of London,"14,260",14.0,40%,52 : 48
+2016, =99,University of Göttingen,"25,581",25.6,12%,51 : 49
+2016, =99,Michigan State University,"44,750",15.7,15%,51 : 49
+2016, =101,University of Basel,"12,551",17.3,24%,54 : 46
+2016, =101,École Polytechnique – Institut Polytechnique de Paris,"2,429",4.8,30%,18 : 82
+2016, =101,Rice University,"6,333",9.0,26%,44 : 56
+2016, =101,Trinity College Dublin,"15,520",22.3,25%,57 : 43
+2016, =104,Dartmouth College,"6,178",6.6,16%,47 : 53
+2016, =104,University of Zurich,"26,583",6.5,19%,57 : 43
+2016, =106,"University of California, Irvine","26,614",16.1,16%,52 : 48
+2016, =106,Aarhus University,"23,895",13.6,14%,54 : 46
+2016, =106,University of Mannheim,"11,761",85.8,15%,55 : 45
+2016,108,University of Notre Dame,"11,829",13.8,10%,44 : 56
+2016,109,The University of Western Australia,"20,851",20.7,27%,50 : 50
+2016, =110,RWTH Aachen University,"37,917",27.6,16%,31 : 69
+2016, =110,University of Southampton,"20,925",13.5,29%,53 : 47
+2016,112,Scuola Normale Superiore di Pisa,462,16.5,5%,28 : 72
+2016, =113,Université de Montréal,"38,264",20.3,25%,57 : 43
+2016, =113,Pierre and Marie Curie University,"27,862",8.7,18%,48 : 52
+2016, =113,Purdue University West Lafayette,"39,256",18.1,22%,42 : 58
+2016,116,Pohang University of Science and Technology (POSTECH),"3,055",10.1,4%,20 : 80
+2016,117,"University of Maryland, College Park","31,331",8.4,9%,48 : 52
+2016,118,Ghent University,"32,166",34.1,9%,57 : 43
+2016,119,University of Birmingham,"25,295",16.4,23%,54 : 46
+2016, =120,University of Bern,"14,708",22.5,14%,54 : 46
+2016, =120,University of Cape Town,"20,040",12.1,18%,53 : 47
+2016, =120,University of Florida,"50,095",18.7,9%,54 : 46
+2016, =123,University of Erlangen-Nuremberg,"36,146",53.9,9%,49 : 51
+2016, =123,Rutgers University–New Brunswick,"37,032",17.3,8%,51 : 49
+2016, =125,University of Münster,"39,838",46.1,8%,53 : 47
+2016, =125,Radboud University Nijmegen,"17,713",13.0,10%,58 : 42
+2016, =127,University of Colorado Boulder,"29,325",16.1,8%,45 : 55
+2016, =127,Tufts University,"10,410",10.0,14%,54 : 46
+2016,129,"Royal Holloway, University of London","8,745",15.9,37%,57 : 43
+2016,130,Lancaster University,"11,510",14.9,33%,52 : 48
+2016, =131,University of Geneva,"15,668",15.0,39%,61 : 39
+2016, =131,University of York,"14,545",15.8,26%,55 : 45
+2016, =133,Case Western Reserve University,"9,259",6.4,17%,48 : 52
+2016, =133,University of Leeds,"27,705",14.7,21%,58 : 42
+2016,135,University of Oslo,"27,139",18.8,18%,
+2016,136,Stockholm University,"31,715",23.7,8%,62 : 38
+2016,137,University of Alberta,"36,299",21.6,23%,55 : 45
+2016, =138,The Chinese University of Hong Kong,"17,916",10.2,22%,53 : 47
+2016, =138,Karlsruhe Institute of Technology,"25,294",24.6,16%,26 : 74
+2016,140,University of Sussex,"12,000",17.4,35%,54 : 46
+2016,141,University of Massachusetts,"56,959",13.0,11%,49 : 51
+2016,142,University of Vienna,"34,651",20.5,25%,67 : 33
+2016,143,University of Nottingham,"30,145",15.0,27%,54 : 46
+2016, =144,"University of California, Santa Cruz","17,404",22.7,1%,53 : 47
+2016, =144,University of Lausanne,"11,964",13.1,22%,
+2016,146,Universitat Autònoma de Barcelona (UAB),"30,538",12.3,10%,59 : 41
+2016,147,University of Virginia (Main campus),"23,845",10.2,12%,52 : 48
+2016,148,Korea Advanced Institute of Science and Technology (KAIST),"9,027",10.0,9%,20 : 80
+2016, =149,University of Adelaide,"20,771",30.1,26%,48 : 52
+2016, =149,University of East Anglia,"14,990",14.7,28%,58 : 42
+2016, =149,University of Twente,"6,631",12.0,26%,37 : 63
+2016,153,Sungkyunkwan University (SKKU),"24,365",20.3,9%,39 : 61
+2016,154,Vrije Universiteit Amsterdam,"23,280",16.3,6%,56 : 44
+2016,155,KTH Royal Institute of Technology,"12,062",14.6,21%,30 : 70
+2016,156,University of Cologne,"43,280",43.4,11%,60 : 40
+2016,157,University of Liverpool,"18,815",13.6,30%,52 : 48
+2016, =158,TU Dresden,"35,487",37.4,12%,42 : 58
+2016, =158,University of Rochester,"9,390",4.5,26%,49 : 51
+2016, =161,Lomonosov Moscow State University,"30,822",7.7,20%,43 : 57
+2016, =161,University of Miami,"15,286",5.7,14%,50 : 50
+2016,163,University of Arizona,"36,429",12.7,8%,52 : 48
+2016, =164,Pompeu Fabra University,"10,901",18.3,13%,59 : 41
+2016, =164,University of Reading,"12,050",14.8,28%,55 : 45
+2016, =164,Yeshiva University,"6,753",5.5,7%,53 : 47
+2016, =167,"University of California, Riverside","20,626",22.0,12%,51 : 49
+2016, =167,University of Leicester,"14,540",13.3,35%,54 : 46
+2016, =167,National Taiwan University (NTU),"31,891",11.9,7%,39 : 61
+2016, =167,Technical University of Denmark,"9,990",5.0,18%,27 : 73
+2016, =167,Université Catholique de Louvain,"28,856",42.0,19%,54 : 46
+2016, =172,University of Aberdeen,"12,940",15.8,33%,54 : 46
+2016, =172,University of Auckland,"29,787",18.9,28%,54 : 46
+2016,174,University of Barcelona,"47,491",12.2,10%,62 : 38
+2016,175,University of Konstanz,"10,930",59.1,12%,54 : 46
+2016, =176,Eindhoven University of Technology,"8,176",16.0,14%,19 : 81
+2016, =176,University College Dublin,"22,193",24.5,23%,
+2016,178,Hebrew University of Jerusalem,"17,612",10.7,5%,55 : 45
+2016,179,University of Waterloo,"30,726",24.2,14%,45 : 55
+2016, =180,University of Gothenburg,"26,420",16.4,12%,
+2016, =180,Sant’Anna School of Advanced Studies – Pisa,769,8.5,17%,35 : 65
+2016, =182,University of Bergen,"11,623",11.1,12%,60 : 40
+2016, =182,Cardiff University,"23,345",13.1,23%,57 : 43
+2016, =182,University of Utah,"25,674",16.9,9%,45 : 55
+2016, =185,Brandeis University,"5,495",12.6,22%,55 : 45
+2016, =185,University of Dundee,"11,630",15.3,25%,60 : 40
+2016, =185,University of Würzburg,"26,576",38.4,8%,57 : 43
+2016,188,Paris-Sud University,"27,603",15.0,17%,
+2016,189,Arizona State University (Tempe),"83,236",29.9,9%,50 : 50
+2016, =190,University of Antwerp,"12,346",30.3,16%,56 : 44
+2016, =190,Boston College,"13,216",17.4,19%,54 : 46
+2016,192,Ulm University,"9,187",11.2,10%,47 : 53
+2016, =193,University of Luxembourg,"5,144",15.9,52%,50 : 50
+2016, =193,Texas A&M University,"50,657",21.4,9%,47 : 53
+2016,195,Charité - Universitätsmedizin Berlin,"6,853",6.6,16%,64 : 36
+2016, =196,Newcastle University,"20,175",15.2,29%,50 : 50
+2016, =196,"St George’s, University of London","2,960",13.5,17%,61 : 39
+2016,198,University of Trento,"16,841",43.2,8%,51 : 49
+2016,199,Paris Diderot University – Paris 7,"27,756",14.8,17%,63 : 37
+2016,200,Queen’s University Belfast,"17,940",17.9,30%,54 : 46
+2016,201-250,Aalborg University,"17,422",15.9,15%,48 : 52
+2016,201-250,"Birkbeck, University of London","9,455",17.2,38%,55 : 45
+2016,201-250,University of Bologna,"85,532",22.9,7%,56 : 44
+2016,201-250,University at Buffalo,"25,668",19.0,19%,47 : 53
+2016,201-250,University of Calgary,"28,341",16.5,17%,53 : 47
+2016,201-250,Chalmers University of Technology,"8,605",11.6,15%,30 : 70
+2016,201-250,City University of Hong Kong,"10,015",7.1,28%,51 : 49
+2016,201-250,Copenhagen Business School,"18,293",42.7,19%,48 : 52
+2016,201-250,Dalhousie University,"15,064",14.4,18%,55 : 45
+2016,201-250,University of São Paulo,"81,402",14.6,4%,48 : 52
+2016,201-250,University of Duisburg-Essen,"36,051",46.6,11%,49 : 51
+2016,201-250,École Normale Supérieure de Lyon,"2,218",8.0,14%,49 : 51
+2016,201-250,Florida State University,"41,226",31.8,7%,55 : 45
+2016,201-250,University of Fribourg,"10,416",46.9,19%,58 : 42
+2016,201-250,Fudan University,"32,175",12.2,11%,50 : 50
+2016,201-250,University of Iceland,"13,960",25.9,8%,66 : 34
+2016,201-250,George Washington University,"20,541",12.0,16%,56 : 44
+2016,201-250,Goethe University Frankfurt,"31,861",9.3,15%,60 : 40
+2016,201-250,University of Hawai’i at Mānoa,"16,773",11.1,13%,55 : 45
+2016,201-250,The Hong Kong Polytechnic University,"22,064",25.9,26%,51 : 49
+2016,201-250,University of Illinois Chicago,"24,313",9.2,17%,53 : 47
+2016,201-250,Indiana University,"62,468",13.6,13%,53 : 47
+2016,201-250,University of Iowa,"27,526",11.6,11%,52 : 48
+2016,201-250,University of Technology Sydney,"24,519",44.1,31%,53 : 47
+2016,201-250,Johannes Gutenberg University of Mainz,"35,609",32.6,10%,58 : 42
+2016,201-250,Joseph Fourier University,"16,130",12.1,13%,
+2016,201-250,University of Kiel,"24,444",23.8,8%,53 : 47
+2016,201-250,Université Laval,"27,227",16.2,12%,
+2016,201-250,Medical University of Vienna,"7,426",2.9,28%,50 : 50
+2016,201-250,"Northeastern University, US","18,539",15.1,26%,50 : 50
+2016,201-250,Oregon Health and Science University,"2,838",1.1,3%,65 : 35
+2016,201-250,University of Otago,"18,600",20.3,21%,57 : 43
+2016,201-250,University of Ottawa,"36,733",26.3,15%,60 : 40
+2016,201-250,Paris Descartes University,"34,691",26.9,15%,63 : 37
+2016,201-250,Peter the Great St Petersburg Polytechnic University,"17,155",7.2,8%,40 : 60
+2016,201-250,Politecnico di Milano,"30,025",22.2,12%,34 : 66
+2016,201-250,Royal Veterinary College,"1,820",11.0,17%,77 : 23
+2016,201-250,Rush University,"1,855",2.1,5%,71 : 29
+2016,201-250,Sapienza University of Rome,"120,986",32.3,7%,59 : 41
+2016,201-250,University of Science and Technology of China,"14,290",7.9,2%,
+2016,201-250,University of South Florida (Tampa),"31,424",21.5,10%,
+2016,201-250,Stony Brook University,"21,908",10.9,24%,50 : 50
+2016,201-250,University of Stuttgart,"24,099",45.4,20%,31 : 69
+2016,201-250,Swedish University of Agricultural Sciences,"3,879",4.6,0%,67 : 33
+2016,201-250,Technical University of Darmstadt,"20,300",53.6,18%,28 : 72
+2016,201-250,Tel Aviv University,"23,977",24.4,4%,
+2016,201-250,University of Texas at Dallas,"16,306",22.8,23%,44 : 56
+2016,201-250,Tilburg University,"7,576",22.4,10%,49 : 51
+2016,201-250,Tohoku University,"17,200",5.0,7%,25 : 75
+2016,201-250,Tokyo Institute of Technology,"9,586",7.3,13%,13 : 87
+2016,201-250,University of Victoria,"17,581",21.5,11%,56 : 44
+2016,201-250,Wake Forest University,"7,326",4.6,5%,51 : 49
+2016,201-250,Western University,"27,387",20.7,16%,54 : 46
+2016,201-250,William & Mary,"7,867",11.8,7%,54 : 46
+2016,201-250,University of the Witwatersrand,"23,321",18.6,9%,56 : 44
+2016,251-300,Aalto University,"16,099",24.2,17%,32 : 68
+2016,251-300,Aix-Marseille University,"71,749",45.5,13%,61 : 39
+2016,251-300,University of Bath,"12,830",18.7,30%,46 : 54
+2016,251-300,University of Bayreuth,"12,520",35.5,8%,46 : 54
+2016,251-300,Bielefeld University,"21,428",67.8,7%,57 : 43
+2016,251-300,University of Bordeaux,"51,239",19.4,12%,58 : 42
+2016,251-300,Charles Darwin University,"5,570",25.4,15%,67 : 33
+2016,251-300,Colorado School of Mines,"5,287",18.2,12%,26 : 74
+2016,251-300,"Colorado State University, Fort Collins","26,769",19.0,5%,52 : 48
+2016,251-300,University of Delaware,"19,262",15.9,10%,56 : 44
+2016,251-300,Flinders University,"15,655",22.6,15%,63 : 37
+2016,251-300,University of Georgia (USA),"33,119",19.9,7%,57 : 43
+2016,251-300,Griffith University,"30,251",22.0,21%,0 : 100
+2016,251-300,Indian Institute of Science,"3,318",8.2,1%,19 : 81
+2016,251-300,Iowa State University,"29,991",17.4,11%,44 : 56
+2016,251-300,James Cook University,"11,713",21.9,11%,63 : 37
+2016,251-300,Justus Liebig University Giessen,"25,682",53.9,9%,62 : 38
+2016,251-300,King Abdulaziz University,"35,889",8.4,21%,57 : 43
+2016,251-300,Koç University,"4,488",14.6,8%,52 : 48
+2016,251-300,Korea University,"24,043",15.8,14%,
+2016,251-300,University of Liège,"20,951",25.9,23%,54 : 46
+2016,251-300,Linköping University,"17,866",7.7,10%,52 : 48
+2016,251-300,Nanjing University,"29,743",13.3,10%,46 : 54
+2016,251-300,National Tsing Hua University,"10,221",13.5,5%,33 : 67
+2016,251-300,University of Galway,"14,067",26.8,14%,56 : 44
+2016,251-300,University of Newcastle,"23,508",21.9,18%,56 : 44
+2016,251-300,North Carolina State University,"30,533",13.6,11%,44 : 56
+2016,251-300,National Research Nuclear University MEPhI,"7,801",7.3,7%,29 : 71
+2016,251-300,Oregon State University,"22,578",16.8,8%,47 : 53
+2016,251-300,The University of Osaka,"23,144",7.8,9%,31 : 69
+2016,251-300,Queen’s University,"20,488",22.1,10%,58 : 42
+2016,251-300,Technion Israel Institute of Technology,"13,855",19.4,4%,35 : 65
+2016,251-300,Queensland University of Technology,"33,391",35.8,17%,54 : 46
+2016,251-300,Rensselaer Polytechnic Institute,"6,671",15.0,16%,30 : 70
+2016,251-300,RCSI University of Medicine and Health Sciences,"2,473",15.6,63%,55 : 45
+2016,251-300,Ruhr University Bochum,"38,675",46.3,13%,48 : 52
+2016,251-300,Saint Louis University,"11,919",5.8,8%,58 : 42
+2016,251-300,Paris-Sorbonne University – Paris 4,"21,580",27.4,21%,69 : 31
+2016,251-300,Simon Fraser University,"26,640",28.3,19%,55 : 45
+2016,251-300,University of Surrey,"12,065",16.5,38%,55 : 45
+2016,251-300,Syracuse University,"19,660",15.9,15%,55 : 45
+2016,251-300,University of Tasmania,"18,340",23.8,21%,57 : 43
+2016,251-300,The University of Tennessee-Knoxville,"24,716",17.0,5%,
+2016,251-300,Tomsk Polytechnic University,"11,902",6.9,17%,39 : 61
+2016,251-300,Tulane University,"11,381",8.4,8%,56 : 44
+2016,251-300,Umeå University,"16,667",11.9,7%,60 : 40
+2016,251-300,TU Wien,"26,419",52.0,27%,27 : 73
+2016,251-300,Virginia Polytechnic Institute and State University,"30,850",18.6,10%,42 : 58
+2016,251-300,University of Wollongong,"16,489",25.4,24%,50 : 50
+2016,251-300,Zhejiang University,"47,508",15.9,4%,41 : 59
+2016,301-350,Aberystwyth University,"9,250",19.1,18%,48 : 52
+2016,301-350,University of Alaska Fairbanks,"3,837",8.2,7%,53 : 47
+2016,301-350,Autonomous University of Madrid,"28,296",13.0,15%,56 : 44
+2016,301-350,Bangor University,"9,565",19.5,22%,55 : 45
+2016,301-350,University of Bremen,"18,590",25.6,11%,50 : 50
+2016,301-350,University of Cincinnati – Uptown,"36,108",15.7,6%,54 : 46
+2016,301-350,University of Connecticut,"25,742",13.0,11%,51 : 49
+2016,301-350,Deakin University,"32,713",30.4,17%,60 : 40
+2016,301-350,University of Essex,"12,695",19.8,39%,55 : 45
+2016,301-350,George Mason University,"26,622",17.0,7%,54 : 46
+2016,301-350,University of Greifswald,"10,931",24.0,6%,55 : 45
+2016,301-350,Gwangju Institute of Science and Technology (GIST),"1,394",9.6,8%,25 : 75
+2016,301-350,University of Hohenheim,"9,163",41.2,13%,56 : 44
+2016,301-350,University of Innsbruck,"18,209",16.9,39%,54 : 46
+2016,301-350,Kazan Federal University,"23,321",12.2,6%,69 : 31
+2016,301-350,University of Kent,"17,640",14.5,27%,53 : 47
+2016,301-350,Leibniz University Hannover,"22,401",62.7,12%,41 : 59
+2016,301-350,Macquarie University,"27,930",20.0,44%,55 : 45
+2016,301-350,Medical College of Wisconsin,"1,211",0.6,5%,48 : 52
+2016,301-350,University of Milan,"58,618",24.3,5%,60 : 40
+2016,301-350,University of Milan-Bicocca,"33,370",72.5,5%,60 : 40
+2016,301-350,Montpellier University,"36,731",18.4,14%,51 : 49
+2016,301-350,Nagoya University,"15,529",7.9,10%,29 : 71
+2016,301-350,University of Naples Federico II,"83,653",64.2,1%,
+2016,301-350,National Chiao Tung University,"12,646",16.6,5%,27 : 73
+2016,301-350,National Taiwan University of Science and Technology (Taiwan Tech),"7,446",17.4,11%,34 : 66
+2016,301-350,University of Navarra,"11,259",10.6,16%,52 : 48
+2016,301-350,University of Nebraska-Lincoln,"21,789",16.4,9%,46 : 54
+2016,301-350,Örebro University,"8,788",15.8,2%,61 : 39
+2016,301-350,University of Oregon,"24,418",20.2,11%,52 : 48
+2016,301-350,University of Padua,"62,577",18.3,4%,56 : 44
+2016,301-350,University of Pavia,"22,958",40.6,6%,56 : 44
+2016,301-350,University of Plymouth,"24,120",25.9,13%,52 : 48
+2016,301-350,Shanghai Jiao Tong University,"38,191",12.8,6%,37 : 63
+2016,301-350,University of Southern Denmark,"22,210",12.7,16%,52 : 48
+2016,301-350,Stellenbosch University,"21,849",23.0,8%,53 : 47
+2016,301-350,University of Strasbourg,"46,208",17.8,21%,58 : 42
+2016,301-350,TU Dortmund University,"29,143",88.9,10%,47 : 53
+2016,301-350,Toulouse 1 Capitole University,"19,011",43.8,19%,59 : 41
+2016,301-350,University of Trieste,"18,135",25.8,9%,56 : 44
+2016,301-350,University of Turin,"67,552",66.0,6%,62 : 38
+2016,301-350,University of Turku,"12,326",14.6,5%,61 : 39
+2016,301-350,Vrije Universiteit Brussel,"9,020",17.1,16%,55 : 45
+2016,301-350,VSB - Technical University of Ostrava,"14,991",23.9,5%,49 : 51
+2016,301-350,Yonsei University,"24,774",11.6,14%,
+2016,301-350,York University,"48,007",39.4,9%,59 : 41
+2016,351-400,SUNY Binghamton University,"15,799",23.3,13%,48 : 52
+2016,351-400,University of Crete,"14,650",26.9,5%,63 : 37
+2016,351-400,University of Cyprus,"6,880",22.9,8%,69 : 31
+2016,351-400,Drexel University,"20,713",10.8,17%,48 : 52
+2016,351-400,University of Eastern Finland,"10,798",17.3,6%,64 : 36
+2016,351-400,University of Florence,"54,290",17.2,7%,59 : 41
+2016,351-400,University of St Gallen,"6,848",10.8,34%,32 : 68
+2016,351-400,Graz University of Technology,"7,542",12.5,16%,22 : 78
+2016,351-400,University of Guelph,"21,643",28.3,4%,60 : 40
+2016,351-400,Hanyang University,"16,729",10.4,19%,
+2016,351-400,Hong Kong Baptist University,"10,441",11.0,25%,61 : 39
+2016,351-400,University of Houston,"40,325",43.7,9%,50 : 50
+2016,351-400,Indian Institute of Technology Bombay,"8,327",14.9,1%,16 : 84
+2016,351-400,Instituto Superior Técnico Lisboa,"11,778",16.9,9%,27 : 73
+2016,351-400,University of Jyväskylä,"9,703",15.2,5%,62 : 38
+2016,351-400,La Trobe University,"22,037",29.0,27%,63 : 37
+2016,351-400,Loughborough University,"13,950",15.9,22%,38 : 62
+2016,351-400,University of Manitoba,"28,576",27.8,11%,55 : 45
+2016,351-400,Mizzou - University of Missouri,"29,885",14.1,5%,53 : 47
+2016,351-400,University of Modena and Reggio Emilia,"19,693",25.3,6%,54 : 46
+2016,351-400,University of Montana,"12,470",15.2,3%,54 : 46
+2016,351-400,Maynooth University,"7,653",28.0,11%,55 : 45
+2016,351-400,University of Nebraska Medical Center,"2,857",2.6,8%,67 : 33
+2016,351-400,University of New Mexico (Main campus),"23,618",6.5,4%,67 : 33
+2016,351-400,Norwegian University of Science and Technology,"17,381",13.9,9%,46 : 54
+2016,351-400,University of Oulu,"14,056",8.5,6%,49 : 51
+2016,351-400,Panthéon-Sorbonne University – Paris 1,"42,215",34.3,20%,59 : 41
+2016,351-400,Polytechnic University of Turin,"27,709",19.6,16%,29 : 71
+2016,351-400,University of Rome III,"36,353",61.2,5%,59 : 41
+2016,351-400,Bilkent University,"9,370",13.6,3%,46 : 54
+2016,351-400,Sabancı University,"2,739",15.9,6%,39 : 61
+2016,351-400,San Diego State University,"27,420",31.7,5%,57 : 43
+2016,351-400,University of South Australia,"18,971",26.2,32%,59 : 41
+2016,351-400,University of South Carolina-Columbia,"29,336",16.3,1%,55 : 45
+2016,351-400,University of South Dakota,"8,003",17.1,2%,61 : 39
+2016,351-400,University of Campinas,"27,095",15.3,3%,48 : 52
+2016,351-400,University of Stirling,"7,830",15.8,22%,61 : 39
+2016,351-400,Sun Yat-sen University,"51,351",16.6,8%,51 : 49
+2016,351-400,Swansea University,"12,800",17.2,20%,49 : 51
+2016,351-400,Swinburne University of Technology,"20,314",36.5,32%,44 : 56
+2016,351-400,University of Tartu,"10,269",13.0,3%,66 : 34
+2016,351-400,Temple University,"33,268",13.3,5%,51 : 49
+2016,351-400,The University of Texas at San Antonio,"27,520",26.9,6%,48 : 52
+2016,351-400,UiT The Arctic University of Norway,"10,398",12.2,10%,60 : 40
+2016,351-400,Université Libre de Bruxelles,"23,819",26.1,32%,54 : 46
+2016,351-400,Lille 2 University – Health and Law,"26,894",38.5,8%,58 : 42
+2016,351-400,University College Cork,"15,805",22.3,15%,55 : 45
+2016,351-400,Verona University,"25,250",19.7,7%,65 : 35
+2016,351-400,Victoria University of Wellington,"17,142",21.1,21%,55 : 45
+2016,351-400,Washington State University,"24,550",18.3,7%,50 : 50
+2016,351-400,Wayne State University,"23,065",10.7,6%,57 : 43
+2016,401-500,American University,"11,604",12.0,12%,60 : 40
+2016,401-500,Aston University,"8,835",17.8,31%,48 : 52
+2016,401-500,University of Aveiro,"10,791",17.8,10%,51 : 49
+2016,401-500,University of Bari Aldo Moro,"51,560",65.1,2%,65 : 35
+2016,401-500,Bar-Ilan University,"17,503",16.0,5%,59 : 41
+2016,401-500,Makerere University,"37,340",29.4,9%,50 : 50
+2016,401-500,Bournemouth University,"14,905",25.9,18%,53 : 47
+2016,401-500,University of Brescia,"14,076",25.0,7%,48 : 52
+2016,401-500,Brno University of Technology,"23,694",21.3,15%,27 : 73
+2016,401-500,Brunel University of London,"12,615",17.6,38%,46 : 54
+2016,401-500,Ca’ Foscari University of Venice,"19,267",38.3,7%,66 : 34
+2016,401-500,University of Cagliari,"30,638",51.0,1%,62 : 38
+2016,401-500,University of Canterbury,"12,187",16.5,20%,51 : 49
+2016,401-500,Università Cattolica del Sacro Cuore,"30,304",18.9,10%,
+2016,401-500,Charles University,"51,438",13.0,15%,62 : 38
+2016,401-500,"China Medical University, Taiwan","7,983",15.4,8%,53 : 47
+2016,401-500,"City, University of London","13,055",17.9,50%,55 : 45
+2016,401-500,Claude Bernard University Lyon 1,"35,308",16.1,11%,50 : 50
+2016,401-500,University of Coimbra,"22,795",19.0,11%,55 : 45
+2016,401-500,Complutense University of Madrid,"86,519",17.5,13%,62 : 38
+2016,401-500,Concordia University,"31,017",30.3,27%,50 : 50
+2016,401-500,Curtin University,"30,333",17.1,38%,53 : 47
+2016,401-500,Dublin City University,"8,546",22.9,17%,51 : 49
+2016,401-500,East China University of Science and Technology,"27,140",15.5,5%,
+2016,401-500,Ewha Womans University,"17,625",14.4,6%,100 : 0
+2016,401-500,Federico Santa María Technical University,"11,718",34.0,2%,24 : 76
+2016,401-500,University of Ferrara,"18,882",30.2,7%,56 : 44
+2016,401-500,Florida International University,"32,566",25.9,7%,56 : 44
+2016,401-500,University of Genoa,"37,373",29.5,9%,56 : 44
+2016,401-500,Georgia State University,"28,534",20.4,5%,59 : 41
+2016,401-500,University of Graz,"20,584",26.8,12%,65 : 35
+2016,401-500,Heriot-Watt University,"8,775",17.7,43%,41 : 59
+2016,401-500,Hokkaido University,"18,162",8.2,9%,29 : 71
+2016,401-500,Howard University,"10,297",6.8,5%,65 : 35
+2016,401-500,University of Hull,"15,140",18.7,20%,52 : 48
+2016,401-500,University of Idaho,"11,641",21.5,6%,47 : 53
+2016,401-500,Indian Institute of Technology Delhi,"8,371",17.3,1%,18 : 82
+2016,401-500,Indian Institute of Technology Kharagpur,"9,928",17.5,0%,15 : 85
+2016,401-500,Indian Institute of Technology Madras,"8,234",15.9,1%,19 : 81
+2016,401-500,University of Ioannina,"20,825",36.3,4%,58 : 42
+2016,401-500,Iran University of Science and Technology,"10,311",23.9,0%,24 : 76
+2016,401-500,Johannes Kepler University of Linz,"19,646",29.1,10%,48 : 52
+2016,401-500,RPTU University Kaiserslautern-Landau,"14,184",54.4,14%,36 : 64
+2016,401-500,Keele University,"8,395",15.7,20%,55 : 45
+2016,401-500,University of KwaZulu-Natal,"30,572",24.9,6%,58 : 42
+2016,401-500,Kyung Hee University,"24,356",17.4,14%,
+2016,401-500,Kyushu University,"18,925",6.7,8%,28 : 72
+2016,401-500,Lehigh University,"6,300",11.3,15%,44 : 56
+2016,401-500,Louisiana State University,"28,116",20.1,5%,52 : 48
+2016,401-500,University of Macau,"8,521",14.9,31%,58 : 42
+2016,401-500,Marche Polytechnic University,"16,589",23.0,4%,45 : 55
+2016,401-500,"University of Maryland, Baltimore County","13,908",18.1,7%,46 : 54
+2016,401-500,Murdoch University,"16,606",32.8,43%,59 : 41
+2016,401-500,Nantes Université,"33,866",22.2,11%,56 : 44
+2016,401-500,National and Kapodistrian University of Athens,"63,052",32.3,9%,61 : 39
+2016,401-500,National Autonomous University of Mexico,"137,378",11.6,5%,51 : 49
+2016,401-500,National Cheng Kung University (NCKU),"21,234",14.4,11%,36 : 64
+2016,401-500,National Institute of Applied Sciences of Lyon (INSA Lyon),"6,137",8.2,31%,31 : 69
+2016,401-500,National Yang-Ming University,"4,496",5.4,2%,48 : 52
+2016,401-500,University of Neuchâtel,"4,358",8.5,22%,59 : 41
+2016,401-500,NOVA University of Lisbon,"18,867",17.9,7%,49 : 51
+2016,401-500,University of Nice Sophia Antipolis,"27,304",20.3,22%,56 : 44
+2016,401-500,Novosibirsk State University,"7,131",7.1,13%,52 : 48
+2016,401-500,The Open University,"76,685",35.9,9%,61 : 39
+2016,401-500,Oxford Brookes University,"14,240",18.5,25%,57 : 43
+2016,401-500,University of Palermo,"43,875",22.4,1%,60 : 40
+2016,401-500,University of Parma,"26,937",29.1,7%,56 : 44
+2016,401-500,University of Pisa,"47,247",18.0,3%,52 : 48
+2016,401-500,Universitat Politècnica de Catalunya,"22,893",11.7,28%,12 : 88
+2016,401-500,Pontificia Universidad Católica de Chile,"25,075",15.3,7%,
+2016,401-500,University of Porto,"32,720",18.8,9%,54 : 46
+2016,401-500,University of Portsmouth,"20,160",19.1,23%,45 : 55
+2016,401-500,RMIT University,"29,501",18.1,24%,47 : 53
+2016,401-500,University of Rome II – Tor Vergata,"33,504",26.5,6%,52 : 48
+2016,401-500,Rovira i Virgili University,"12,533",12.8,9%,61 : 39
+2016,401-500,Saint Petersburg State University,"20,836",5.2,7%,60 : 40
+2016,401-500,University of Salento,"19,959",58.4,1%,64 : 36
+2016,401-500,University of San Francisco,"10,788",17.0,17%,63 : 37
+2016,401-500,University of Saskatchewan,"19,028",16.3,14%,57 : 43
+2016,401-500,Sharif University of Technology,"10,977",18.7,0%,27 : 73
+2016,401-500,University of Siena,"18,846",23.6,5%,59 : 41
+2016,401-500,Southern Cross University,"9,026",32.8,15%,66 : 34
+2016,401-500,SUNY University at Albany,"15,387",18.5,8%,51 : 49
+2016,401-500,University of Strathclyde,"15,705",20.1,20%,50 : 50
+2016,401-500,University of Tampere,"10,045",9.5,4%,66 : 34
+2016,401-500,Boğaziçi University,"11,506",25.0,7%,50 : 50
+2016,401-500,Tampere University of Technology,"6,147",15.5,13%,23 : 77
+2016,401-500,Tokyo Medical and Dental University (TMDU),"2,872",3.3,7%,51 : 49
+2016,401-500,Tokyo Metropolitan University,"9,303",9.9,3%,35 : 65
+2016,401-500,University of Tsukuba,"15,930",12.6,16%,38 : 62
+2016,401-500,University of Ulsan,"14,037",13.3,3%,
+2016,401-500,Ulster University,"19,620",15.8,15%,55 : 45
+2016,401-500,Université du Québec à Montréal,"27,046",24.7,9%,61 : 39
+2016,401-500,Universiti Teknologi Malaysia,"16,270",9.0,13%,43 : 57
+2016,401-500,University of Urbino Carlo Bo,"13,435",37.4,7%,61 : 39
+2016,401-500,University of Valencia,"58,413",15.4,9%,60 : 40
+2016,401-500,University of Waikato,"10,159",17.0,25%,57 : 43
+2016,401-500,Western Sydney University,"30,704",32.2,9%,56 : 44
+2016,401-500,Wuhan University,"46,227",14.4,7%,
+2016,401-500,Xiamen University,"32,921",12.3,5%,52 : 48
+2016,501-600,American University of Beirut,"7,695",8.9,25%,51 : 49
+2016,501-600,Amirkabir University of Technology,"14,080",25.6,1%,34 : 66
+2016,501-600,"University of the Andes, Colombia","15,773",16.9,2%,44 : 56
+2016,501-600,University of Arkansas,"22,819",21.2,5%,50 : 50
+2016,501-600,Auburn University,"22,386",17.6,4%,51 : 49
+2016,501-600,Babeş-Bolyai University,"37,915",23.5,2%,67 : 33
+2016,501-600,Bauman Moscow State Technical University,"18,808",4.0,4%,23 : 77
+2016,501-600,Blaise Pascal University,"15,619",7.1,17%,55 : 45
+2016,501-600,Université Bourgogne Europe,"26,612",20.8,11%,54 : 46
+2016,501-600,University of Canberra,"11,221",28.6,24%,54 : 46
+2016,501-600,Ben-Gurion University of the Negev,"16,695",12.6,2%,49 : 51
+2016,501-600,Carleton University,"25,036",29.8,18%,47 : 53
+2016,501-600,University of Catania,"55,859",49.7,1%,61 : 39
+2016,501-600,Central Queensland University,"11,452",29.6,27%,59 : 41
+2016,501-600,University of Chile,"29,207",14.2,3%,47 : 53
+2016,501-600,China Agricultural University,"19,342",12.0,1%,57 : 43
+2016,501-600,Chung-Ang University,"13,015",17.4,17%,45 : 55
+2016,501-600,Czech Technical University in Prague,"22,751",12.0,0%,0 : 100
+2016,501-600,De Montfort University,"16,810",19.1,21%,57 : 43
+2016,501-600,East China Normal University,"29,623",14.0,11%,63 : 37
+2016,501-600,Edith Cowan University,"16,671",34.2,18%,61 : 39
+2016,501-600,Federal University of Rio de Janeiro,"52,878",12.8,2%,54 : 46
+2016,501-600,University of Granada,"53,476",16.0,6%,56 : 44
+2016,501-600,University of Haifa,"17,758",30.8,1%,65 : 35
+2016,501-600,Harbin Institute of Technology,"31,658",10.8,7%,29 : 71
+2016,501-600,University of Hertfordshire,"19,665",19.4,27%,54 : 46
+2016,501-600,Hiroshima University,"14,686",8.2,5%,36 : 64
+2016,501-600,Huazhong University of Science and Technology,"57,242",17.7,3%,34 : 66
+2016,501-600,Indian Institute of Technology Guwahati,"4,710",14.2,1%,14 : 86
+2016,501-600,Indian Institute of Technology Kanpur,"6,167",12.2,0%,13 : 87
+2016,501-600,Indian Institute of Technology Roorkee,"8,061",18.7,1%,17 : 83
+2016,501-600,Isfahan University of Technology,"10,964",26.5,1%,39 : 61
+2016,501-600,Istanbul Technical University,"34,550",16.0,5%,34 : 66
+2016,501-600,Jadavpur University,"10,697",16.1,0%,30 : 70
+2016,501-600,Kanazawa University,"10,546",10.4,5%,36 : 64
+2016,501-600,Kansas State University,"21,379",15.1,10%,50 : 50
+2016,501-600,Keio University,"33,751",11.9,5%,32 : 68
+2016,501-600,Kent State University,"23,122",19.0,7%,58 : 42
+2016,501-600,King Fahd University of Petroleum and Minerals,"6,898",7.1,19%,0 : 100
+2016,501-600,King Saud University,"40,666",13.4,6%,
+2016,501-600,University of La Laguna,"22,422",14.9,5%,58 : 42
+2016,501-600,LUT University,"3,486",23.9,19%,31 : 69
+2016,501-600,University of Limerick,"12,212",19.8,13%,46 : 54
+2016,501-600,University of Lisbon,"47,849",17.5,9%,51 : 49
+2016,501-600,Liverpool John Moores University,"18,515",19.8,13%,52 : 48
+2016,501-600,Mahidol University,"27,402",7.5,3%,63 : 37
+2016,501-600,Manchester Metropolitan University,"28,035",18.2,14%,57 : 43
+2016,501-600,University of Maribor,"14,531",17.3,4%,
+2016,501-600,Masaryk University,"40,898",26.6,17%,62 : 38
+2016,501-600,University of the Basque Country,"46,373",15.3,5%,53 : 47
+2016,501-600,Massey University,"19,101",16.8,15%,62 : 38
+2016,501-600,Memorial University of Newfoundland,"15,464",14.6,10%,59 : 41
+2016,501-600,Middle East Technical University,"25,779",22.2,7%,44 : 56
+2016,501-600,University of Minho,"19,090",18.8,9%,52 : 48
+2016,501-600,Missouri University of Science and Technology,"7,647",15.5,12%,23 : 77
+2016,501-600,Montana State University,"12,331",17.8,4%,46 : 54
+2016,501-600,Tecnológico de Monterrey,"14,353",20.5,12%,40 : 60
+2016,501-600,National Central University,"10,915",9.8,6%,31 : 69
+2016,501-600,National Sun Yat-Sen University,"9,336",19.6,4%,37 : 63
+2016,501-600,National Taiwan Normal University,"11,072",13.0,19%,57 : 43
+2016,501-600,National Technical University of Athens,"14,780",26.9,7%,36 : 64
+2016,501-600,Moscow Institute of Physics and Technology (MIPT),"5,395",7.0,12%,
+2016,501-600,New Jersey Institute of Technology,"10,646",26.2,17%,25 : 75
+2016,501-600,New Mexico State University (Main campus),"15,035",18.8,7%,54 : 46
+2016,501-600,University of North Carolina at Greensboro,"16,446",19.2,2%,66 : 34
+2016,501-600,Oklahoma State University,"21,270",21.4,7%,49 : 51
+2016,501-600,Osaka City University,"8,604",10.1,4%,36 : 64
+2016,501-600,Otto von Guericke University of Magdeburg,"14,104",13.1,13%,42 : 58
+2016,501-600,University of Oviedo,"24,210",13.7,5%,54 : 46
+2016,501-600,Palacký University Olomouc,"18,540",11.4,9%,70 : 30
+2016,501-600,Panjab University,"16,691",23.9,1%,46 : 54
+2016,501-600,Paris Dauphine University,"9,565",15.4,28%,53 : 47
+2016,501-600,Pontifical Catholic University of Rio de Janeiro (PUC-Rio),"14,300",21.2,3%,49 : 51
+2016,501-600,Portland State University,"20,398",22.2,8%,54 : 46
+2016,501-600,University of Pretoria,"37,314",20.0,8%,57 : 43
+2016,501-600,Pusan National University,"24,929",19.7,12%,51 : 49
+2016,501-600,Quaid-i-Azam University,"12,688",25.7,0%,53 : 47
+2016,501-600,University of Regina,"11,550",22.8,12%,61 : 39
+2016,501-600,Renmin University of China,"24,954",12.7,6%,
+2016,501-600,University of Rennes 1,"22,186",13.9,12%,50 : 50
+2016,501-600,University of Salamanca,"31,035",17.9,12%,58 : 42
+2016,501-600,University of Santiago de Compostela,"29,085",15.3,6%,63 : 37
+2016,501-600,Semmelweis University,"12,920",10.9,25%,64 : 36
+2016,501-600,University of Seville,"64,931",17.5,7%,55 : 45
+2016,501-600,Université de Sherbrooke,"13,438",5.4,5%,54 : 46
+2016,501-600,"Soochow University, China","36,465",12.9,2%,78 : 22
+2016,501-600,South China University of Technology,"41,438",17.7,3%,33 : 67
+2016,501-600,Tallinn University of Technology,"14,061",28.6,5%,44 : 56
+2016,501-600,Tehran University of Medical Sciences,"13,912",9.0,1%,62 : 38
+2016,501-600,University of Texas at Arlington,"29,396",10.5,10%,60 : 40
+2016,501-600,Tianjin University,"29,693",12.2,1%,
+2016,501-600,Tokyo University of Agriculture and Technology,"5,865",14.4,5%,27 : 73
+2016,501-600,University of Toledo,"19,465",17.5,9%,50 : 50
+2016,501-600,Tongji University,"37,394",13.5,10%,38 : 62
+2016,501-600,The University of Tulsa,"4,597",12.5,25%,43 : 57
+2016,501-600,United Arab Emirates University,"9,221",12.5,26%,76 : 24
+2016,501-600,University of Warsaw,"49,292",14.1,7%,67 : 33
+2016,501-600,University of Wisconsin-Milwaukee,"22,542",18.4,5%,52 : 48
+2016,501-600,Xi’an Jiaotong University,"29,863",12.3,4%,34 : 66
+2016,501-600,University of Zaragoza,"31,046",11.8,5%,55 : 45
+2016,601-800,University of A Coruña,"17,062",13.0,2%,52 : 48
+2016,601-800,"Adam Mickiewicz University, Poznań","40,633",15.6,1%,71 : 29
+2016,601-800,AGH University of Krakow,"35,569",17.0,0%,0 : 100
+2016,601-800,Ajou University,"12,706",11.3,2%,33 : 67
+2016,601-800,University of Alcalá,"30,812",25.1,18%,53 : 47
+2016,601-800,Alexandria University,"127,431",23.3,1%,46 : 54
+2016,601-800,Alexandru Ioan Cuza University,"25,724",33.0,5%,63 : 37
+2016,601-800,Aligarh Muslim University,"11,197",10.5,2%,17 : 83
+2016,601-800,American University of Sharjah,"5,226",14.1,82%,48 : 52
+2016,601-800,Amrita Vishwa Vidyapeetham,"17,273",6.6,8%,
+2016,601-800,Anadolu University,"379,231",162.6,1%,78 : 22
+2016,601-800,Andhra University,"10,407",20.2,3%,36 : 64
+2016,601-800,University of Antioquia,"38,872",23.0,1%,50 : 50
+2016,601-800,Aristotle University of Thessaloniki,"46,288",22.2,9%,52 : 48
+2016,601-800,"Asia University, Taiwan","12,119",26.3,3%,53 : 47
+2016,601-800,Athens University of Economics and Business,"13,167",57.5,6%,47 : 53
+2016,601-800,Auckland University of Technology,"18,981",18.1,38%,58 : 42
+2016,601-800,Austral University of Chile,"13,794",17.8,1%,47 : 53
+2016,601-800,Beijing Institute of Technology,"25,983",12.6,3%,35 : 65
+2016,601-800,Belarusian State University,"29,303",10.6,6%,69 : 31
+2016,601-800,University of Belgrade,"96,968",28.3,4%,60 : 40
+2016,601-800,"Birla Institute of Technology and Science, Pilani","11,837",19.5,0%,22 : 78
+2016,601-800,University of Bradford,"11,065",20.5,32%,53 : 47
+2016,601-800,University of Brasília,"45,880",14.5,2%,52 : 48
+2016,601-800,University of Brighton,"16,925",19.5,19%,58 : 42
+2016,601-800,University of Bucharest,"31,806",24.9,2%,70 : 30
+2016,601-800,Budapest University of Technology and Economics,"22,447",22.1,4%,32 : 68
+2016,601-800,Cairo University,"231,941",39.1,2%,47 : 53
+2016,601-800,University of Calcutta,"18,511",32.5,0%,
+2016,601-800,"California State University, Long Beach","29,594",32.3,5%,58 : 42
+2016,601-800,Capital Medical University,"11,506",7.1,3%,70 : 30
+2016,601-800,University of Castilla-La Mancha,"26,381",14.3,3%,56 : 44
+2016,601-800,University of Lancashire,"18,540",17.5,17%,57 : 43
+2016,601-800,University of Cergy-Pontoise,"17,000",9.2,11%,53 : 47
+2016,601-800,Chang Gung University,"7,506",12.6,0%,42 : 58
+2016,601-800,Carlos III University of Madrid,"15,730",11.4,9%,43 : 57
+2016,601-800,"University of Chemistry and Technology, Prague","4,699",11.0,18%,
+2016,601-800,Chiang Mai University,"35,617",16.5,1%,19 : 81
+2016,601-800,Chiba University,"14,554",12.3,5%,37 : 63
+2016,601-800,"China University of Geosciences, Wuhan","29,483",20.7,2%,
+2016,601-800,"China University of Petroleum, Beijing","14,579",19.4,6%,
+2016,601-800,Jeonbuk National University,"23,270",15.0,3%,45 : 55
+2016,601-800,Chongqing University,"43,955",16.0,3%,
+2016,601-800,Chonnam National University,"35,779",18.5,3%,41 : 59
+2016,601-800,Chulalongkorn University,"38,719",14.5,2%,59 : 41
+2016,601-800,Chung Yuan Christian University,"15,020",30.2,3%,41 : 59
+2016,601-800,Chungnam National University,"18,361",17.2,3%,
+2016,601-800,Clemson University,"19,198",17.1,8%,46 : 54
+2016,601-800,Comenius University Bratislava,"20,879",9.7,10%,54 : 46
+2016,601-800,Coventry University,"21,935",14.8,35%,47 : 53
+2016,601-800,Dalian University of Technology,"34,326",15.2,2%,33 : 67
+2016,601-800,University of Debrecen,"29,714",20.3,13%,57 : 43
+2016,601-800,University of Delhi,"32,567",22.9,1%,50 : 50
+2016,601-800,University of Dhaka,"62,716",6.9,5%,34 : 66
+2016,601-800,Dublin Institute of Technology,"13,839",18.9,25%,41 : 59
+2016,601-800,Ehime University,"8,394",9.9,1%,39 : 61
+2016,601-800,University of Electronic Science and Technology of China,"21,689",9.8,0%,21 : 79
+2016,601-800,Eötvös Loránd University,"28,698",22.4,4%,
+2016,601-800,Erciyes University,"28,079",28.0,2%,46 : 54
+2016,601-800,Universidade Federal da Bahia,"39,861",17.9,1%,47 : 53
+2016,601-800,Federal University of Minas Gerais,"42,612",13.5,1%,55 : 45
+2016,601-800,Universidade Federal do Paraná (UFPR),"21,850",11.2,1%,
+2016,601-800,Universidade Federal do Rio Grande do Sul,"38,743",14.8,1%,50 : 50
+2016,601-800,Universidade Federal de Santa Catarina,"26,078",12.6,1%,48 : 52
+2016,601-800,Federal University of São Carlos,"18,587",16.9,0%,
+2016,601-800,Federal University of Viçosa,"13,163",11.4,3%,70 : 30
+2016,601-800,Federal University of Lavras,"10,350",20.9,1%,53 : 47
+2016,601-800,Feng Chia University,"20,213",23.9,7%,36 : 64
+2016,601-800,Florida Institute of Technology,"4,408",13.7,26%,34 : 66
+2016,601-800,Fu Jen Catholic University,"25,951",22.8,4%,59 : 41
+2016,601-800,Gdańsk University of Technology,"25,217",23.3,1%,39 : 61
+2016,601-800,University of Ghana,"37,274",37.5,2%,41 : 59
+2016,601-800,Gifu University,"7,318",12.4,4%,35 : 65
+2016,601-800,Glasgow Caledonian University,"13,525",21.6,16%,60 : 40
+2016,601-800,University of Greenwich,"18,095",24.6,32%,53 : 47
+2016,601-800,Hacettepe University,"39,606",20.4,4%,56 : 44
+2016,601-800,University of Huddersfield,"15,435",18.2,25%,54 : 46
+2016,601-800,University of Tehran,"53,802",27.0,1%,45 : 55
+2016,601-800,Hunan University,"42,756",24.7,2%,43 : 57
+2016,601-800,University of Ibadan,"26,247",17.1,1%,45 : 55
+2016,601-800,University of Indonesia,"43,565",15.8,0%,51 : 49
+2016,601-800,Inha University,"20,353",24.1,3%,36 : 64
+2016,601-800,I-Shou University,"16,263",29.9,10%,45 : 55
+2016,601-800,Istanbul University,"82,096",41.1,6%,44 : 56
+2016,601-800,Jagiellonian University,"42,835",11.5,5%,67 : 33
+2016,601-800,Jilin University,"65,605",13.6,3%,46 : 54
+2016,601-800,The University of Jordan,"35,577",13.6,13%,67 : 33
+2016,601-800,Jordan University of Science and Technology,"24,686",16.4,23%,55 : 45
+2016,601-800,Juntendo University,"3,955",3.7,1%,52 : 48
+2016,601-800,K.N. Toosi University of Technology,"7,146",24.6,0%,32 : 68
+2016,601-800,Kaohsiung Medical University,"7,009",12.6,5%,56 : 44
+2016,601-800,Khon Kaen University,"39,669",16.9,1%,62 : 38
+2016,601-800,King Mongkut’s University of Technology Thonburi,"17,791",23.7,1%,42 : 58
+2016,601-800,Kingston University,"20,780",20.9,34%,53 : 47
+2016,601-800,Kindai University,"31,216",11.6,2%,
+2016,601-800,Kobe University,"15,885",8.4,6%,33 : 67
+2016,601-800,Konkuk University,"26,483",23.5,6%,47 : 53
+2016,601-800,Kumamoto University,"10,226",7.6,5%,37 : 63
+2016,601-800,Kyungpook National University (KNU),"27,152",14.4,3%,42 : 58
+2016,601-800,Kyushu Institute of Technology (Kyutech),"5,890",12.1,4%,11 : 89
+2016,601-800,University of Latvia,"15,100",26.5,3%,68 : 32
+2016,601-800,Lille 1 University – Science and Technology,"19,599",14.5,18%,41 : 59
+2016,601-800,University of Lincoln,"10,665",18.9,11%,54 : 46
+2016,601-800,University of Ljubljana,"48,821",17.6,4%,60 : 40
+2016,601-800,University Cadi Ayyad of Marrakech,"56,060",38.7,1%,46 : 54
+2016,601-800,Miami University,"16,370",20.5,7%,53 : 47
+2016,601-800,Middlesex University,"17,755",24.7,44%,59 : 41
+2016,601-800,University of Murcia,"31,460",15.8,6%,62 : 38
+2016,601-800,Nagasaki University,"9,137",7.2,4%,36 : 64
+2016,601-800,University of Nairobi,"72,676",47.0,1%,40 : 60
+2016,601-800,National Chengchi University,"16,867",18.4,10%,57 : 43
+2016,601-800,National Chung Cheng University,"11,989",22.9,1%,
+2016,601-800,National Chung Hsing University,"15,632",20.3,4%,39 : 61
+2016,601-800,National Taipei University of Technology,"10,227",16.5,3%,25 : 75
+2016,601-800,National Taiwan Ocean University,"8,240",20.9,5%,30 : 70
+2016,601-800,National University of Córdoba,"108,373",38.1,2%,62 : 38
+2016,601-800,National University of Science and Technology (MISiS),"4,441",6.7,13%,43 : 57
+2016,601-800,National University of Sciences and Technology,"9,808",7.8,3%,27 : 73
+2016,601-800,Niigata University,"12,460",8.5,3%,37 : 63
+2016,601-800,Northumbria University,"22,750",19.4,16%,55 : 45
+2016,601-800,Northwestern Polytechnical University,"23,056",14.1,3%,25 : 75
+2016,601-800,Nottingham Trent University,"21,850",17.4,17%,55 : 45
+2016,601-800,Oakland University,"14,584",19.8,2%,60 : 40
+2016,601-800,Ocean University of China,"36,205",20.6,1%,40 : 60
+2016,601-800,Ohio University (Main campus),"22,224",20.0,9%,50 : 50
+2016,601-800,Okayama University,"13,035",8.6,3%,38 : 62
+2016,601-800,Osaka Prefecture University,"8,051",7.5,3%,36 : 64
+2016,601-800,University of Pardubice,"10,671",19.8,4%,55 : 45
+2016,601-800,Université Sorbonne Paris Nord,"23,026",23.4,22%,60 : 40
+2016,601-800,University of Patras,"29,251",40.9,4%,46 : 54
+2016,601-800,University of Pécs,"21,819",15.4,10%,
+2016,601-800,Polytechnic University of Valencia,"33,172",13.6,7%,36 : 64
+2016,601-800,Pontifícia Universidade Católica do Paraná,"7,741",10.9,2%,1 : 99
+2016,601-800,Pontifical Catholic University of Rio Grande do Sul (PUCRS),"14,797",10.1,0%,50 : 50
+2016,601-800,Pontifical Catholic University of Valparaíso,"13,493",10.4,0%,45 : 55
+2016,601-800,Prince of Songkla University,"38,274",16.1,1%,69 : 31
+2016,601-800,Qatar University,"9,583",19.0,42%,74 : 26
+2016,601-800,Universidade do Estado do Rio de Janeiro (UERJ),"28,757",10.1,0%,46 : 54
+2016,601-800,Rochester Institute of Technology,"12,965",13.5,13%,34 : 66
+2016,601-800,Saitama University,"7,469",11.7,2%,33 : 67
+2016,601-800,University of Salford,"16,150",17.0,25%,51 : 49
+2016,601-800,"University of Santiago, Chile (USACH)","22,739",23.6,1%,39 : 61
+2016,601-800,Universidade Estadual Paulista (Unesp),"50,594",13.0,5%,52 : 48
+2016,601-800,Savitribai Phule Pune University,"4,858",14.6,3%,25 : 75
+2016,601-800,University of Science and Technology Beijing,"22,780",15.1,4%,36 : 64
+2016,601-800,Sejong University,"11,704",15.5,3%,43 : 57
+2016,601-800,University of Seoul,"10,243",19.0,3%,36 : 64
+2016,601-800,Shahid Beheshti University,"17,800",24.9,1%,52 : 48
+2016,601-800,Shanghai University,"46,044",17.5,3%,48 : 52
+2016,601-800,Shantou University,"9,593",13.5,0%,48 : 52
+2016,601-800,Sheffield Hallam University,"27,475",18.8,15%,53 : 47
+2016,601-800,Shinshu University,"11,232",9.6,3%,
+2016,601-800,Showa University,"3,675",2.5,0%,57 : 43
+2016,601-800,Sichuan University,"65,035",14.5,2%,48 : 52
+2016,601-800,University of Silesia in Katowice,"32,764",17.3,1%,65 : 35
+2016,601-800,Slovak University of Technology in Bratislava,"16,400",15.3,2%,31 : 69
+2016,601-800,Sogang University,"10,625",24.1,7%,43 : 57
+2016,601-800,Sophia University,"12,799",24.3,8%,53 : 47
+2016,601-800,University of South Africa,"197,102",108.5,9%,65 : 35
+2016,601-800,Southern Federal University,"27,556",9.0,3%,56 : 44
+2016,601-800,University of Southern Mississippi,"14,569",18.5,3%,63 : 37
+2016,601-800,University of Southern Queensland,"13,761",29.2,21%,55 : 45
+2016,601-800,Suez Canal University,"16,817",6.0,0%,65 : 35
+2016,601-800,Sultan Qaboos University,"7,089",9.0,3%,50 : 50
+2016,601-800,Suranaree University of Technology,"12,650",32.9,1%,50 : 50
+2016,601-800,University of Szeged,"22,684",13.8,9%,58 : 42
+2016,601-800,Taipei Medical University,"6,001",11.1,6%,58 : 42
+2016,601-800,Taras Shevchenko National University of Kyiv,"22,686",8.2,2%,45 : 55
+2016,601-800,Technical University of Madrid,"41,500",13.8,11%,32 : 68
+2016,601-800,University of Texas at El Paso,"19,123",29.0,7%,54 : 46
+2016,601-800,Texas Tech University,"29,512",20.9,7%,46 : 54
+2016,601-800,Tokai University,"29,700",12.7,1%,27 : 73
+2016,601-800,Tokushima University,"7,519",8.9,3%,34 : 66
+2016,601-800,Tokyo University of Marine Science and Technology,"2,597",11.1,7%,34 : 66
+2016,601-800,Tokyo University of Science,"20,243",25.7,2%,20 : 80
+2016,601-800,Tomsk State University,"10,413",9.9,12%,60 : 40
+2016,601-800,Tottori University,"6,248",8.2,2%,34 : 66
+2016,601-800,Toyohashi University of Technology (TUT),"2,153",9.3,9%,9 : 91
+2016,601-800,Universiti Kebangsaan Malaysia,"24,227",11.8,12%,62 : 38
+2016,601-800,Universiti Putra Malaysia,"23,883",12.2,15%,63 : 37
+2016,601-800,Universiti Sains Malaysia,"28,179",14.8,10%,61 : 39
+2016,601-800,Universiti Teknologi MARA,"69,268",16.8,0%,65 : 35
+2016,601-800,Ural Federal University,"28,427",10.1,3%,48 : 52
+2016,601-800,V.N. Karazin Kharkiv National University,"14,410",9.7,22%,53 : 47
+2016,601-800,University of Vigo,"22,793",19.0,3%,51 : 49
+2016,601-800,Vilnius University,"19,019",14.2,4%,65 : 35
+2016,601-800,Warsaw University of Technology,"34,572",14.5,3%,34 : 66
+2016,601-800,Waseda University,"52,316",16.9,8%,35 : 65
+2016,601-800,University of West Bohemia,"15,639",21.5,2%,52 : 48
+2016,601-800,UWE Bristol (University of the West of England),"22,525",21.4,15%,53 : 47
+2016,601-800,West University of Timişoara,"12,933",19.0,2%,62 : 38
+2016,601-800,University of Westminster,"16,610",20.9,43%,57 : 43
+2016,601-800,Xidian University,"31,618",16.4,2%,29 : 71
+2016,601-800,Yeungnam University,"21,958",15.3,3%,48 : 52
+2016,601-800,Yıldız Technical University,"31,268",28.7,2%,36 : 64
+2016,601-800,Yokohama City University,"4,122",3.7,3%,
+2016,601-800,Yokohama National University,"10,117",12.1,7%,28 : 72
+2016,601-800,Yuan Ze University,"8,663",20.6,4%,43 : 57

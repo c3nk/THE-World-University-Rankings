@@ -178,8 +178,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Output files
-outputs/
+# Output files (CSV, JSON, SQL files kept in repository)
 *.csv
 *.json
 *.sql

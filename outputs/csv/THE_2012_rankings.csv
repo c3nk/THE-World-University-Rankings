@@ -1,0 +1,403 @@
+year,Rank,Name,Overall,Teaching,Research Environment,Research Quality,Industry,International Outlook
+2012,1,California Institute of Technology,94.8,95.7,98.2,99.9,97.0,56.0
+2012,2,Harvard University,93.9,95.8,97.4,99.8,35.9,67.5
+2012,2,Stanford University,93.9,94.8,98.9,99.8,63.8,57.2
+2012,4,University of Oxford,93.6,89.5,96.6,97.9,62.1,91.9
+2012,5,Princeton University,92.9,91.5,99.1,100.0,81.0,49.6
+2012,6,University of Cambridge,92.4,90.5,94.2,97.3,55.5,85.3
+2012,7,Massachusetts Institute of Technology,92.3,92.7,87.4,100.0,94.4,79.2
+2012,8,Imperial College London,90.7,88.8,88.7,93.9,93.1,92.2
+2012,9,The University of Chicago,90.2,89.4,90.8,99.4,-,58.8
+2012,10,"University of California, Berkeley",89.8,82.8,99.4,99.4,62.5,50.4
+2012,11,Yale University,89.1,92.3,91.2,96.7,34.7,55.5
+2012,12,Columbia University,87.5,89.1,81.8,97.8,-,67.6
+2012,13,"University of California, Los Angeles",87.3,85.9,92.5,97.3,-,41.0
+2012,14,Johns Hopkins University,85.8,78.9,86.5,97.3,100.0,59.9
+2012,15,ETH Zurich,85.0,79.1,85.8,87.2,-,97.5
+2012,16,University of Pennsylvania,84.9,87.0,86.1,97.9,41.9,34.3
+2012,17,UCL,83.2,77.8,84.3,89.0,41.4,91.8
+2012,18,University of Michigan-Ann Arbor,82.8,75.4,90.0,94.3,53.3,47.2
+2012,19,University of Toronto,81.6,76.9,87.4,86.5,44.9,69.0
+2012,20,Cornell University,80.5,70.4,87.2,93.5,-,53.4
+2012,21,Carnegie Mellon University,78.4,65.7,79.5,97.4,60.7,55.0
+2012,22,University of British Columbia,77.4,68.6,78.6,85.2,40.6,88.7
+2012,22,Duke University,77.4,62.6,77.9,97.4,100.0,46.9
+2012,24,Georgia Institute of Technology,77.0,66.6,73.8,91.9,99.2,65.0
+2012,25,University of Washington,76.5,70.8,74.0,98.2,31.8,36.9
+2012,26,Northwestern University,76.2,66.3,75.5,98.6,56.6,35.3
+2012,27,University of Wisconsin-Madison,75.8,74.3,77.3,90.6,55.3,23.8
+2012,28,McGill University,75.5,72.8,78.4,77.1,35.1,81.4
+2012,29,University of Texas at Austin,74.9,69.5,76.1,89.6,57.7,38.8
+2012,30,The University of Tokyo,74.3,86.1,80.3,69.1,76.6,23.0
+2012,31,University of Illinois at Urbana-Champaign,74.2,67.9,81.3,81.5,-,50.7
+2012,32,Karolinska Institute,73.1,69.9,73.8,73.1,78.5,82.0
+2012,33,"University of California, San Diego",73.0,61.4,72.0,97.8,51.8,31.5
+2012,34,University of Hong Kong,72.3,74.0,80.1,60.5,64.1,83.7
+2012,35,"University of California, Santa Barbara",72.1,55.0,65.3,99.9,85.0,52.6
+2012,36,University of Edinburgh,72.0,63.0,61.4,92.3,41.3,79.8
+2012,37,University of Melbourne,71.9,62.2,72.4,80.7,44.4,82.5
+2012,38,Australian National University,71.2,62.8,75.1,72.6,41.7,93.8
+2012,38,"University of California, Davis",71.2,68.0,68.7,83.4,52.5,51.4
+2012,40,National University of Singapore,70.9,65.7,79.0,63.4,60.7,93.0
+2012,41,Washington University in St Louis,70.5,64.0,58.9,96.1,-,45.7
+2012,42,University of Minnesota,70.0,66.1,72.5,85.4,-,25.6
+2012,43,University of North Carolina at Chapel Hill,69.3,67.6,62.6,92.6,35.5,20.2
+2012,44,New York University,69.0,60.2,65.4,92.3,30.9,38.1
+2012,45,LMU Munich,67.6,63.8,59.9,84.6,40.7,54.3
+2012,46,École Polytechnique Fédérale de Lausanne,66.3,53.1,43.9,95.3,46.7,98.9
+2012,47,London School of Economics and Political Science,66.0,66.4,75.4,50.6,41.1,96.0
+2012,48,University of Manchester,65.7,59.0,61.1,75.6,37.7,80.4
+2012,49,Brown University,65.6,59.8,53.6,93.9,34.9,33.4
+2012,49,Peking University,65.6,82.3,64.1,51.0,99.9,51.7
+2012,51,Penn State (Main campus),64.9,53.5,66.7,83.4,61.6,29.5
+2012,52,Kyoto University,64.8,76.4,72.0,56.3,71.7,21.1
+2012,53,Pohang University of Science and Technology (POSTECH),64.6,56.4,51.9,92.3,100.0,25.0
+2012,54,Boston University,64.2,60.7,46.2,95.6,27.6,37.2
+2012,55,University of Southern California,64.0,65.8,48.7,80.2,99.3,41.1
+2012,56,King’s College London,63.2,49.8,54.2,80.9,40.8,90.0
+2012,57,Ohio State University (Main campus),63.0,61.8,56.2,77.5,49.9,42.2
+2012,58,The University of Sydney,62.4,55.4,65.7,57.2,92.1,88.1
+2012,59,École Normale Supérieure,62.0,56.6,33.5,96.4,44.7,66.2
+2012,59,University of Pittsburgh-Pittsburgh campus,62.0,54.3,53.9,88.7,37.5,26.5
+2012,61,University of Zurich,61.9,56.7,45.9,78.4,43.5,87.4
+2012,62,The Hong Kong University of Science and Technology,61.7,51.0,58.6,71.0,59.0,80.1
+2012,63,École Polytechnique – Institut Polytechnique de Paris,61.5,50.4,38.8,89.1,63.0,86.1
+2012,64,University of Massachusetts,61.1,54.0,58.3,80.1,53.2,27.3
+2012,65,McMaster University,61.0,41.9,49.9,85.5,97.5,72.0
+2012,66,University of Bristol,60.9,44.2,47.7,89.9,34.8,73.7
+2012,67,KU Leuven,60.8,52.5,64.7,63.0,99.9,56.7
+2012,68,Utrecht University,60.4,42.8,53.2,85.7,59.3,58.1
+2012,69,University of Göttingen,60.3,51.4,50.9,84.1,32.7,48.0
+2012,70,Vanderbilt University,59.6,52.1,47.6,86.8,64.4,26.8
+2012,71,Tsinghua University,59.5,74.1,70.1,37.4,99.8,33.4
+2012,72,Rice University,59.0,45.9,38.0,99.9,36.2,39.7
+2012,73,Universität Heidelberg,58.7,57.1,41.5,78.5,37.6,62.3
+2012,74,The University of Queensland,58.6,47.5,52.3,70.2,62.6,80.8
+2012,75,Emory University,57.4,48.4,39.8,90.9,34.4,37.3
+2012,75,Wageningen University & Research,57.4,50.1,47.6,66.3,100.0,75.9
+2012,77,University of Colorado Boulder,57.3,39.5,42.6,98.2,-,30.8
+2012,77,Tufts University,57.3,45.8,37.4,94.5,35.4,41.3
+2012,79,Leiden University,57.0,45.4,55.3,71.7,48.6,54.4
+2012,80,Lund University,56.9,40.4,58.5,72.8,32.6,61.2
+2012,81,University of Rochester,56.8,47.0,33.5,94.5,36.4,45.7
+2012,81,Rutgers University–New Brunswick,56.8,51.6,60.0,69.0,-,25.3
+2012,83,Durham University,56.4,32.5,37.9,96.2,30.5,75.8
+2012,84,Pierre and Marie Curie University,56.0,56.3,30.5,81.1,26.2,66.7
+2012,85,University of St Andrews,55.7,37.1,40.2,83.0,34.1,89.1
+2012,86,"University of California, Irvine",55.4,36.2,42.3,93.5,45.6,36.3
+2012,87,Uppsala University,55.2,47.2,65.1,53.3,43.4,59.1
+2012,88,Technical University of Munich,55.1,50.0,37.1,76.3,47.2,65.2
+2012,89,University of Notre Dame,55.0,42.6,36.2,94.1,27.3,33.1
+2012,90,Dartmouth College,54.9,44.8,38.7,89.9,-,30.6
+2012,91,University of Helsinki,54.8,39.3,54.2,75.1,28.9,46.8
+2012,92,University of Amsterdam,54.7,41.7,54.7,68.3,42.5,56.4
+2012,93,Case Western Reserve University,54.6,54.2,40.2,78.4,-,29.9
+2012,94,Korea Advanced Institute of Science and Technology (KAIST),54.5,64.2,54.6,47.1,100.0,29.3
+2012,94,"University of Maryland, College Park",54.5,41.1,43.6,85.8,28.5,35.3
+2012,96,Michigan State University,54.4,47.4,49.6,73.6,28.0,34.0
+2012,97,University of Arizona,54.2,45.1,43.0,78.3,86.0,28.4
+2012,98,Purdue University West Lafayette,54.0,56.6,49.4,57.8,-,52.6
+2012,99,University of Sussex,53.9,30.6,34.8,92.0,28.1,79.8
+2012,100,University of Alberta,53.7,50.6,54.4,51.7,53.7,71.9
+2012,101,University of Sheffield,53.6,44.6,46.0,67.5,40.2,68.2
+2012,102,University of Glasgow,53.4,37.5,41.0,77.5,61.4,68.1
+2012,103,University of Cape Town,53.2,34.3,41.1,75.3,97.5,73.9
+2012,104,Delft University of Technology,53.1,53.5,66.1,31.2,100.0,71.3
+2012,104,Université de Montréal,53.1,54.5,47.0,48.7,81.3,79.5
+2012,106,Ghent University,53.0,41.1,52.2,63.4,97.8,47.3
+2012,107,"Royal Holloway, University of London",52.9,28.6,24.1,98.2,25.9,93.3
+2012,108,Tokyo Institute of Technology,52.8,56.0,58.9,49.5,66.3,24.9
+2012,109,Humboldt University of Berlin,52.6,51.3,54.5,50.1,-,64.5
+2012,110,"University of California, Santa Cruz",52.5,28.5,36.6,99.9,29.5,29.8
+2012,111,University of Basel,52.2,38.9,21.9,86.0,48.6,92.4
+2012,112,University of Bern,52.1,43.0,34.6,73.5,38.2,77.6
+2012,113,University of Utah,51.9,42.1,41.0,82.3,-,23.3
+2012,114,Stony Brook University,51.4,37.7,28.7,88.3,29.2,56.5
+2012,115,Eindhoven University of Technology,51.3,35.6,48.0,62.1,100.0,67.3
+2012,116,University of Lausanne,51.2,27.5,40.4,77.8,40.3,86.7
+2012,117,Monash University,51.1,40.5,48.5,57.1,62.2,75.8
+2012,117,Trinity College Dublin,51.1,30.3,23.5,91.7,29.7,89.4
+2012,119,The University of Osaka,51.0,61.8,56.5,40.0,75.0,21.1
+2012,120,Tohoku University,50.8,57.7,55.7,42.9,78.9,25.6
+2012,121,Hebrew University of Jerusalem,50.4,47.7,56.4,48.4,25.0,53.0
+2012,121,University of York,50.4,36.7,38.8,71.6,33.9,72.7
+2012,123,Indiana University,50.2,46.8,34.5,73.7,-,37.7
+2012,124,Seoul National University,50.1,64.6,50.8,44.0,42.6,16.3
+2012,125,Aarhus University,50.0,30.7,49.0,64.0,67.0,69.3
+2012,125,University of Florida,50.0,46.7,59.9,50.9,-,25.9
+2012,127,Arizona State University (Tempe),49.9,38.2,39.0,80.3,28.7,26.1
+2012,127,University of Southampton,49.9,35.6,35.5,72.5,39.3,78.3
+2012,127,Queen Mary University of London,49.9,29.0,28.6,83.7,36.6,88.8
+2012,130,University of Geneva,49.8,34.9,39.0,65.1,32.7,97.5
+2012,131,Lancaster University,49.7,32.6,35.7,75.4,27.5,78.6
+2012,131,Stockholm University,49.7,25.0,36.0,90.2,26.8,48.8
+2012,133,University of Leeds,49.5,44.6,43.9,57.1,36.4,64.8
+2012,134,University of Groningen,49.2,32.4,52.4,62.4,59.9,47.3
+2012,135,University of Copenhagen,49.0,37.8,31.6,72.1,37.0,74.8
+2012,135,George Washington University,49.0,44.2,33.6,73.2,-,38.3
+2012,135,University of Virginia (Main campus),49.0,37.0,42.2,74.7,34.7,26.4
+2012,138,Georgetown University,48.0,52.5,40.4,57.7,-,29.1
+2012,139,University of Vienna,47.9,49.5,41.2,45.2,25.4,86.6
+2012,140,University of Nottingham,47.7,40.2,40.0,57.6,36.7,72.6
+2012,141,University of Iowa,47.6,47.7,42.1,61.3,-,21.9
+2012,141,École Normale Supérieure de Lyon,47.6,35.3,21.4,85.1,25.1,58.8
+2012,143,"University of California, Riverside",47.5,27.8,30.9,89.6,31.0,30.0
+2012,144,Rensselaer Polytechnic Institute,47.4,31.7,40.4,73.6,49.0,32.7
+2012,145,University of East Anglia,47.3,26.5,26.1,85.6,28.0,68.5
+2012,146,William & Mary,47.0,40.0,18.9,90.7,27.0,19.7
+2012,146,Newcastle University,47.0,34.2,28.4,72.2,32.3,76.2
+2012,148,University of Birmingham,46.9,42.6,42.6,50.6,36.0,70.3
+2012,149,"Birkbeck, University of London",46.8,25.9,25.8,80.8,25.1,85.3
+2012,150,Brandeis University,46.7,25.3,27.3,90.2,33.7,40.3
+2012,151,University of Aberdeen,46.6,30.6,32.2,67.7,44.4,84.8
+2012,151,Free University of Berlin,46.6,46.3,48.5,42.5,30.6,62.1
+2012,151,The Chinese University of Hong Kong,46.6,47.0,50.2,37.8,36.4,69.5
+2012,154,National Taiwan University (NTU),46.2,47.8,58.5,39.2,40.0,20.7
+2012,154,Yeshiva University,46.2,43.6,27.0,75.3,-,26.4
+2012,156,University of Exeter,46.1,31.3,33.3,67.8,35.4,73.4
+2012,157,University of Warwick,46.0,39.7,44.5,45.0,31.3,85.5
+2012,157,Erasmus University Rotterdam,46.0,28.8,27.2,77.4,45.0,65.0
+2012,159,Radboud University Nijmegen,45.9,27.7,43.8,65.5,33.1,52.3
+2012,159,Vrije Universiteit Amsterdam,45.9,30.4,35.3,70.2,63.2,48.0
+2012,159,University College Dublin,45.9,25.2,23.7,80.5,32.3,83.2
+2012,162,Medical University of South Carolina,45.8,43.9,38.9,56.6,87.8,23.9
+2012,162,Wake Forest University,45.8,36.4,21.6,86.1,49.1,17.2
+2012,164,Texas A&M University,45.7,42.3,51.8,45.7,43.8,36.0
+2012,164,University of Reading,45.7,36.9,38.6,55.4,31.6,75.1
+2012,166,Tel Aviv University,45.4,47.3,60.7,33.0,35.0,30.1
+2012,167,University of Illinois Chicago,45.2,53.3,43.9,43.3,38.6,27.2
+2012,168,RWTH Aachen University,45.1,36.1,25.1,67.2,61.8,67.1
+2012,169,Université Catholique de Louvain,45.0,29.2,34.7,65.5,30.8,72.5
+2012,169,Paris Diderot University – Paris 7,45.0,23.3,18.7,88.9,-,70.7
+2012,169,"Nanyang Technological University, Singapore",45.0,41.4,47.8,34.5,44.4,89.8
+2012,172,University of Miami,44.8,45.7,23.3,70.3,-,30.3
+2012,173,Queen’s University,44.6,39.7,36.1,49.3,87.5,65.0
+2012,173,University of Auckland,44.6,28.3,35.0,55.7,76.6,92.9
+2012,173,UNSW Sydney,44.6,36.1,40.2,46.8,53.1,85.1
+2012,176,University of Dundee,44.5,20.8,20.1,87.1,55.3,62.5
+2012,177,University of Victoria,44.2,16.8,31.5,79.2,26.8,70.5
+2012,178,University of São Paulo,44.1,61.7,58.0,18.8,33.3,22.9
+2012,178,Technical University of Denmark,44.1,31.9,24.1,66.8,95.7,65.2
+2012,180,University of Delaware,43.8,26.4,37.2,66.7,98.0,29.8
+2012,181,Goethe University Frankfurt,43.6,30.5,21.7,75.1,42.4,57.6
+2012,181,University of Liverpool,43.6,34.8,33.5,55.6,37.1,73.1
+2012,181,University of Oslo,43.6,33.5,36.9,56.6,29.0,63.9
+2012,184,Iowa State University,43.4,32.8,30.1,70.4,49.2,28.3
+2012,185,University of Ottawa,43.2,38.9,34.8,54.8,36.9,49.6
+2012,186,Pompeu Fabra University,43.1,23.4,16.1,87.6,37.6,54.3
+2012,187,KTH Royal Institute of Technology,43.0,40.9,39.5,34.1,100.0,82.1
+2012,187,University of Tübingen,43.0,34.4,24.1,67.6,31.0,58.1
+2012,189,University of Freiburg,42.9,35.7,18.7,67.8,81.8,55.6
+2012,189,The University of Western Australia,42.9,32.1,35.8,47.8,58.7,90.0
+2012,191,University of Bergen,42.8,29.0,26.6,65.2,42.1,73.5
+2012,192,University of Science and Technology of China,42.7,38.9,23.5,73.6,29.7,14.8
+2012,193,City University of Hong Kong,42.6,30.2,35.0,57.4,50.1,61.6
+2012,194,University of Konstanz,42.5,29.0,29.7,62.8,49.9,63.7
+2012,195,Boston College,42.4,26.5,18.9,83.5,24.2,41.4
+2012,196,Karlsruhe Institute of Technology,41.6,34.6,19.6,65.5,35.6,64.9
+2012,197,Maastricht University,41.5,30.6,30.5,53.9,-,86.4
+2012,197,Georgia Health Sciences University,41.5,49.0,14.2,63.5,40.7,32.1
+2012,197,University of Leicester,41.5,27.6,30.3,56.3,34.4,84.9
+2012,200,University of Twente,41.4,32.9,30.4,54.4,76.8,56.2
+2012,201-225,Université Libre de Bruxelles,-,23.6,25.9,53.5,52.8,80.4
+2012,201-225,Ulm University,-,40.8,18.8,46.7,69.8,50.8
+2012,201-225,University of Waterloo,-,35.8,44.2,32.5,32.7,62.1
+2012,201-225,University at Buffalo,-,44.3,35.6,42.0,40.9,49.2
+2012,201-225,Umeå University,-,20.8,29.2,59.4,26.3,52.0
+2012,201-225,Cardiff University,-,28.9,34.0,51.7,35.5,67.8
+2012,201-225,Western University,-,38.8,34.3,38.5,41.9,55.7
+2012,201-225,University of Cincinnati – Uptown,-,29.0,24.9,69.0,32.9,20.6
+2012,201-225,University of Würzburg,-,31.3,18.0,63.0,27.9,44.0
+2012,201-225,Colorado School of Mines,-,24.6,22.8,63.7,99.4,38.4
+2012,201-225,University of Georgia (USA),-,44.4,36.4,37.3,27.7,30.6
+2012,201-225,University of Gothenburg,-,25.8,37.7,55.7,37.7,48.4
+2012,201-225,University of Innsbruck,-,23.1,13.8,65.7,32.8,90.7
+2012,201-225,University of Medicine and Dentistry of New Jersey,-,48.5,14.4,55.6,34.3,31.0
+2012,201-225,Nagoya University,-,45.5,39.2,43.8,33.1,21.2
+2012,201-225,National Tsing Hua University,-,42.7,44.5,39.7,46.8,17.7
+2012,201-225,"Northeastern University, US",-,30.4,18.9,70.0,31.1,38.0
+2012,201-225,Universitat Autònoma de Barcelona (UAB),-,33.7,27.9,57.9,37.0,45.9
+2012,201-225,University of South Carolina-Columbia,-,34.3,29.3,52.1,27.3,26.0
+2012,201-225,University of Barcelona,-,24.5,22.2,71.9,29.5,44.1
+2012,201-225,University of Strasbourg,-,26.7,17.3,70.3,32.1,70.4
+2012,201-225,University of Essex,-,31.7,35.9,37.0,28.3,90.1
+2012,201-225,Technion Israel Institute of Technology,-,38.7,45.0,34.0,33.6,48.9
+2012,201-225,University of Otago,-,24.5,28.0,48.0,27.8,88.8
+2012,201-225,University of Adelaide,-,32.2,33.4,43.8,50.7,81.7
+2012,201-225,Tulane University,-,28.0,34.1,58.8,-,29.8
+2012,201-225,Bilkent University,-,27.9,22.3,60.8,29.4,48.5
+2012,226-250,Mizzou - University of Missouri,-,38.5,33.7,37.7,26.5,26.9
+2012,226-250,Macquarie University,-,21.3,23.2,46.5,42.3,93.0
+2012,226-250,National Chiao Tung University,-,36.4,44.5,25.1,100.0,24.2
+2012,226-250,Tokyo Metropolitan University,-,19.0,10.3,84.3,27.6,17.8
+2012,226-250,University of Padua,-,24.2,26.0,56.2,31.1,34.3
+2012,226-250,Simon Fraser University,-,19.6,30.0,53.0,37.6,56.8
+2012,226-250,University of Bologna,-,32.7,22.0,52.1,32.2,34.9
+2012,226-250,SUNY University at Albany,-,25.7,30.8,53.5,92.9,25.9
+2012,226-250,University of Calgary,-,34.0,34.4,39.7,39.5,42.7
+2012,226-250,Swedish University of Agricultural Sciences,-,28.9,22.2,49.8,100.0,43.5
+2012,226-250,Carleton University,-,17.0,24.2,61.6,-,58.6
+2012,226-250,University of Trieste,-,16.7,12.9,76.9,31.3,45.5
+2012,226-250,Chalmers University of Technology,-,25.9,37.2,36.3,79.3,66.0
+2012,226-250,Yonsei University,-,41.5,33.6,36.9,47.9,23.3
+2012,226-250,"Colorado State University, Fort Collins",-,26.9,32.0,51.2,-,25.5
+2012,226-250,Creighton University,-,43.6,10.5,55.7,24.2,25.0
+2012,226-250,Dalhousie University,-,25.5,30.7,43.0,72.5,64.8
+2012,226-250,Drexel University,-,36.9,12.2,59.4,29.9,37.8
+2012,226-250,Fudan University,-,42.4,26.2,42.9,40.5,36.1
+2012,226-250,University of Hamburg,-,35.2,21.3,50.0,27.4,56.3
+2012,226-250,University of Milan,-,37.1,24.3,51.3,35.0,34.3
+2012,226-250,University of Milan-Bicocca,-,22.5,12.3,78.3,35.6,33.2
+2012,226-250,Korea University,-,39.5,39.6,30.2,49.7,23.4
+2012,251-275,Johannes Kepler University of Linz,-,18.4,11.1,62.8,73.4,56.6
+2012,251-275,Nanjing University,-,40.9,24.2,42.3,42.9,25.0
+2012,251-275,The Hong Kong Polytechnic University,-,30.1,37.3,22.2,72.8,62.5
+2012,251-275,National Sun Yat-Sen University,-,24.9,30.4,48.5,42.1,16.0
+2012,251-275,Bielefeld University,-,19.1,17.0,61.6,28.6,45.2
+2012,251-275,Norwegian University of Science and Technology,-,26.9,26.9,41.5,49.7,57.7
+2012,251-275,University of Texas at Dallas,-,23.6,36.7,44.2,31.1,35.9
+2012,251-275,Queen’s University Belfast,-,26.5,21.3,42.0,41.9,89.5
+2012,251-275,Victoria University of Wellington,-,16.5,21.5,51.1,25.8,89.0
+2012,251-275,University of Southern Denmark,-,19.7,12.4,58.0,67.9,73.7
+2012,251-275,Kyushu University,-,46.8,30.7,23.2,75.1,19.5
+2012,251-275,University of Wollongong,-,21.4,23.0,43.5,40.4,88.7
+2012,251-275,Stellenbosch University,-,25.4,30.0,36.6,99.6,44.4
+2012,251-275,Tilburg University,-,22.6,49.4,23.6,36.0,69.1
+2012,251-275,Bangor University,-,24.9,23.8,48.0,29.0,67.1
+2012,251-275,University of Tsukuba,-,37.2,26.2,41.4,32.0,27.2
+2012,251-275,University of Bath,-,25.2,23.2,39.9,38.9,80.6
+2012,251-275,Virginia Polytechnic Institute and State University,-,36.9,40.4,30.3,24.2,25.1
+2012,251-275,Ruhr University Bochum,-,34.9,28.3,36.0,59.7,46.6
+2012,251-275,Wayne State University,-,34.7,16.4,55.2,-,24.6
+2012,251-275,Brunel University of London,-,17.4,20.3,51.7,30.0,89.9
+2012,251-275,University of the Witwatersrand,-,25.6,32.4,32.7,100.0,71.7
+2012,251-275,TU Dresden,-,27.3,13.8,57.4,31.9,49.2
+2012,251-275,University of Graz,-,24.9,14.0,55.1,25.5,63.8
+2012,251-275,University of Hawai’i at Mānoa,-,31.3,29.2,44.3,-,34.6
+2012,251-275,University of Kiel,-,29.3,20.9,52.1,33.6,47.3
+2012,276-300,Technical University of Darmstadt,-,28.0,15.5,39.2,45.1,71.0
+2012,276-300,University of Guelph,-,24.2,31.4,38.6,48.9,33.3
+2012,276-300,Hokkaido University,-,44.5,34.3,21.6,38.7,18.8
+2012,276-300,University of Newcastle,-,18.2,27.1,35.8,64.8,76.3
+2012,276-300,University of Iceland,-,10.7,17.3,62.4,75.4,56.9
+2012,276-300,Istanbul Technical University,-,25.1,18.2,48.9,99.1,18.9
+2012,276-300,University of Kansas,-,33.2,20.1,43.0,27.6,23.5
+2012,276-300,University of Kentucky,-,38.7,28.4,35.2,-,18.3
+2012,276-300,Hong Kong Baptist University,-,20.0,11.2,59.7,25.3,58.9
+2012,276-300,Lomonosov Moscow State University,-,47.9,27.5,11.0,80.0,53.3
+2012,276-300,Queensland University of Technology,-,21.0,26.7,35.5,62.5,76.7
+2012,276-300,Middle East Technical University,-,37.0,28.9,35.1,43.2,23.5
+2012,276-300,Sun Yat-sen University,-,33.3,14.3,50.5,42.1,20.7
+2012,276-300,Montpellier University,-,24.3,8.7,62.3,24.9,52.9
+2012,276-300,York University,-,19.9,27.7,41.2,41.7,57.7
+2012,276-300,University of Münster,-,27.8,18.5,49.1,35.1,43.3
+2012,276-300,University of Campinas,-,52.3,33.1,15.2,43.2,19.1
+2012,276-300,Aberystwyth University,-,19.8,15.5,56.6,35.5,63.8
+2012,276-300,The University of Texas at San Antonio,-,14.1,15.4,70.3,25.3,22.6
+2012,276-300,University of Antwerp,-,21.8,10.9,55.3,56.2,70.7
+2012,276-300,Tokyo Medical and Dental University (TMDU),-,42.8,22.6,36.7,40.8,18.0
+2012,276-300,Autonomous University of Madrid,-,28.8,21.4,47.5,32.5,39.7
+2012,276-300,University of Trento,-,21.9,20.0,51.5,51.0,49.7
+2012,276-300,University of Crete,-,13.1,12.6,66.7,33.2,42.6
+2012,276-300,UiT The Arctic University of Norway,-,24.4,14.4,53.0,32.8,63.5
+2012,301-350,Aalto University,-,26.2,22.2,37.5,61.9,49.0
+2012,301-350,Jagiellonian University,-,25.1,16.0,43.1,25.8,39.5
+2012,301-350,Sapienza University of Rome,-,29.6,27.2,29.2,32.8,32.4
+2012,301-350,Alexandria University,-,15.2,7.8,61.4,34.5,31.6
+2012,301-350,Keele University,-,18.0,18.1,39.8,28.1,62.6
+2012,301-350,Shanghai Jiao Tong University,-,39.4,29.7,19.1,85.2,20.5
+2012,301-350,University of Aveiro,-,17.0,15.9,40.9,34.7,48.4
+2012,301-350,Keio University,-,32.3,21.9,26.1,40.0,18.3
+2012,301-350,Sharif University of Technology,-,28.5,29.7,19.3,93.1,12.7
+2012,301-350,Bar-Ilan University,-,27.9,32.2,15.7,28.5,47.0
+2012,301-350,Kent State University,-,15.9,13.9,58.3,24.6,26.9
+2012,301-350,University of South Florida (Tampa),-,22.1,30.1,36.6,94.4,15.0
+2012,301-350,University of Surrey,-,32.6,25.2,12.4,46.9,81.5
+2012,301-350,SUNY Binghamton University,-,18.7,20.3,46.2,29.5,30.8
+2012,301-350,Lehigh University,-,20.2,18.1,44.9,38.6,26.5
+2012,301-350,University of Stirling,-,18.2,22.2,42.0,26.6,69.5
+2012,301-350,Boğaziçi University,-,24.5,19.7,45.7,34.7,36.2
+2012,301-350,University of Liège,-,23.5,16.4,38.9,64.8,68.7
+2012,301-350,University of Tampere,-,22.5,22.1,44.4,55.1,38.3
+2012,301-350,University of Canterbury,-,17.3,24.3,30.5,26.6,76.3
+2012,301-350,Linköping University,-,19.6,18.9,42.8,31.8,48.6
+2012,301-350,University of Tasmania,-,18.5,15.0,34.9,42.1,70.5
+2012,301-350,Charles Darwin University,-,16.4,19.4,52.6,31.3,46.7
+2012,301-350,University of Manitoba,-,29.5,31.7,27.7,40.7,40.2
+2012,301-350,University of Valencia,-,15.8,10.2,64.3,32.1,36.4
+2012,301-350,University College Cork,-,20.6,19.2,29.4,36.8,77.0
+2012,301-350,"University of Maryland, Baltimore County",-,17.6,14.5,52.8,29.9,18.6
+2012,301-350,TU Wien,-,26.3,14.1,24.3,35.2,82.5
+2012,301-350,University of Eastern Finland,-,23.2,16.1,51.1,30.2,33.5
+2012,301-350,University of Modena and Reggio Emilia,-,14.5,15.7,50.8,27.9,26.8
+2012,301-350,Vrije Universiteit Brussel,-,23.4,21.1,36.7,66.2,49.4
+2012,301-350,University of Ferrara,-,15.8,14.1,59.3,34.3,37.1
+2012,301-350,University of Oklahoma,-,33.8,16.1,31.6,32.3,20.7
+2012,301-350,University of Warsaw,-,21.6,15.7,44.3,-,35.8
+2012,301-350,Aalborg University,-,19.0,20.0,27.1,36.4,75.3
+2012,301-350,George Mason University,-,29.3,17.7,42.6,25.1,23.8
+2012,301-350,University of Pisa,-,18.3,18.5,50.8,35.3,26.2
+2012,301-350,Washington State University,-,28.8,24.5,33.5,34.3,31.0
+2012,301-350,National Taiwan University of Science and Technology (Taiwan Tech),-,24.3,37.0,19.4,42.9,15.6
+2012,301-350,University of Hertfordshire,-,12.2,7.7,55.5,27.1,76.5
+2012,301-350,University of Plymouth,-,12.9,13.7,58.1,25.8,49.0
+2012,301-350,Zhejiang University,-,38.8,27.2,23.0,84.4,13.9
+2012,301-350,Sungkyunkwan University (SKKU),-,31.4,32.1,23.9,99.4,26.6
+2012,301-350,University of Houston,-,36.5,23.6,23.6,31.2,27.7
+2012,301-350,Politecnico di Milano,-,24.1,17.6,33.9,69.8,33.6
+2012,301-350,University of Waikato,-,13.3,13.9,47.8,24.5,87.0
+2012,301-350,University of Hull,-,14.5,16.7,40.2,28.1,66.2
+2012,301-350,University of Porto,-,17.7,13.0,43.9,33.7,42.0
+2012,301-350,Indian Institute of Technology Bombay,-,43.8,15.7,38.8,24.2,14.3
+2012,301-350,Charles University,-,32.3,24.6,31.0,24.5,51.4
+2012,350-400,Clemson University,-,20.8,17.0,25.5,30.8,28.5
+2012,350-400,National Taiwan Ocean University,-,12.5,19.7,31.0,68.0,14.3
+2012,350-400,Waseda University,-,25.4,17.3,29.7,27.3,27.1
+2012,350-400,University of Kent,-,15.6,18.5,19.1,26.5,82.5
+2012,350-400,University of Coimbra,-,20.6,11.6,27.4,29.4,55.8
+2012,350-400,New Jersey Institute of Technology,-,17.1,14.5,26.4,37.5,41.3
+2012,350-400,University of Wyoming,-,18.4,20.9,36.7,29.8,21.8
+2012,350-400,Kyung Hee University,-,37.1,17.9,6.6,79.9,31.4
+2012,350-400,Curtin University,-,17.1,12.3,28.7,31.3,91.4
+2012,350-400,NOVA University of Lisbon,-,18.0,10.9,28.3,38.3,48.3
+2012,350-400,Yuan Ze University,-,10.8,9.6,58.3,29.2,12.8
+2012,350-400,La Trobe University,-,19.0,19.5,13.6,28.9,71.3
+2012,350-400,Georgia State University,-,19.6,20.2,34.4,39.1,27.9
+2012,350-400,Old Dominion University,-,17.1,12.5,46.9,-,27.3
+2012,350-400,University of Zaragoza,-,14.5,9.3,38.4,42.9,28.8
+2012,350-400,University of Galway,-,17.9,12.2,31.3,32.7,72.6
+2012,350-400,Leibniz University Hannover,-,28.2,15.9,21.7,38.9,51.4
+2012,350-400,Université Sorbonne Paris Nord,-,13.4,11.8,39.4,24.2,59.9
+2012,350-400,Deakin University,-,17.7,16.8,26.2,27.9,56.3
+2012,350-400,University of South Australia,-,20.6,18.0,19.4,87.7,81.8
+2012,350-400,Harbin Institute of Technology,-,29.0,12.5,21.0,97.2,21.0
+2012,350-400,Universitat Politècnica de Catalunya,-,23.0,12.5,23.3,44.6,42.0
+2012,350-400,Flinders University,-,18.2,19.1,20.3,36.2,59.9
+2012,350-400,Swansea University,-,17.6,18.1,25.6,28.8,63.3
+2012,350-400,Hiroshima University,-,27.7,16.3,20.1,39.4,18.8
+2012,350-400,Polytechnic University of Turin,-,19.3,12.1,29.1,67.6,32.4
+2012,350-400,Massey University,-,17.4,17.2,24.5,-,77.8
+2012,350-400,University of Idaho,-,29.4,16.2,24.0,25.5,27.4
+2012,350-400,Polytechnic University of Valencia,-,19.6,9.8,45.3,36.6,23.6
+2012,350-400,Wuhan University,-,31.3,12.9,25.3,66.7,21.7
+2012,350-400,Kansas State University,-,20.9,13.8,33.9,36.0,23.6
+2012,350-400,Pontificia Universidad Católica de Chile,-,17.1,16.3,30.1,29.7,45.5
+2012,350-400,Kobe University,-,28.3,15.5,24.3,33.5,18.1
+2012,350-400,Saint Petersburg State University,-,37.6,19.7,3.1,26.0,38.1
+2012,350-400,Liverpool John Moores University,-,12.3,9.3,48.4,26.9,52.6
+2012,350-400,University of Salento,-,26.5,19.1,27.2,73.1,24.4
+2012,350-400,Loughborough University,-,27.9,25.7,9.2,39.4,66.7
+2012,350-400,University of Strathclyde,-,24.4,17.7,19.3,33.1,63.0
+2012,350-400,Mahidol University,-,29.9,14.7,20.9,29.0,45.0
+2012,350-400,Swinburne University of Technology,-,15.5,11.3,35.6,40.3,64.6
+2012,350-400,Aston University,-,16.2,19.9,11.7,26.8,84.5
+2012,350-400,Michigan Technological University,-,21.2,13.8,24.8,41.9,32.3
+2012,350-400,University of Tartu,-,17.8,17.8,34.4,26.3,42.0
+2012,350-400,Auburn University,-,33.7,18.7,10.3,47.3,22.5
+2012,350-400,National Central University,-,24.7,21.4,27.1,78.6,22.2
+2012,350-400,Tokyo University of Agriculture and Technology,-,26.5,15.8,21.7,41.5,18.0
+2012,350-400,Griffith University,-,15.7,16.2,20.3,30.7,79.0
+2012,350-400,University of Bari Aldo Moro,-,23.1,17.4,35.1,30.6,30.5
+2012,350-400,Maynooth University,-,22.9,18.6,22.1,27.1,74.8
+2012,350-400,University of Turku,-,20.4,21.5,28.9,32.3,41.4
+2012,350-400,Heriot-Watt University,-,21.5,16.2,18.8,41.1,82.6
