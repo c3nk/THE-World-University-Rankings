@@ -10,19 +10,15 @@
 
 > 🎓 Python application that directly fetches Times Higher Education World University Rankings from official APIs - fast, reliable, no browser automation required!
 
-[🇬🇧 English](#english) | [🇹🇷 Türkçe](#türkçe)
+[🇬🇧 English](#english)
 
----
+### 🌟 Key Features
 
-## English
-
-### 🌟 Öne Çıkan Özellikler
-
-- **Doğrudan API Erişimi**: Selenium veya Playwright gibi ağır kütüphaneler gerektirmez
-- **Tam Veri Seti**: 16 yıllık veri (2011-2026), toplamda ~44,000 kayıt
-- **İkili Çıktı Formatı**: Temiz CSV dosyaları + Tam JSON yedekleri
-- **Veritabanı Hazır**: İsteğe bağlı SQL üretimi dahil
-- **İki Veri Türü**: Sıralama puanları ve Anahtar istatistikler
+- **Direct API Access**: No Selenium or Playwright overhead required
+- **Complete Dataset**: 16 years of data (2011-2026), ~44,000 total records
+- **Dual Output Format**: Clean CSV files + Full JSON backups
+- **Database Ready**: Optional SQL generation included
+- **Two Data Types**: Rankings scores and Key statistics tables
 
 ### 📦 Installation
 
