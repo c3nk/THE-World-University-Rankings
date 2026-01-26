@@ -8,17 +8,18 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/c3nk/THE-World-University-Rankings?style=social)](https://github.com/c3nk/THE-World-University-Rankings/stargazers)
 
-> 🎓 Python application that directly fetches Times Higher Education World University Rankings from official APIs - fast, reliable, no browser automation required!
+> 🎓 Python application that fetches Times Higher Education World University Rankings via the official JSON API endpoints – fast, reliable, no browser automation required!
 
 [🇬🇧 English](#english)
 
 ### 🌟 Key Features
 
-- **Direct API Access**: No Selenium or Playwright overhead required
+- **Official JSON API Integration**: Connects to THE’s published ranking endpoints without browser automation
 - **Complete Dataset**: 16 years of data (2011-2026), ~44,000 total records
 - **Dual Output Format**: Clean CSV files + Full JSON backups
 - **Database Ready**: Optional SQL generation included
 - **Two Data Types**: Rankings scores and Key statistics tables
+- **Interactive CLI**: Prompts guide you to pull general or subject rankings for the desired year range
 
 ### 📦 Installation
 
@@ -41,6 +42,8 @@ pip install -r requirements.txt
 # Fetch all years' data (2011-2026)
 python the_university_rankings_full.py
 
+# The script asks whether to pull general rankings, subject rankings, or both, and for the year range to process.
+
 # Check outputs
 ls outputs/csv/
 ls outputs/json/
@@ -50,14 +53,24 @@ ls outputs/json/
 
 ```
 outputs/
-├── csv/                              # Filtered CSV files for DB import
-│   ├── THE_2026_rankings.csv
-│   ├── THE_2026_key_statistics.csv
-│   └── ... (all years)
-├── json/                             # Full JSON responses
-│   ├── THE_2026_rankings.json
-│   ├── THE_2026_key_statistics.json
-│   └── ... (all years)
+├── csv/
+│   ├── general/
+│   │   ├── THE_2026_rankings.csv
+│   │   ├── THE_2026_key_statistics.csv
+│   │   └── ... (general rankings per year)
+│   └── subject/
+│       ├── THE_2026_arts-and-humanities_rankings.csv
+│       ├── THE_2026_arts-and-humanities_key_statistics.csv
+│       └── ... (subject + year combinations)
+├── json/
+│   ├── general/
+│   │   ├── THE_2026_rankings.json
+│   │   ├── THE_2026_key_statistics.json
+│   │   └── ... (general rankings per year)
+│   └── subject/
+│       ├── THE_2026_arts-and-humanities_rankings.json
+│       ├── THE_2026_arts-and-humanities_key_statistics.json
+│       └── ... (subject + year combinations)
 └── the_rankings_insert.sql           # (Optional) SQL script
 ```
 
@@ -147,10 +160,15 @@ sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=20
 ### ⚙️ Technical Details
 
 #### Data Processing Pipeline
-1. **Fetch**: Direct HTTP GET requests to THE API
+1. **Fetch**: Direct HTTP GET requests to THE API (annual and subject endpoints)
 2. **Parse**: JSON response parsing with error handling
 3. **Clean**: Remove null values, standardize rank formats
-4. **Export**: Dual format (CSV + JSON) with year-based naming
+4. **Export**: Dual format (CSV + JSON) with year-based naming and category folders (general vs subject)
+
+#### Interactive CLI
+- Prompts whether to retrieve general rankings, subject rankings, or both
+- Requests a year or year range (default 2011-2026)
+- Offers optional filtering to a subset of subject slugs while preserving slug-based filenames
 
 ### ⚠️ Important Notes
 
@@ -216,11 +234,12 @@ This scraper uses publicly available THE API endpoints for educational and resea
 
 ### 🌟 Key Features
 
-- **Direct API Access**: No Selenium or Playwright overhead required
+- **Official JSON API Integration**: Connects to THE’s published ranking endpoints without browser automation
 - **Complete Dataset**: 16 years of data (2011-2026), ~44,000 total records
 - **Dual Output Format**: Clean CSV files + Full JSON backups
 - **Database Ready**: Optional SQL generation included
 - **Two Data Types**: Rankings scores and Key statistics tables
+- **Interactive CLI**: Guides you through pulling general or subject rankings for the desired year range
 
 ### 📦 Installation
 
@@ -243,6 +262,8 @@ pip install -r requirements.txt
 # Fetch all years' data (2011-2026)
 python the_university_rankings_full.py
 
+# The script prompts whether to pull general rankings, subject rankings, or both, and for the year range to process.
+
 # Check outputs
 ls outputs/csv/
 ls outputs/json/
@@ -252,14 +273,24 @@ ls outputs/json/
 
 ```
 outputs/
-├── csv/                              # Filtered CSV files for DB import
-│   ├── THE_2026_rankings.csv
-│   ├── THE_2026_key_statistics.csv
-│   └── ... (all years)
-├── json/                             # Full JSON responses
-│   ├── THE_2026_rankings.json
-│   ├── THE_2026_key_statistics.json
-│   └── ... (all years)
+├── csv/
+│   ├── general/
+│   │   ├── THE_2026_rankings.csv
+│   │   ├── THE_2026_key_statistics.csv
+│   │   └── ... (general rankings per year)
+│   └── subject/
+│       ├── THE_2026_arts-and-humanities_rankings.csv
+│       ├── THE_2026_arts-and-humanities_key_statistics.csv
+│       └── ... (subject + year combinations)
+├── json/
+│   ├── general/
+│   │   ├── THE_2026_rankings.json
+│   │   ├── THE_2026_key_statistics.json
+│   │   └── ... (general rankings per year)
+│   └── subject/
+│       ├── THE_2026_arts-and-humanities_rankings.json
+│       ├── THE_2026_arts-and-humanities_key_statistics.json
+│       └── ... (subject + year combinations)
 └── the_rankings_insert.sql           # (Optional) SQL script
 ```
 
@@ -349,10 +380,15 @@ sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=20
 ### ⚙️ Technical Details
 
 #### Data Processing Pipeline
-1. **Fetch**: Direct HTTP GET requests to THE API
+1. **Fetch**: Direct HTTP GET requests to THE API (annual and subject endpoints)
 2. **Parse**: JSON response parsing with error handling
 3. **Clean**: Remove null values, standardize rank formats
-4. **Export**: Dual format (CSV + JSON) with year-based naming
+4. **Export**: Dual format (CSV + JSON) with year-based naming and category folders (general vs subject)
+
+#### Interactive CLI
+- Prompts whether to pull general rankings, subject rankings, or both
+- Asks for a year or year range (default 2011-2026)
+- Allows optional filtering to a subset of subject slugs while keeping slug-based filenames
 
 ### ⚠️ Important Notes
 

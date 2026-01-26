@@ -11,6 +11,7 @@ import pandas as pd
 import os
 import time
 import json
+from typing import Iterable, Optional
 
 BASE_URL = "https://www.timeshighereducation.com/json/ranking_tables/world_university_rankings"
 HEADERS = {
@@ -43,6 +44,34 @@ KEY_STATISTICS_FIELDS = {
     'stats_female_male_ratio': 'Female:Male ratio'
 }
 
+SUBJECT_SLUGS = [
+    "arts-and-humanities",
+    "business-and-economics",
+    "computer-science",
+    "education",
+    "engineering",
+    "law",
+    "life-sciences",
+    "clinical-pre-clinical-health",
+    "physical-sciences",
+    "psychology",
+    "social-sciences",
+]
+
+SUBJECT_DISPLAY_NAMES = {
+    "arts-and-humanities": "Arts and Humanities",
+    "business-and-economics": "Business and Economics",
+    "computer-science": "Computer Science",
+    "education": "Education Studies",
+    "engineering": "Engineering",
+    "law": "Law",
+    "life-sciences": "Life Sciences",
+    "clinical-pre-clinical-health": "Medical and Health",
+    "physical-sciences": "Physical Sciences",
+    "psychology": "Psychology",
+    "social-sciences": "Social Sciences",
+}
+
 
 def fetch_json(url):
     """Safely fetch JSON and return dict or None."""
@@ -54,6 +83,11 @@ def fetch_json(url):
     except Exception as e:
         print(f"[ERROR] Fetch failed for {url}: {e}")
     return None
+
+
+def get_subject_display_name(subject_slug: str) -> str:
+    """Return a human-readable label for a subject slug."""
+    return SUBJECT_DISPLAY_NAMES.get(subject_slug, subject_slug.replace('-', ' ').title())
 
 
 def filter_data_for_db(data, year, field_mapping):
@@ -87,22 +121,24 @@ def filter_data_for_db(data, year, field_mapping):
     return {"data": filtered_data}
 
 
-def save_outputs(year, data, name):
+def save_outputs(year, data, name, category: str = "general"):
     """Save both CSV and JSON versions for a given dataset."""
     if not data or "data" not in data:
         print(f"[WARN] No data for {year} {name}.")
         return
 
-    os.makedirs("outputs/json", exist_ok=True)
-    os.makedirs("outputs/csv", exist_ok=True)
+    json_dir = os.path.join("outputs", "json", category)
+    csv_dir = os.path.join("outputs", "csv", category)
+    os.makedirs(json_dir, exist_ok=True)
+    os.makedirs(csv_dir, exist_ok=True)
 
     # JSON output
-    json_path = f"outputs/json/THE_{year}_{name}.json"
+    json_path = os.path.join(json_dir, f"THE_{year}_{name}.json")
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     # CSV output
-    csv_path = f"outputs/csv/THE_{year}_{name}.csv"
+    csv_path = os.path.join(csv_dir, f"THE_{year}_{name}.csv")
     df = pd.DataFrame(data["data"])
     df.to_csv(csv_path, index=False, encoding="utf-8")
 
@@ -118,7 +154,7 @@ def process_year(year):
     rankings_data = fetch_json(rankings_url)
     if rankings_data:
         filtered_rankings = filter_data_for_db(rankings_data, year, RANKINGS_FIELDS)
-        save_outputs(year, filtered_rankings, "rankings")
+        save_outputs(year, filtered_rankings, "rankings", category="general")
     time.sleep(1)
 
     # Key statistics
@@ -126,19 +162,133 @@ def process_year(year):
     key_stats_data = fetch_json(key_stats_url)
     if key_stats_data:
         filtered_key_stats = filter_data_for_db(key_stats_data, year, KEY_STATISTICS_FIELDS)
-        save_outputs(year, filtered_key_stats, "key_statistics")
+        save_outputs(year, filtered_key_stats, "key_statistics", category="general")
     time.sleep(1)
+
+
+def _build_subject_url(year: int, subject_slug: str, suffix: Optional[str] = None) -> str:
+    """Construct subject-specific THE API endpoint."""
+    subject_base = f"{BASE_URL}/{year}/subject-ranking/{subject_slug}"
+    if suffix:
+        return f"{subject_base}/{suffix}"
+    return subject_base
+
+
+def process_subject(year: int, subject_slug: str) -> None:
+    """Fetch rankings and key statistics for a subject in a given year."""
+    print(f"\n=== SUBJECT {year} – {subject_slug} ===")
+
+    rankings_url = _build_subject_url(year, subject_slug)
+    rankings_data = fetch_json(rankings_url)
+    if rankings_data:
+        filtered_rankings = filter_data_for_db(rankings_data, year, RANKINGS_FIELDS)
+        save_outputs(year, filtered_rankings, f"{subject_slug}_rankings", category="subject")
+    time.sleep(1)
+
+    key_stats_url = _build_subject_url(year, subject_slug, "key_statistics")
+    key_stats_data = fetch_json(key_stats_url)
+    if key_stats_data:
+        filtered_key_stats = filter_data_for_db(key_stats_data, year, KEY_STATISTICS_FIELDS)
+        save_outputs(year, filtered_key_stats, f"{subject_slug}_key_statistics", category="subject")
+    time.sleep(1)
+
+
+def process_subjects_for_year(year: int, subject_slugs: Optional[Iterable[str]] = None) -> None:
+    """Batch processor for several subject slugs."""
+    slugs = list(subject_slugs or SUBJECT_SLUGS)
+    for slug in slugs:
+        process_subject(year, slug)
+
+
+def ask_years_range() -> list[int]:
+    """Prompt for a year or range of years to process."""
+    default = "2011-2026"
+    while True:
+        response = input(
+            f"Enter the year or range to process (e.g. {default}) [blank = full range]: "
+        ).strip()
+        if not response:
+            return list(range(2011, 2027))
+        if "-" in response:
+            start_str, end_str = response.split("-", 1)
+        else:
+            start_str = end_str = response
+        try:
+            start_year = int(start_str)
+            end_year = int(end_str)
+        except ValueError:
+            print("Year must be a valid number. Please try again.")
+            continue
+        if start_year > end_year:
+            print("Start year cannot be greater than end year.")
+            continue
+        return list(range(start_year, end_year + 1))
+
+
+def ask_data_mode() -> str:
+    """Prompt user for general/subject/both processing mode."""
+    options = {"1": "general", "2": "subject", "3": "both"}
+    while True:
+        print("\nWhich dataset do you want to fetch?")
+        print("  1) General Rankings/Key Statistics")
+        print("  2) Subject Rankings/Key Statistics")
+        print("  3) Both (default)")
+        choice = input("Selection [1-3]: ").strip() or "3"
+        if choice in options:
+            return options[choice]
+        print("Invalid selection; please enter 1, 2, or 3.")
+
+
+def ask_subject_slugs() -> list[str]:
+    """Prompt for specific subject slugs or return the full list."""
+    display_list = ", ".join(
+        f"{slug} ({get_subject_display_name(slug)})" for slug in SUBJECT_SLUGS
+    )
+    print(f"\nSupported subject slugs: {display_list}")
+    while True:
+        response = input(
+            "Enter comma-separated slugs to process or leave blank for all subjects: "
+        ).strip()
+        if not response:
+            return SUBJECT_SLUGS
+        slugs = [slug.strip() for slug in response.split(",") if slug.strip()]
+        invalid = [slug for slug in slugs if slug not in SUBJECT_SLUGS]
+        if invalid:
+            print(f"Invalid slug(s): {', '.join(invalid)}. Please try again.")
+            continue
+        return slugs
+
+
+def run_interactive() -> None:
+    """Run the scraper based on interactive user input."""
+    mode = ask_data_mode()
+    years = ask_years_range()
+    performed_general = False
+    performed_subject = False
+
+    if mode in {"general", "both"}:
+        performed_general = True
+        for year in years:
+            process_year(year)
+
+    if mode in {"subject", "both"}:
+        subject_slugs = ask_subject_slugs()
+        performed_subject = True
+        for year in years:
+            process_subjects_for_year(year, subject_slugs)
+
+    print("\n✅ Processing complete.")
+    if performed_general and performed_subject:
+        print("• General and subject data downloaded.")
+    elif performed_general:
+        print("• Only general data downloaded.")
+    elif performed_subject:
+        print("• Only subject data downloaded.")
 
 
 def main():
     os.makedirs("outputs", exist_ok=True)
-
-    for year in range(2011, 2027):
-        process_year(year)
-
-    print("\n✅ All years completed successfully!")
-    print("📂 JSON files: ./outputs/json")
-    print("📂 CSV files:  ./outputs/csv")
+    run_interactive()
 
 if __name__ == "__main__":
     main()
