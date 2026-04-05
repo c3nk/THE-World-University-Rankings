@@ -12,6 +12,8 @@ import os
 import time
 import json
 from typing import Iterable, Optional
+import re
+from html import unescape
 
 BASE_URL = "https://www.timeshighereducation.com/json/ranking_tables/world_university_rankings"
 HEADERS = {
@@ -27,6 +29,7 @@ HEADERS = {
 RANKINGS_FIELDS = {
     'rank': 'Rank',
     'name': 'Name',
+    'location': 'Country',
     'scores_overall': 'Overall',
     'scores_teaching': 'Teaching',
     'scores_research': 'Research Environment',
@@ -38,6 +41,7 @@ RANKINGS_FIELDS = {
 KEY_STATISTICS_FIELDS = {
     'rank': 'Rank',
     'name': 'Name',
+    'location': 'Country',
     'stats_number_students': 'No. of FTE students',
     'stats_student_staff_ratio': 'No. of students per staff',
     'stats_pc_intl_students': 'International students',
@@ -90,6 +94,24 @@ def get_subject_display_name(subject_slug: str) -> str:
     return SUBJECT_DISPLAY_NAMES.get(subject_slug, subject_slug.replace('-', ' ').title())
 
 
+def extract_country_from_location(location_value):
+    """Extract country text from location HTML with safe fallbacks."""
+    if location_value is None:
+        return ""
+    raw_text = str(location_value).strip()
+    if not raw_text:
+        return ""
+    span_matches = re.findall(r"<span[^>]*>([^<]+)</span>", raw_text, flags=re.IGNORECASE)
+    cleaned_spans = [unescape(item).strip() for item in span_matches if item and item.strip()]
+    if cleaned_spans:
+        return cleaned_spans[-1]
+    plain_text = re.sub(r"<[^>]+>", " ", raw_text)
+    plain_text = re.sub(r"\s+", " ", unescape(plain_text)).strip()
+    if "," in plain_text:
+        return plain_text.split(",")[-1].strip()
+    return plain_text
+
+
 def filter_data_for_db(data, year, field_mapping):
     """Filter JSON data to only include fields needed for database insertion."""
     if not data or "data" not in data:
@@ -103,6 +125,9 @@ def filter_data_for_db(data, year, field_mapping):
         # Map and filter fields
         for json_field, db_field in field_mapping.items():
             value = university.get(json_field, '')
+            if json_field == 'location':
+                filtered_university[db_field] = extract_country_from_location(value)
+                continue
 
             # Special handling for rank field
             if json_field == 'rank' and isinstance(value, str) and value.startswith('='):

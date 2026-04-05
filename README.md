@@ -84,6 +84,7 @@ outputs/
 | rank | INT | University rank (numeric) |
 | rank_prefix | VARCHAR | Rank prefix (e.g., '=' for ties) |
 | name | VARCHAR | University name |
+| country | VARCHAR | University country |
 | overall | FLOAT | Overall score (0-100) |
 | teaching | FLOAT | Teaching score |
 | research_environment | FLOAT | Research environment score |
@@ -99,6 +100,7 @@ outputs/
 | rank | INT | Rank |
 | rank_prefix | VARCHAR | Rank prefix |
 | name | VARCHAR | University name |
+| country | VARCHAR | University country |
 | fte_students | INT | Full-time equivalent students |
 | students_per_staff | FLOAT | Student-to-staff ratio |
 | international_students | VARCHAR | % of international students |
@@ -304,6 +306,7 @@ outputs/
 | rank | INT | University rank (numeric) |
 | rank_prefix | VARCHAR | Rank prefix (e.g., '=' for ties) |
 | name | VARCHAR | University name |
+| country | VARCHAR | University country |
 | overall | FLOAT | Overall score (0-100) |
 | teaching | FLOAT | Teaching score |
 | research_environment | FLOAT | Research environment score |
@@ -319,6 +322,7 @@ outputs/
 | rank | INT | Rank |
 | rank_prefix | VARCHAR | Rank prefix |
 | name | VARCHAR | University name |
+| country | VARCHAR | University country |
 | fte_students | INT | Full-time equivalent students |
 | students_per_staff | FLOAT | Student-to-staff ratio |
 | international_students | VARCHAR | % of international students |

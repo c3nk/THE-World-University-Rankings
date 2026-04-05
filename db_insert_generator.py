@@ -47,10 +47,11 @@ def generate_rankings_insert(df: pd.DataFrame, year: int) -> List[str]:
             clean_value(row.get('Research Environment', '')),
             clean_value(row.get('Research Quality', '')),
             clean_value(row.get('Industry', '')),
-            clean_value(row.get('International Outlook', ''))
+            clean_value(row.get('International Outlook', '')),
+            clean_value(row.get('Country', ''))
         ]
 
-        sql = f"INSERT INTO Rankings (year, rank, rank_prefix, name, overall, teaching, research_environment, research_quality, industry, international_outlook) VALUES ({', '.join(values)});"
+        sql = f"INSERT INTO Rankings (year, rank, rank_prefix, name, overall, teaching, research_environment, research_quality, industry, international_outlook, country) VALUES ({', '.join(values)});"
         inserts.append(sql)
 
     return inserts
@@ -68,10 +69,11 @@ def generate_key_statistics_insert(df: pd.DataFrame, year: int) -> List[str]:
             clean_value(row.get('No. of FTE students', '')),
             clean_value(row.get('No. of students per staff', '')),
             clean_value(row.get('International students', '')),
-            clean_value(row.get('Female:Male ratio', ''))
+            clean_value(row.get('Female:Male ratio', '')),
+            clean_value(row.get('Country', ''))
         ]
 
-        sql = f"INSERT INTO Key_Statistics (year, rank, rank_prefix, name, fte_students, students_per_staff, international_students, female_male_ratio) VALUES ({', '.join(values)});"
+        sql = f"INSERT INTO Key_Statistics (year, rank, rank_prefix, name, fte_students, students_per_staff, international_students, female_male_ratio, country) VALUES ({', '.join(values)});"
         inserts.append(sql)
 
     return inserts
@@ -92,6 +94,7 @@ CREATE TABLE IF NOT EXISTS Rankings (
     research_quality TEXT,
     industry TEXT,
     international_outlook TEXT,
+    country TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -106,6 +109,7 @@ CREATE TABLE IF NOT EXISTS Key_Statistics (
     students_per_staff TEXT,
     international_students TEXT,
     female_male_ratio TEXT,
+    country TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
