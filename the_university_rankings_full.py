@@ -76,6 +76,54 @@ SUBJECT_DISPLAY_NAMES = {
     "social-sciences": "Social Sciences",
 }
 
+IMPACT_BASE_URL = "https://www.timeshighereducation.com/json/ranking_tables/world_impact_rankings"
+
+SDG_SLUGS = [
+    "sdg1_rankings",
+    "sdg2_rankings",
+    "sdg3_rankings",
+    "sdg4_rankings",
+    "sdg5_rankings",
+    "sdg6_rankings",
+    "sdg7_rankings",
+    "sdg8_rankings",
+    "sdg9_rankings",
+    "sdg10_rankings",
+    "sdg11_rankings",
+    "sdg12_rankings",
+    "sdg13_rankings",
+    "sdg14_rankings",
+    "sdg15_rankings",
+    "sdg16_rankings",
+    "sdg17_rankings",
+]
+
+IMPACT_OVERALL_FIELDS = {
+    'rank': 'Rank',
+    'name': 'Name',
+    'scores_overall': 'Overall',
+    'sdg17_rankings_score': 'SDG17_Score',
+    'location': 'Location',
+    'stats_number_students': 'No. of FTE students',
+    'stats_student_staff_ratio': 'No. of students per staff',
+    'stats_pc_intl_students': 'International students',
+    'stats_female_male_ratio': 'Female:Male ratio',
+}
+
+IMPACT_SDG_FIELDS = {
+    'rank': 'Rank',
+    'name': 'Name',
+    'scores_overall': 'Overall',
+    'location': 'Location',
+    'stats_number_students': 'No. of FTE students',
+    'stats_student_staff_ratio': 'No. of students per staff',
+    'stats_pc_intl_students': 'International students',
+    'stats_female_male_ratio': 'Female:Male ratio',
+}
+
+SDG_COLUMN_NAMES = {slug: f"SDG{slug.split('_')[0][3:]}_Score" for slug in SDG_SLUGS}
+SDG_RANK_COLUMN_NAMES = {slug: f"SDG{slug.split('_')[0][3:]}_Rank" for slug in SDG_SLUGS}
+
 
 def fetch_json(url):
     """Safely fetch JSON and return dict or None."""
@@ -225,15 +273,99 @@ def process_subjects_for_year(year: int, subject_slugs: Optional[Iterable[str]] 
         process_subject(year, slug)
 
 
-def ask_years_range() -> list[int]:
+def filter_impact_overall_data(data, year):
+    """Filter overall Impact Ratings data for DB fields."""
+    if not data or "data" not in data:
+        return None
+
+    filtered_data = []
+    for university in data["data"]:
+        entry = {'year': year}
+        for json_field, db_field in IMPACT_OVERALL_FIELDS.items():
+            value = university.get(json_field, '')
+            if json_field == 'rank' and isinstance(value, str) and value.startswith('='):
+                entry['rank_prefix'] = '='
+                entry[db_field] = value[1:]
+            elif json_field.startswith('scores_') or json_field == 'stats_student_staff_ratio':
+                value = str(value).replace(',', '') if value else ''
+                entry[db_field] = value
+            else:
+                entry[db_field] = value
+        if 'best_scores' in university:
+            entry['best_scores'] = json.dumps(university['best_scores'], ensure_ascii=False)
+        filtered_data.append(entry)
+    return {"data": filtered_data}
+
+
+def filter_impact_sdg_data(data, year, sdg_slug):
+    """Filter individual SDG Impact Ratings data for DB fields."""
+    if not data or "data" not in data:
+        return None
+
+    filtered_data = []
+    sdg_score_key = sdg_slug
+    sdg_rank_key = f"{sdg_slug}_rank"
+    sdg_score_col = SDG_COLUMN_NAMES.get(sdg_slug, sdg_slug)
+    sdg_rank_col = SDG_RANK_COLUMN_NAMES.get(sdg_slug, f"{sdg_slug}_rank")
+
+    for university in data["data"]:
+        entry = {'year': year}
+        for json_field, db_field in IMPACT_SDG_FIELDS.items():
+            value = university.get(json_field, '')
+            if json_field == 'rank' and isinstance(value, str) and value.startswith('='):
+                entry['rank_prefix'] = '='
+                entry[db_field] = value[1:]
+            elif json_field.startswith('scores_') or json_field == 'stats_student_staff_ratio':
+                value = str(value).replace(',', '') if value else ''
+                entry[db_field] = value
+            else:
+                entry[db_field] = value
+        entry[sdg_score_col] = university.get(sdg_score_key, '')
+        entry[sdg_rank_col] = university.get(sdg_rank_key, '')
+        filtered_data.append(entry)
+    return {"data": filtered_data}
+
+
+def process_impact_year(year):
+    """Fetch and save overall Impact Ratings for a year."""
+    print(f"\n=== IMPACT OVERALL {year} ===")
+    url = f"{IMPACT_BASE_URL}/{year}"
+    data = fetch_json(url)
+    if data:
+        filtered = filter_impact_overall_data(data, year)
+        save_outputs(year, filtered, "impact_overall", category="impact")
+    time.sleep(1)
+
+
+def process_impact_sdg(year: int, sdg_slug: str) -> None:
+    """Fetch and save an individual SDG ranking for a year."""
+    print(f"\n=== IMPACT SDG {year} – {sdg_slug} ===")
+    url = f"https://www.timeshighereducation.com/json/ranking_tables/{sdg_slug}/{year}"
+    data = fetch_json(url)
+    if data:
+        filtered = filter_impact_sdg_data(data, year, sdg_slug)
+        save_outputs(year, filtered, f"impact_{sdg_slug}", category="impact/sdg")
+    time.sleep(1)
+
+
+def process_impact_sdgs_for_year(year: int, sdg_slugs: Optional[Iterable[str]] = None) -> None:
+    """Batch process multiple SDGs for a year."""
+    slugs = list(sdg_slugs or SDG_SLUGS)
+    for slug in slugs:
+        process_impact_sdg(year, slug)
+
+
+def ask_years_range(default_range: str = "2011-2026") -> list[int]:
     """Prompt for a year or range of years to process."""
-    default = "2011-2026"
+    parts = default_range.split("-")
+    default_start = int(parts[0])
+    default_end = int(parts[1])
     while True:
         response = input(
-            f"Enter the year or range to process (e.g. {default}) [blank = full range]: "
+            f"Enter the year or range to process (e.g. {default_range}) [blank = full range]: "
         ).strip()
         if not response:
-            return list(range(2011, 2027))
+            return list(range(default_start, default_end + 1))
         if "-" in response:
             start_str, end_str = response.split("-", 1)
         else:
@@ -251,17 +383,18 @@ def ask_years_range() -> list[int]:
 
 
 def ask_data_mode() -> str:
-    """Prompt user for general/subject/both processing mode."""
-    options = {"1": "general", "2": "subject", "3": "both"}
+    """Prompt user for general/subject/impact/both processing mode."""
+    options = {"1": "general", "2": "subject", "3": "both", "4": "impact"}
     while True:
         print("\nWhich dataset do you want to fetch?")
         print("  1) General Rankings/Key Statistics")
         print("  2) Subject Rankings/Key Statistics")
-        print("  3) Both (default)")
-        choice = input("Selection [1-3]: ").strip() or "3"
+        print("  3) Both General + Subject (default)")
+        print("  4) Sustainability Impact Ratings (SDGs)")
+        choice = input("Selection [1-4]: ").strip() or "3"
         if choice in options:
             return options[choice]
-        print("Invalid selection; please enter 1, 2, or 3.")
+        print("Invalid selection; please enter 1, 2, 3, or 4.")
 
 
 def ask_subject_slugs() -> list[str]:
@@ -284,31 +417,62 @@ def ask_subject_slugs() -> list[str]:
         return slugs
 
 
+def ask_sdg_slugs() -> list[str]:
+    """Prompt for specific SDG slugs or return the full list."""
+    display_list = ", ".join(SDG_SLUGS)
+    print(f"\nSupported SDG slugs: {display_list}")
+    while True:
+        response = input(
+            "Enter comma-separated slugs to process or leave blank for all SDGs: "
+        ).strip()
+        if not response:
+            return SDG_SLUGS
+        slugs = [slug.strip() for slug in response.split(",") if slug.strip()]
+        invalid = [slug for slug in slugs if slug not in SDG_SLUGS]
+        if invalid:
+            print(f"Invalid slug(s): {', '.join(invalid)}. Please try again.")
+            continue
+        return slugs
+
+
 def run_interactive() -> None:
     """Run the scraper based on interactive user input."""
     mode = ask_data_mode()
-    years = ask_years_range()
     performed_general = False
     performed_subject = False
+    performed_impact = False
 
-    if mode in {"general", "both"}:
-        performed_general = True
+    if mode == "impact":
+        years = ask_years_range(default_range="2019-2026")
+        performed_impact = True
         for year in years:
-            process_year(year)
+            process_impact_year(year)
+        sdg_slugs = ask_sdg_slugs()
+        for year in years:
+            process_impact_sdgs_for_year(year, sdg_slugs)
+    else:
+        years = ask_years_range()
+        if mode in {"general", "both"}:
+            performed_general = True
+            for year in years:
+                process_year(year)
 
-    if mode in {"subject", "both"}:
-        subject_slugs = ask_subject_slugs()
-        performed_subject = True
-        for year in years:
-            process_subjects_for_year(year, subject_slugs)
+        if mode in {"subject", "both"}:
+            subject_slugs = ask_subject_slugs()
+            performed_subject = True
+            for year in years:
+                process_subjects_for_year(year, subject_slugs)
 
     print("\n✅ Processing complete.")
-    if performed_general and performed_subject:
-        print("• General and subject data downloaded.")
-    elif performed_general:
-        print("• Only general data downloaded.")
-    elif performed_subject:
-        print("• Only subject data downloaded.")
+    parts = []
+    if performed_general:
+        parts.append("General")
+    if performed_subject:
+        parts.append("Subject")
+    if performed_impact:
+        parts.append("Impact Ratings")
+    if parts:
+        print(f"• {' and '.join(parts)} data downloaded.")
 
 
 def main():
