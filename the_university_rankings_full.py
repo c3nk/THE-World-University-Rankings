@@ -326,15 +326,53 @@ def filter_impact_sdg_data(data, year, sdg_slug):
     return {"data": filtered_data}
 
 
-def process_impact_year(year):
-    """Fetch and save overall Impact Ratings for a year."""
+def _fetch_all_sdg_scores(year: int, sdg_slugs: list) -> dict:
+    """Fetch all SDG datasets and return a lookup: {university_name: {col: val, ...}}."""
+    lookup = {}
+    for slug in sdg_slugs:
+        url = f"https://www.timeshighereducation.com/json/ranking_tables/{slug}/{year}"
+        raw = fetch_json(url)
+        time.sleep(1)
+        if not raw or "data" not in raw:
+            continue
+        score_col = SDG_COLUMN_NAMES.get(slug, slug)
+        rank_col = SDG_RANK_COLUMN_NAMES.get(slug, f"{slug}_rank")
+        score_key = slug
+        rank_key = f"{slug}_rank"
+        for uni in raw["data"]:
+            name = uni.get("name", "")
+            if not name:
+                continue
+            if name not in lookup:
+                lookup[name] = {}
+            lookup[name][score_col] = uni.get(score_key, "")
+            lookup[name][rank_col] = uni.get(rank_key, "")
+    return lookup
+
+
+def process_impact_year(year, sdg_slugs=None):
+    """Fetch overall Impact Ratings and merge all SDG scores into a single wide CSV."""
     print(f"\n=== IMPACT OVERALL {year} ===")
     url = f"{IMPACT_BASE_URL}/{year}"
     data = fetch_json(url)
-    if data:
-        filtered = filter_impact_overall_data(data, year)
-        save_outputs(year, filtered, "impact_overall", category="impact")
+    if not data:
+        return
+    filtered = filter_impact_overall_data(data, year)
     time.sleep(1)
+
+    # Fetch per-SDG data and merge into overall rows
+    slugs = list(sdg_slugs or SDG_SLUGS)
+    sdg_lookup = _fetch_all_sdg_scores(year, slugs)
+    for entry in filtered["data"]:
+        name = entry.get("Name", "")
+        sdg_data = sdg_lookup.get(name, {})
+        entry.update(sdg_data)
+
+    save_outputs(year, filtered, "impact_overall", category="impact")
+
+    # Also save individual SDG files
+    for slug in slugs:
+        process_impact_sdg(year, slug)
 
 
 def process_impact_sdg(year: int, sdg_slug: str) -> None:
@@ -444,12 +482,10 @@ def run_interactive() -> None:
 
     if mode == "impact":
         years = ask_years_range(default_range="2019-2026")
+        sdg_slugs = ask_sdg_slugs()
         performed_impact = True
         for year in years:
-            process_impact_year(year)
-        sdg_slugs = ask_sdg_slugs()
-        for year in years:
-            process_impact_sdgs_for_year(year, sdg_slugs)
+            process_impact_year(year, sdg_slugs)
     else:
         years = ask_years_range()
         if mode in {"general", "both"}:
