@@ -382,6 +382,17 @@ def process_impact_year(year, sdg_slugs=None):
 
     save_outputs(year, filtered, "impact_overall", category="impact")
 
+    # Save consolidated impact_data CSV (wide format with key columns)
+    base_cols = ['Rank', 'rank_prefix', 'Name', 'Overall', 'Location']
+    score_cols = sorted([c for c in filtered['data'][0].keys() if c.startswith('SDG') and c.endswith('_Score')])
+    rank_cols = sorted([c for c in filtered['data'][0].keys() if c.startswith('SDG') and c.endswith('_Rank') and not c.endswith('_Rank_Prefix')])
+    prefix_cols = sorted([c for c in filtered['data'][0].keys() if c.startswith('SDG') and c.endswith('_Rank_Prefix')])
+    impact_cols = base_cols + score_cols + rank_cols + prefix_cols
+    os.makedirs("outputs", exist_ok=True)
+    impact_path = os.path.join("outputs", f"THE_{year}_impact_data.csv")
+    pd.DataFrame(filtered["data"])[impact_cols].to_csv(impact_path, index=False, encoding="utf-8")
+    print(f"[DONE] {year} impact_data: {len(filtered['data'])} rows → {impact_path}")
+
     # Also save individual SDG files
     for slug in slugs:
         process_impact_sdg(year, slug)
