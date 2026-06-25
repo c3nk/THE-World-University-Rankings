@@ -123,6 +123,7 @@ IMPACT_SDG_FIELDS = {
 
 SDG_COLUMN_NAMES = {slug: f"SDG{slug.split('_')[0][3:]}_Score" for slug in SDG_SLUGS}
 SDG_RANK_COLUMN_NAMES = {slug: f"SDG{slug.split('_')[0][3:]}_Rank" for slug in SDG_SLUGS}
+SDG_RANK_PREFIX_COLUMN_NAMES = {slug: f"SDG{slug.split('_')[0][3:]}_Rank_Prefix" for slug in SDG_SLUGS}
 
 
 def fetch_json(url):
@@ -304,7 +305,6 @@ def filter_impact_sdg_data(data, year, sdg_slug):
 
     filtered_data = []
     sdg_score_key = sdg_slug
-    sdg_rank_key = f"{sdg_slug}_rank"
     sdg_score_col = SDG_COLUMN_NAMES.get(sdg_slug, sdg_slug)
     sdg_rank_col = SDG_RANK_COLUMN_NAMES.get(sdg_slug, f"{sdg_slug}_rank")
 
@@ -321,7 +321,12 @@ def filter_impact_sdg_data(data, year, sdg_slug):
             else:
                 entry[db_field] = value
         entry[sdg_score_col] = university.get(sdg_score_key, '')
-        entry[sdg_rank_col] = university.get(sdg_rank_key, '')
+        # Use rank field (display rank) for SDG rank, consistent with overall approach
+        rank_display = university.get('rank', '')
+        if isinstance(rank_display, str) and rank_display.startswith('='):
+            entry[sdg_rank_col] = rank_display[1:]
+        else:
+            entry[sdg_rank_col] = rank_display
         filtered_data.append(entry)
     return {"data": filtered_data}
 
@@ -337,6 +342,7 @@ def _fetch_all_sdg_scores(year: int, sdg_slugs: list) -> dict:
             continue
         score_col = SDG_COLUMN_NAMES.get(slug, slug)
         rank_col = SDG_RANK_COLUMN_NAMES.get(slug, f"{slug}_rank")
+        rank_prefix_col = SDG_RANK_PREFIX_COLUMN_NAMES.get(slug, f"{slug}_rank_prefix")
         score_key = slug
         rank_key = f"{slug}_rank"
         for uni in raw["data"]:
@@ -346,7 +352,13 @@ def _fetch_all_sdg_scores(year: int, sdg_slugs: list) -> dict:
             if name not in lookup:
                 lookup[name] = {}
             lookup[name][score_col] = uni.get(score_key, "")
-            lookup[name][rank_col] = uni.get(rank_key, "")
+            # Use rank field (display rank) consistently, same as overall Rank
+            rank_display = uni.get("rank", "")
+            if isinstance(rank_display, str) and rank_display.startswith("="):
+                lookup[name][rank_prefix_col] = "="
+                lookup[name][rank_col] = rank_display[1:]
+            else:
+                lookup[name][rank_col] = rank_display
     return lookup
 
 
