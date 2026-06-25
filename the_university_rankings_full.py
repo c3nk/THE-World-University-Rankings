@@ -384,10 +384,20 @@ def process_impact_year(year, sdg_slugs=None):
 
     # Save consolidated impact_data CSV (wide format with key columns)
     base_cols = ['Rank', 'rank_prefix', 'Name', 'Overall', 'Location']
-    score_cols = sorted([c for c in filtered['data'][0].keys() if c.startswith('SDG') and c.endswith('_Score')])
-    rank_cols = sorted([c for c in filtered['data'][0].keys() if c.startswith('SDG') and c.endswith('_Rank') and not c.endswith('_Rank_Prefix')])
-    prefix_cols = sorted([c for c in filtered['data'][0].keys() if c.startswith('SDG') and c.endswith('_Rank_Prefix')])
-    impact_cols = base_cols + score_cols + rank_cols + prefix_cols
+    # Gather all possible SDG columns across all entries (not just the first)
+    all_sdg_cols = set()
+    for entry in filtered["data"]:
+        all_sdg_cols.update(c for c in entry if c.startswith('SDG'))
+    sdg_nums = sorted(set(
+        c.split('_')[0].replace('SDG', '') for c in all_sdg_cols
+    ), key=int)
+    impact_cols = base_cols[:]
+    for num in sdg_nums:
+        impact_cols.append(f'SDG{num}_Score')
+        if f'SDG{num}_Rank' in all_sdg_cols:
+            impact_cols.append(f'SDG{num}_Rank')
+        if f'SDG{num}_Rank_Prefix' in all_sdg_cols:
+            impact_cols.append(f'SDG{num}_Rank_Prefix')
     os.makedirs("outputs", exist_ok=True)
     impact_path = os.path.join("outputs", f"THE_{year}_impact_data.csv")
     pd.DataFrame(filtered["data"])[impact_cols].to_csv(impact_path, index=False, encoding="utf-8")
