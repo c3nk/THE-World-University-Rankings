@@ -1,4 +1,5 @@
 import contextlib
+from datetime import date
 import io
 import os
 from pathlib import Path
@@ -93,6 +94,44 @@ class RegressionTests(unittest.TestCase):
                 db.generate_impact_sdg_insert(pd.DataFrame(), 2026, number)
         with self.assertRaises(ValueError):
             db.generate_impact_sdg_insert(pd.DataFrame({'SDG13_Score': ['4']}), 2026, 4)
+
+    def test_unpublished_impact_year_explains_the_404(self):
+        def fake_fetch(url, quiet=False):
+            scraper._last_fetch_status = 404
+            return None
+        with tempfile.TemporaryDirectory() as tmp:
+            original = os.getcwd()
+            try:
+                os.chdir(tmp)
+                with patch.object(scraper, "fetch_json", side_effect=fake_fetch), \
+                     patch.object(scraper, "process_impact_sdg") as process_sdg, \
+                     contextlib.redirect_stdout(io.StringIO()) as output:
+                    saved = scraper.process_impact_year(2027, ["sdg17_rankings"])
+            finally:
+                os.chdir(original)
+        message = output.getvalue()
+        process_sdg.assert_not_called()
+        self.assertFalse(saved)
+        self.assertIn("2027 impact rankings are not published (HTTP 404)", message)
+        self.assertIn("SDG tables for 2027 were not requested", message)
+        self.assertIn("Leave the year blank", message)
+
+    def test_latest_published_year_follows_the_endpoint(self):
+        def fake_fetch(url, quiet=False):
+            if url.endswith("/2028"):
+                return None
+            if url.endswith("/2027"):
+                return {"data": [{"name": "Example"}]}
+            return None
+        with patch.object(scraper, "fetch_json", side_effect=fake_fetch):
+            actual = scraper.latest_published_year(
+                "https://example.test/rankings", 2011, today=date(2026, 9, 30)
+            )
+            year_range = scraper.default_year_range(
+                "https://example.test/rankings", 2011, today=date(2026, 9, 30)
+            )
+        self.assertEqual(actual, 2027)
+        self.assertEqual(year_range, "2011-2027")
 
     def test_missing_columns_and_blank_names_stop_generation(self):
         with self.assertRaises(ValueError):

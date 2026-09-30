@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-THE World University Rankings Scraper (2011–2026)
+THE World University Rankings Scraper
 Fetches both 'Rankings' and 'Key statistics' tables from official THE JSON endpoints.
 Saves filtered results in both CSV and JSON formats for database insertion.
 """
@@ -11,11 +11,15 @@ import pandas as pd
 import os
 import time
 import json
+from datetime import date
 from typing import Iterable, Optional
 import re
 from html import unescape
 
 BASE_URL = "https://www.timeshighereducation.com/json/ranking_tables/world_university_rankings"
+WORLD_RANKINGS_START_YEAR = 2011
+IMPACT_RANKINGS_START_YEAR = 2019
+YEAR_PROBE_LIMIT = 3
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) "
@@ -126,16 +130,55 @@ SDG_RANK_COLUMN_NAMES = {slug: f"SDG{slug.split('_')[0][3:]}_Rank" for slug in S
 SDG_RANK_PREFIX_COLUMN_NAMES = {slug: f"SDG{slug.split('_')[0][3:]}_Rank_Prefix" for slug in SDG_SLUGS}
 
 
-def fetch_json(url):
+_last_fetch_status = None
+
+
+def fetch_failure_message(url: str, status_code: int) -> str:
+    """Explain an unsuccessful ranking request."""
+    if status_code == 404:
+        return (
+            f"[WARN] No published data (HTTP 404): {url}. "
+            "THE has not released this ranking edition."
+        )
+    return f"[WARN] {status_code} for {url}"
+
+
+def fetch_json(url, quiet=False):
     """Safely fetch JSON and return dict or None."""
+    global _last_fetch_status
+    _last_fetch_status = None
     try:
-        r = requests.get(url, headers=HEADERS, timeout=60)
-        if r.status_code == 200:
-            return r.json()
-        print(f"[WARN] {r.status_code} for {url}")
-    except Exception as e:
-        print(f"[ERROR] Fetch failed for {url}: {e}")
+        response = requests.get(url, headers=HEADERS, timeout=60)
+        _last_fetch_status = response.status_code
+        if response.status_code == 200:
+            return response.json()
+        if not quiet:
+            print(fetch_failure_message(url, response.status_code))
+    except Exception as error:
+        if not quiet:
+            print(f"[ERROR] Fetch failed for {url}: {error}")
     return None
+
+
+def latest_published_year(base_url: str, earliest: int, today: Optional[date] = None) -> int:
+    """Return the newest ranking edition the endpoint currently serves."""
+    current = today or date.today()
+    newest = current.year + 1
+    for offset in range(YEAR_PROBE_LIMIT):
+        candidate = newest - offset
+        if candidate < earliest:
+            break
+        payload = fetch_json(f"{base_url}/{candidate}", quiet=True)
+        if payload and payload.get("data"):
+            return candidate
+    if current.year >= earliest:
+        return current.year
+    return earliest
+
+
+def default_year_range(base_url: str, earliest: int, today: Optional[date] = None) -> str:
+    """Build the blank-input range from the first edition through the latest live one."""
+    return f"{earliest}-{latest_published_year(base_url, earliest, today)}"
 
 
 def get_subject_display_name(subject_slug: str) -> str:
@@ -392,29 +435,49 @@ def _save_impact_overview(year, data, slugs):
     print(f"[DONE] {year} impact_data: {len(filtered['data'])} rows → {impact_path}")
 
 
-def process_impact_year(year, sdg_slugs=None):
-    """Fetch overall Impact Ratings, then always save the individual SDG files."""
+def process_impact_year(year, sdg_slugs=None) -> bool:
+    """Fetch overall Impact Ratings, then save individual SDG files when the edition exists."""
+    global _last_fetch_status
     print(f"\n=== IMPACT OVERALL {year} ===")
     slugs = list(sdg_slugs or SDG_SLUGS)
     url = f"{IMPACT_BASE_URL}/{year}"
-    data = fetch_json(url)
+    _last_fetch_status = None
+    data = fetch_json(url, quiet=True)
+    if _last_fetch_status == 404:
+        print(
+            f"[WARN] {year} impact rankings are not published (HTTP 404). "
+            f"THE has no overall table at {url}, so the {len(slugs)} SDG tables "
+            f"for {year} were not requested. Leave the year blank to download "
+            "the latest published impact edition."
+        )
+        return False
+    saved = False
     if not data or not data.get("data"):
-        print(f"[WARN] No impact data for {year}.")
+        if _last_fetch_status not in (None, 200):
+            print(f"[WARN] Impact rankings for {year} could not be read (HTTP {_last_fetch_status}).")
+        else:
+            print(f"[WARN] No impact rows for {year}. SDG tables for this year will still be requested.")
     else:
         _save_impact_overview(year, data, slugs)
+        saved = True
     for slug in slugs:
-        process_impact_sdg(year, slug)
+        if process_impact_sdg(year, slug):
+            saved = True
+    return saved
 
 
-def process_impact_sdg(year: int, sdg_slug: str) -> None:
+def process_impact_sdg(year: int, sdg_slug: str) -> bool:
     """Fetch and save an individual SDG ranking for a year."""
     print(f"\n=== IMPACT SDG {year} – {sdg_slug} ===")
     url = f"https://www.timeshighereducation.com/json/ranking_tables/{sdg_slug}/{year}"
     data = fetch_json(url)
+    saved = False
     if data:
         filtered = filter_impact_sdg_data(data, year, sdg_slug)
         save_outputs(year, filtered, f"impact_{sdg_slug}", category="impact/sdg")
+        saved = bool(filtered and filtered.get("data"))
     time.sleep(1)
+    return saved
 
 
 def process_impact_sdgs_for_year(year: int, sdg_slugs: Optional[Iterable[str]] = None) -> None:
@@ -424,8 +487,10 @@ def process_impact_sdgs_for_year(year: int, sdg_slugs: Optional[Iterable[str]] =
         process_impact_sdg(year, slug)
 
 
-def ask_years_range(default_range: str = "2011-2026") -> list[int]:
+def ask_years_range(default_range: Optional[str] = None) -> list[int]:
     """Prompt for a year or range of years to process."""
+    if default_range is None:
+        default_range = default_year_range(BASE_URL, WORLD_RANKINGS_START_YEAR)
     parts = default_range.split("-")
     default_start = int(parts[0])
     default_end = int(parts[1])
@@ -510,15 +575,16 @@ def run_interactive() -> None:
     performed_general = False
     performed_subject = False
     performed_impact = False
+    impact_saved = False
 
     if mode == "impact":
-        years = ask_years_range(default_range="2019-2026")
+        years = ask_years_range(default_range=default_year_range(IMPACT_BASE_URL, IMPACT_RANKINGS_START_YEAR))
         sdg_slugs = ask_sdg_slugs()
         performed_impact = True
         for year in years:
-            process_impact_year(year, sdg_slugs)
+            impact_saved = process_impact_year(year, sdg_slugs) or impact_saved
     else:
-        years = ask_years_range()
+        years = ask_years_range(default_range=default_year_range(BASE_URL, WORLD_RANKINGS_START_YEAR))
         if mode in {"general", "both"}:
             performed_general = True
             for year in years:
@@ -536,10 +602,12 @@ def run_interactive() -> None:
         parts.append("General")
     if performed_subject:
         parts.append("Subject")
-    if performed_impact:
+    if performed_impact and impact_saved:
         parts.append("Impact Ratings")
     if parts:
         print(f"• {' and '.join(parts)} data downloaded.")
+    if performed_impact and not impact_saved:
+        print("• No impact files were saved. The requested edition is not published.")
 
 
 def main():

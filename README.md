@@ -10,10 +10,12 @@
 
 > 🎓 Python application that fetches Times Higher Education World University Rankings and Sustainability Impact Ratings via the official JSON API endpoints – fast, reliable, no browser automation required!
 
+The sample data is updated with **World University Rankings 2027**. This edition covers the top research-intensive universities worldwide: more than 2,200 institutions from 118 countries and territories. Sustainability Impact Ratings remain available through 2026; THE has not published a 2027 impact edition.
+
 ### 🌟 Key Features
 
 - **Official JSON API Integration**: Connects to THE’s published ranking endpoints without browser automation
-- **Year Selection**: Default ranges are 2011–2026 for world/subject rankings and 2019–2026 for impact rankings; availability depends on the source endpoint
+- **Year Selection**: A blank answer uses 2011 through the latest world/subject edition the endpoint serves (currently 2027), and 2019 through the latest impact edition (currently 2026). The end year is detected at startup
 - **Dual Output Format**: Clean CSV files + filtered JSON copies
 - **Database Ready**: Optional SQL generation included
 - **Three Data Types**: Rankings scores, Key statistics tables, and UN SDG Impact Ratings
@@ -37,7 +39,7 @@ pip install -r requirements.txt
 ### 🚀 Quick Start
 
 ```bash
-# Fetch all years' data (2011-2026)
+# Fetch the detected year range (currently 2011 through the latest live edition)
 python the_university_rankings_full.py
 
 # The script asks whether to pull general rankings, subject rankings, both, or
@@ -54,12 +56,12 @@ ls outputs/json/
 outputs/
 ├── csv/
 │   ├── general/
-│   │   ├── THE_2026_rankings.csv
-│   │   ├── THE_2026_key_statistics.csv
+│   │   ├── THE_2027_rankings.csv
+│   │   ├── THE_2027_key_statistics.csv
 │   │   └── ... (general rankings per year)
 │   ├── subject/
-│   │   ├── THE_2026_arts-and-humanities_rankings.csv
-│   │   ├── THE_2026_arts-and-humanities_key_statistics.csv
+│   │   ├── THE_2027_arts-and-humanities_rankings.csv
+│   │   ├── THE_2027_arts-and-humanities_key_statistics.csv
 │   │   └── ... (subject + year combinations)
 │   └── impact/
 │       ├── THE_2026_impact_overall.csv
@@ -69,12 +71,12 @@ outputs/
 │           └── ... (17 SDGs per year)
 ├── json/
 │   ├── general/
-│   │   ├── THE_2026_rankings.json
-│   │   ├── THE_2026_key_statistics.json
+│   │   ├── THE_2027_rankings.json
+│   │   ├── THE_2027_key_statistics.json
 │   │   └── ... (general rankings per year)
 │   ├── subject/
-│   │   ├── THE_2026_arts-and-humanities_rankings.json
-│   │   ├── THE_2026_arts-and-humanities_key_statistics.json
+│   │   ├── THE_2027_arts-and-humanities_rankings.json
+│   │   ├── THE_2027_arts-and-humanities_key_statistics.json
 │   │   └── ... (subject + year combinations)
 │   └── impact/
 │       ├── THE_2026_impact_overall.json
@@ -92,7 +94,7 @@ outputs/
 
 | Column | Type | Description |
 |--------|------|-------------|
-| year | INTEGER | Ranking year (2011-2026) |
+| year | INTEGER | Ranking edition, from 2011 through the latest published year |
 | rank | TEXT | Display rank, including ranges and reporter labels |
 | rank_prefix | TEXT | Rank prefix (e.g., '=' for ties) |
 | name | TEXT | University name |
@@ -122,7 +124,7 @@ outputs/
 
 | Column | Type | Description |
 |--------|------|-------------|
-| year | INTEGER | Ranking year (2019-2026) |
+| year | INTEGER | Ranking edition, from 2019 through the latest published impact year |
 | rank | TEXT | Overall impact rank |
 | rank_prefix | TEXT | Rank prefix (e.g., '=' for ties) |
 | name | TEXT | University name |
@@ -140,7 +142,7 @@ Each row retains its SDG identity.
 
 | Column | Type | Description |
 |--------|------|-------------|
-| year | INTEGER | Ranking year (2019-2026) |
+| year | INTEGER | Ranking edition, from 2019 through the latest published impact year |
 | sdg_number | INTEGER | Required SDG number, 1–17 |
 | rank | TEXT | Rank within this SDG |
 | rank_prefix | TEXT | Rank prefix |
@@ -185,9 +187,9 @@ Malformed CSVs stop generation instead of silently producing a partial export.
 import pandas as pd
 
 # Load ranking data
-df = pd.read_csv('outputs/csv/general/THE_2026_rankings.csv')
+df = pd.read_csv('outputs/csv/general/THE_2027_rankings.csv')
 
-# Top 10 universities in 2026
+# Top 10 universities in 2027
 df['numeric_rank'] = pd.to_numeric(df['Rank'], errors='coerce')
 top_10 = df.nsmallest(10, 'numeric_rank')
 print(top_10[['Rank', 'Name', 'Overall']])
@@ -215,12 +217,12 @@ This optional example requires `pip install matplotlib`.
 import matplotlib.pyplot as plt
 
 # Visualize top 20 universities
-top_20 = df[df['year'] == 2026].nsmallest(20, 'numeric_rank')
+top_20 = df[df['year'] == 2027].nsmallest(20, 'numeric_rank')
 
 plt.figure(figsize=(12, 8))
 plt.barh(top_20['Name'], pd.to_numeric(top_20['Overall'], errors='coerce'))
 plt.xlabel('Overall Score')
-plt.title('Top 20 Universities - THE 2026')
+plt.title('Top 20 Universities - THE 2027')
 plt.gca().invert_yaxis()
 plt.tight_layout()
 plt.show()
@@ -239,7 +241,7 @@ python db_insert_generator.py
 sqlite3 university_rankings.db < outputs/the_rankings_insert.sql
 
 # Query example
-sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=2026 AND rank <> '' AND rank NOT GLOB '*[^0-9]*' ORDER BY CAST(rank AS INTEGER) LIMIT 10;"
+sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=2027 AND rank <> '' AND rank NOT GLOB '*[^0-9]*' ORDER BY CAST(rank AS INTEGER) LIMIT 10;"
 ```
 
 ### ⚙️ Technical Details
@@ -252,7 +254,7 @@ sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=20
 
 #### Interactive CLI
 - Prompts whether to retrieve general rankings, subject rankings, both, or Sustainability Impact Ratings
-- Requests a year or year range (default 2011-2026 for rankings, 2019-2026 for impact)
+- Requests a year or year range. Leaving it blank selects 2011 through the newest world ranking the endpoint returns, or 2019 through the newest impact ranking. World University Rankings 2027 is included; impact rankings still end at 2026
 - Offers optional filtering to a subset of subject slugs or SDG slugs while preserving slug-based filenames
 
 #### Available Slugs
