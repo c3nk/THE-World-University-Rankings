@@ -2,14 +2,43 @@
 # -*- coding: utf-8 -*-
 """
 THE Rankings Database Insert Generator
-Generates SQL INSERT statements from filtered CSV/JSON files
+Generates SQLite INSERT statements from filtered CSV files
 """
 
 import pandas as pd
 import os
-import glob
-import json
-from typing import List
+from pathlib import Path
+import re
+from typing import Iterable, List, Optional
+
+RANKINGS_COLUMNS = (
+    'Rank', 'Name', 'Overall', 'Teaching', 'Research Environment',
+    'Research Quality', 'Industry', 'International Outlook', 'Country',
+)
+KEY_STATISTICS_COLUMNS = (
+    'Rank', 'Name', 'No. of FTE students', 'No. of students per staff',
+    'International students', 'Female:Male ratio', 'Country',
+)
+IMPACT_OVERALL_COLUMNS = (
+    'Rank', 'Name', 'Overall', 'SDG17_Score', 'Location', 'No. of FTE students',
+    'No. of students per staff', 'International students', 'Female:Male ratio',
+)
+IMPACT_SDG_COLUMNS = (
+    'Rank', 'Name', 'Overall', 'Location', 'No. of FTE students',
+    'No. of students per staff', 'International students', 'Female:Male ratio',
+)
+
+def _is_blank(value) -> bool:
+    """Return whether a CSV cell cannot satisfy a NOT NULL text column."""
+    return pd.isna(value) or not str(value).strip()
+
+def validate_frame(df: pd.DataFrame, columns: Iterable[str], source: str) -> None:
+    """Reject frames that would fail import or omit part of the dataset."""
+    missing = [column for column in columns if column not in df.columns]
+    if missing:
+        raise ValueError(f"{source}: missing required columns: {', '.join(missing)}")
+    if any(_is_blank(value) for value in df['Name']):
+        raise ValueError(f"{source}: university name is required")
 
 def clean_value(value):
     """Clean and format value for SQL insertion"""
@@ -32,8 +61,10 @@ def clean_value(value):
 
     return f"'{value_str}'"
 
-def generate_rankings_insert(df: pd.DataFrame, year: int) -> List[str]:
+def generate_rankings_insert(df: pd.DataFrame, year: int, subject: Optional[str] = None) -> List[str]:
     """Generate INSERT statements for Rankings table"""
+    source = "Subject_Rankings" if subject is not None else "Rankings"
+    validate_frame(df, RANKINGS_COLUMNS, source)
     inserts = []
 
     for _, row in df.iterrows():
@@ -51,13 +82,20 @@ def generate_rankings_insert(df: pd.DataFrame, year: int) -> List[str]:
             clean_value(row.get('Country', ''))
         ]
 
-        sql = f"INSERT INTO Rankings (year, rank, rank_prefix, name, overall, teaching, research_environment, research_quality, industry, international_outlook, country) VALUES ({', '.join(values)});"
+        table = "Subject_Rankings" if subject is not None else "Rankings"
+        subject_column = ", subject" if subject is not None else ""
+        if subject is not None:
+            values.append(clean_value(subject))
+
+        sql = f"INSERT INTO {table} (year, rank, rank_prefix, name, overall, teaching, research_environment, research_quality, industry, international_outlook, country{subject_column}) VALUES ({', '.join(values)});"
         inserts.append(sql)
 
     return inserts
 
-def generate_key_statistics_insert(df: pd.DataFrame, year: int) -> List[str]:
+def generate_key_statistics_insert(df: pd.DataFrame, year: int, subject: Optional[str] = None) -> List[str]:
     """Generate INSERT statements for Key_Statistics table"""
+    source = "Subject_Key_Statistics" if subject is not None else "Key_Statistics"
+    validate_frame(df, KEY_STATISTICS_COLUMNS, source)
     inserts = []
 
     for _, row in df.iterrows():
@@ -73,7 +111,12 @@ def generate_key_statistics_insert(df: pd.DataFrame, year: int) -> List[str]:
             clean_value(row.get('Country', ''))
         ]
 
-        sql = f"INSERT INTO Key_Statistics (year, rank, rank_prefix, name, fte_students, students_per_staff, international_students, female_male_ratio, country) VALUES ({', '.join(values)});"
+        table = "Subject_Key_Statistics" if subject is not None else "Key_Statistics"
+        subject_column = ", subject" if subject is not None else ""
+        if subject is not None:
+            values.append(clean_value(subject))
+
+        sql = f"INSERT INTO {table} (year, rank, rank_prefix, name, fte_students, students_per_staff, international_students, female_male_ratio, country{subject_column}) VALUES ({', '.join(values)});"
         inserts.append(sql)
 
     return inserts
@@ -133,6 +176,7 @@ CREATE TABLE IF NOT EXISTS Impact_Overall (
 -- Impact SDG Table
 CREATE TABLE IF NOT EXISTS Impact_SDG (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    sdg_number INTEGER NOT NULL CHECK (sdg_number BETWEEN 1 AND 17),
     year INTEGER NOT NULL,
     rank TEXT,
     rank_prefix TEXT,
@@ -157,10 +201,20 @@ CREATE INDEX IF NOT EXISTS idx_impact_overall_year ON Impact_Overall(year);
 CREATE INDEX IF NOT EXISTS idx_impact_sdg_year ON Impact_SDG(year);
 CREATE INDEX IF NOT EXISTS idx_impact_sdg_name ON Impact_SDG(name);
 """
+    for table in ("Rankings", "Key_Statistics"):
+        start = tables_sql.index(f"CREATE TABLE IF NOT EXISTS {table} (")
+        end = tables_sql.index(");", start) + 2
+        subject_sql = tables_sql[start:end].replace(
+            f"{table} (", f"Subject_{table} (", 1
+        ).replace("    year INTEGER NOT NULL,", "    year INTEGER NOT NULL,\n    subject TEXT NOT NULL,", 1)
+        tables_sql += "\n" + subject_sql + "\n"
+        tables_sql += f"CREATE INDEX IF NOT EXISTS idx_subject_{table.lower()} ON Subject_{table}(year, subject);\n"
+    tables_sql += "CREATE INDEX IF NOT EXISTS idx_impact_sdg_number ON Impact_SDG(year, sdg_number);\n"
     return tables_sql
 
 def generate_impact_overall_insert(df: pd.DataFrame, year: int) -> list:
     """Generate INSERT statements for Impact_Overall table"""
+    validate_frame(df, IMPACT_OVERALL_COLUMNS, "Impact_Overall")
     inserts = []
     for _, row in df.iterrows():
         values = [
@@ -182,11 +236,14 @@ def generate_impact_overall_insert(df: pd.DataFrame, year: int) -> list:
     return inserts
 
 
-def generate_impact_sdg_insert(df: pd.DataFrame, year: int) -> list:
+def generate_impact_sdg_insert(df: pd.DataFrame, year: int, sdg_number: int) -> list:
     """Generate INSERT statements for Impact_SDG table"""
     inserts = []
-    sdg_score_col = next((c for c in df.columns if c.startswith('SDG') and c.endswith('_Score')), '')
-    sdg_rank_col = next((c for c in df.columns if c.startswith('SDG') and c.endswith('_Rank')), '')
+    if not 1 <= sdg_number <= 17:
+        raise ValueError("SDG number must be between 1 and 17")
+    sdg_score_col = f"SDG{sdg_number}_Score"
+    sdg_rank_col = f"SDG{sdg_number}_Rank"
+    validate_frame(df, (*IMPACT_SDG_COLUMNS, sdg_score_col, sdg_rank_col), "Impact_SDG")
 
     for _, row in df.iterrows():
         values = [
@@ -203,87 +260,58 @@ def generate_impact_sdg_insert(df: pd.DataFrame, year: int) -> list:
             clean_value(row.get('International students', '')),
             clean_value(row.get('Female:Male ratio', '')),
         ]
-        cols = 'year, rank, rank_prefix, name, overall, sdg_score, sdg_rank, location, fte_students, students_per_staff, international_students, female_male_ratio'
+        values.append(str(sdg_number))
+        cols = 'year, rank, rank_prefix, name, overall, sdg_score, sdg_rank, location, fte_students, students_per_staff, international_students, female_male_ratio, sdg_number'
         sql = f"INSERT INTO Impact_SDG ({cols}) VALUES ({', '.join(values)});"
         inserts.append(sql)
     return inserts
 
 
-def process_csv_files():
-    """Process all CSV files and generate SQL"""
-    rankings_files = glob.glob("outputs/csv/THE_*_rankings.csv")
-    key_stats_files = glob.glob("outputs/csv/THE_*_key_statistics.csv")
-    impact_overall_files = glob.glob("outputs/csv/impact/THE_*_impact_overall.csv")
-    impact_sdg_files = glob.glob("outputs/csv/impact/sdg/THE_*_impact_*.csv")
-
-    all_sql = []
-
-    # Add table creation SQL
-    all_sql.append("-- Table Creation SQL")
-    all_sql.append(create_table_sql())
-    all_sql.append("\n-- Data Insert SQL\n")
-
-    # Process Rankings files
-    print("Processing Rankings files...")
-    for csv_file in sorted(rankings_files):
-        print(f"Reading: {csv_file}")
+def process_csv_files(csv_root="outputs/csv"):
+    """Read current outputs, falling back to legacy general files per filename."""
+    root = Path(csv_root)
+    general_files = {p.name: p for p in root.glob("THE_*.csv")}
+    general_files.update({p.name: p for p in (root / "general").glob("THE_*.csv")})
+    sources = [(p, "general") for p in general_files.values()]
+    sources += [(p, "subject") for p in (root / "subject").glob("THE_*.csv")]
+    sources += [(p, "impact") for p in (root / "impact").glob("THE_*_impact_overall.csv")]
+    sources += [(p, "sdg") for p in (root / "impact" / "sdg").glob("THE_*_impact_*.csv")]
+    all_sql = ["-- Table Creation SQL", create_table_sql(), "\n-- Data Insert SQL\n"]
+    for path, category in sorted(sources):
+        print(f"Reading: {path}")
+        match = re.fullmatch(r"THE_(\d{4})_(.+)\.csv", path.name)
+        if not match:
+            raise ValueError(f"Unexpected dataset filename: {path}")
+        year, dataset = int(match[1]), match[2]
+        # Preserve display ranks, leading zeros, and literal strings such as NA.
+        df = pd.read_csv(path, dtype=str, keep_default_na=False)
+        subject = None
+        sdg_number = None
+        if category == "sdg":
+            sdg = re.fullmatch(r"impact_sdg([1-9]|1[0-7])_rankings", dataset)
+            if not sdg:
+                raise ValueError(f"Unexpected SDG filename: {path}")
+            sdg_number = int(sdg[1])
+        elif category == "subject":
+            parsed = re.fullmatch(r"(.+)_(rankings|key_statistics)", dataset)
+            if not parsed:
+                raise ValueError(f"Unexpected subject filename: {path}")
+            subject, dataset = parsed.groups()
+        if category in {"general", "subject"} and dataset not in {"rankings", "key_statistics"}:
+            raise ValueError(f"Unexpected dataset: {path}")
         try:
-            df = pd.read_csv(csv_file)
-            year = int(csv_file.split('_')[1])
-
-            inserts = generate_rankings_insert(df, year)
-            all_sql.extend(inserts)
-            print(f"  → {len(inserts)} INSERTs for Rankings {year}")
-
-        except Exception as e:
-            print(f"  Error: {e}")
-
-    # Process Key Statistics files
-    print("\nProcessing Key Statistics files...")
-    for csv_file in sorted(key_stats_files):
-        print(f"Reading: {csv_file}")
-        try:
-            df = pd.read_csv(csv_file)
-            year = int(csv_file.split('_')[1])
-
-            inserts = generate_key_statistics_insert(df, year)
-            all_sql.extend(inserts)
-            print(f"  → {len(inserts)} INSERTs for Key Statistics {year}")
-
-        except Exception as e:
-            print(f"  Error: {e}")
-
-    # Process Impact Overall files
-    print("\nProcessing Impact Overall files...")
-    for csv_file in sorted(impact_overall_files):
-        print(f"Reading: {csv_file}")
-        try:
-            df = pd.read_csv(csv_file)
-            year = int(csv_file.split('_')[1])
-
-            inserts = generate_impact_overall_insert(df, year)
-            all_sql.extend(inserts)
-            print(f"  → {len(inserts)} INSERTs for Impact Overall {year}")
-
-        except Exception as e:
-            print(f"  Error: {e}")
-
-    # Process Impact SDG files
-    print("\nProcessing Impact SDG files...")
-    for csv_file in sorted(impact_sdg_files):
-        slug_part = csv_file.split('_impact_')[1].replace('.csv', '')
-        print(f"Reading: {csv_file}")
-        try:
-            df = pd.read_csv(csv_file)
-            year = int(csv_file.split('_')[1])
-
-            inserts = generate_impact_sdg_insert(df, year)
-            all_sql.extend(inserts)
-            print(f"  → {len(inserts)} INSERTs for {slug_part} {year}")
-
-        except Exception as e:
-            print(f"  Error: {e}")
-
+            if category == "impact":
+                inserts = generate_impact_overall_insert(df, year)
+            elif category == "sdg":
+                inserts = generate_impact_sdg_insert(df, year, sdg_number)
+            elif dataset == "rankings":
+                inserts = generate_rankings_insert(df, year, subject)
+            else:
+                inserts = generate_key_statistics_insert(df, year, subject)
+        except ValueError as error:
+            raise ValueError(f"{path}: {error}") from error
+        all_sql.extend(inserts)
+        print(f"  → {len(inserts)} INSERTs")
     return all_sql
 
 def save_sql_file(sql_statements: List[str], filename: str = "outputs/the_rankings_insert.sql"):
@@ -313,13 +341,15 @@ def main():
     save_sql_file(sql_statements)
 
     print("\n📋 SQL File contains:")
-    print("  - Table creation statements (Rankings, Key_Statistics, Impact_Overall, Impact_SDG)")
+    print("  - Table creation statements (Rankings, Key_Statistics, Subject_Rankings, Subject_Key_Statistics, Impact_Overall, Impact_SDG)")
     print("  - INSERT statements for Rankings table")
     print("  - INSERT statements for Key_Statistics table")
+    print("  - INSERT statements for Subject_Rankings table")
+    print("  - INSERT statements for Subject_Key_Statistics table")
     print("  - INSERT statements for Impact_Overall table")
     print("  - INSERT statements for Impact_SDG table")
     print("\n🔄 To use:")
-    print("  sqlite3 your_database.db < the_rankings_insert.sql")
+    print("  sqlite3 your_database.db < outputs/the_rankings_insert.sql")
 
 if __name__ == "__main__":
     main()

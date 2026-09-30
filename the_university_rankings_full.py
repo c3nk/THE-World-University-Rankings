@@ -169,7 +169,7 @@ def filter_data_for_db(data, year, field_mapping):
     filtered_data = []
 
     for university in data["data"]:
-        filtered_university = {'year': year}  # Add year field
+        filtered_university = {'year': year, 'rank_prefix': ''}  # Add year and stable rank metadata
 
         # Map and filter fields
         for json_field, db_field in field_mapping.items():
@@ -187,7 +187,7 @@ def filter_data_for_db(data, year, field_mapping):
                 # Clean up numeric values
                 if json_field.startswith('scores_') or json_field == 'stats_student_staff_ratio':
                     # Remove commas and handle empty values
-                    value = str(value).replace(',', '') if value else ''
+                    value = str(value).replace(',', '') if value is not None else ''
                 filtered_university[db_field] = value
 
         filtered_data.append(filtered_university)
@@ -281,14 +281,14 @@ def filter_impact_overall_data(data, year):
 
     filtered_data = []
     for university in data["data"]:
-        entry = {'year': year}
+        entry = {'year': year, 'rank_prefix': ''}
         for json_field, db_field in IMPACT_OVERALL_FIELDS.items():
             value = university.get(json_field, '')
             if json_field == 'rank' and isinstance(value, str) and value.startswith('='):
                 entry['rank_prefix'] = '='
                 entry[db_field] = value[1:]
             elif json_field.startswith('scores_') or json_field == 'stats_student_staff_ratio':
-                value = str(value).replace(',', '') if value else ''
+                value = str(value).replace(',', '') if value is not None else ''
                 entry[db_field] = value
             else:
                 entry[db_field] = value
@@ -309,14 +309,14 @@ def filter_impact_sdg_data(data, year, sdg_slug):
     sdg_rank_col = SDG_RANK_COLUMN_NAMES.get(sdg_slug, f"{sdg_slug}_rank")
 
     for university in data["data"]:
-        entry = {'year': year}
+        entry = {'year': year, 'rank_prefix': ''}
         for json_field, db_field in IMPACT_SDG_FIELDS.items():
             value = university.get(json_field, '')
             if json_field == 'rank' and isinstance(value, str) and value.startswith('='):
                 entry['rank_prefix'] = '='
                 entry[db_field] = value[1:]
             elif json_field.startswith('scores_') or json_field == 'stats_student_staff_ratio':
-                value = str(value).replace(',', '') if value else ''
+                value = str(value).replace(',', '') if value is not None else ''
                 entry[db_field] = value
             else:
                 entry[db_field] = value
@@ -362,35 +362,23 @@ def _fetch_all_sdg_scores(year: int, sdg_slugs: list) -> dict:
     return lookup
 
 
-def process_impact_year(year, sdg_slugs=None):
-    """Fetch overall Impact Ratings and merge all SDG scores into a single wide CSV."""
-    print(f"\n=== IMPACT OVERALL {year} ===")
-    url = f"{IMPACT_BASE_URL}/{year}"
-    data = fetch_json(url)
-    if not data:
-        return
+def _save_impact_overview(year, data, slugs):
+    """Save overall impact rows and the consolidated wide CSV."""
     filtered = filter_impact_overall_data(data, year)
     time.sleep(1)
-
-    # Fetch per-SDG data and merge into overall rows
-    slugs = list(sdg_slugs or SDG_SLUGS)
     sdg_lookup = _fetch_all_sdg_scores(year, slugs)
     for entry in filtered["data"]:
         name = entry.get("Name", "")
         sdg_data = sdg_lookup.get(name, {})
         entry.update(sdg_data)
-
     save_outputs(year, filtered, "impact_overall", category="impact")
-
-    # Save consolidated impact_data CSV (wide format with key columns)
     base_cols = ['Rank', 'rank_prefix', 'Name', 'Overall', 'Location']
-    # Gather all possible SDG columns across all entries (not just the first)
     all_sdg_cols = set()
     for entry in filtered["data"]:
-        all_sdg_cols.update(c for c in entry if c.startswith('SDG'))
-    sdg_nums = sorted(set(
-        c.split('_')[0].replace('SDG', '') for c in all_sdg_cols
-    ), key=int)
+        all_sdg_cols.update(column for column in entry if column.startswith('SDG'))
+    sdg_nums = sorted({
+        column.split('_')[0].replace('SDG', '') for column in all_sdg_cols
+    }, key=int)
     impact_cols = base_cols[:]
     for num in sdg_nums:
         impact_cols.append(f'SDG{num}_Score')
@@ -400,10 +388,20 @@ def process_impact_year(year, sdg_slugs=None):
             impact_cols.append(f'SDG{num}_Rank_Prefix')
     os.makedirs("outputs", exist_ok=True)
     impact_path = os.path.join("outputs", f"THE_{year}_impact_data.csv")
-    pd.DataFrame(filtered["data"])[impact_cols].to_csv(impact_path, index=False, encoding="utf-8")
+    pd.DataFrame(filtered["data"]).reindex(columns=impact_cols).to_csv(impact_path, index=False, encoding="utf-8")
     print(f"[DONE] {year} impact_data: {len(filtered['data'])} rows → {impact_path}")
 
-    # Also save individual SDG files
+
+def process_impact_year(year, sdg_slugs=None):
+    """Fetch overall Impact Ratings, then always save the individual SDG files."""
+    print(f"\n=== IMPACT OVERALL {year} ===")
+    slugs = list(sdg_slugs or SDG_SLUGS)
+    url = f"{IMPACT_BASE_URL}/{year}"
+    data = fetch_json(url)
+    if not data or not data.get("data"):
+        print(f"[WARN] No impact data for {year}.")
+    else:
+        _save_impact_overview(year, data, slugs)
     for slug in slugs:
         process_impact_sdg(year, slug)
 

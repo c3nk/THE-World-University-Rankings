@@ -4,7 +4,7 @@
   <img src="THE-World-University-Rankings.png" alt="THE World University Rankings Scraper" width="800">
 </p>
 
-[![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/c3nk/THE-World-University-Rankings?style=social)](https://github.com/c3nk/THE-World-University-Rankings/stargazers)
 
@@ -13,8 +13,8 @@
 ### 🌟 Key Features
 
 - **Official JSON API Integration**: Connects to THE’s published ranking endpoints without browser automation
-- **Complete Dataset**: 16 years of World University Rankings (2011-2026) + 8 years of Sustainability Impact Ratings (2019-2026), ~80,000 total records
-- **Dual Output Format**: Clean CSV files + Full JSON backups
+- **Year Selection**: Default ranges are 2011–2026 for world/subject rankings and 2019–2026 for impact rankings; availability depends on the source endpoint
+- **Dual Output Format**: Clean CSV files + filtered JSON copies
 - **Database Ready**: Optional SQL generation included
 - **Three Data Types**: Rankings scores, Key statistics tables, and UN SDG Impact Ratings
 - **Interactive CLI**: Prompts guide you to pull general, subject, or impact rankings for the desired year range
@@ -82,6 +82,7 @@ outputs/
 │           ├── THE_2026_impact_sdg1_rankings.json
 │           ├── THE_2026_impact_sdg2_rankings.json
 │           └── ... (17 SDGs per year)
+├── THE_2026_impact_data.csv          # Consolidated overall + SDG scores/ranks
 └── the_rankings_insert.sql           # (Optional) SQL script
 ```
 
@@ -91,64 +92,90 @@ outputs/
 
 | Column | Type | Description |
 |--------|------|-------------|
-| year | INT | Ranking year (2011-2026) |
-| rank | INT | University rank (numeric) |
-| rank_prefix | VARCHAR | Rank prefix (e.g., '=' for ties) |
-| name | VARCHAR | University name |
-| country | VARCHAR | University country |
-| overall | FLOAT | Overall score (0-100) |
-| teaching | FLOAT | Teaching score |
-| research_environment | FLOAT | Research environment score |
-| research_quality | FLOAT | Research quality score |
-| industry | FLOAT | Industry income score |
-| international_outlook | FLOAT | International outlook score |
+| year | INTEGER | Ranking year (2011-2026) |
+| rank | TEXT | Display rank, including ranges and reporter labels |
+| rank_prefix | TEXT | Rank prefix (e.g., '=' for ties) |
+| name | TEXT | University name |
+| country | TEXT | University country |
+| overall | TEXT | Overall score (0-100) |
+| teaching | TEXT | Teaching score |
+| research_environment | TEXT | Research environment score |
+| research_quality | TEXT | Research quality score |
+| industry | TEXT | Industry income score |
+| international_outlook | TEXT | International outlook score |
 
 #### Key Statistics Table
 
 | Column | Type | Description |
 |--------|------|-------------|
-| year | INT | Year |
-| rank | INT | Rank |
-| rank_prefix | VARCHAR | Rank prefix |
-| name | VARCHAR | University name |
-| country | VARCHAR | University country |
-| fte_students | INT | Full-time equivalent students |
-| students_per_staff | FLOAT | Student-to-staff ratio |
-| international_students | VARCHAR | % of international students |
-| female_male_ratio | VARCHAR | Female to male ratio |
+| year | INTEGER | Year |
+| rank | TEXT | Rank |
+| rank_prefix | TEXT | Rank prefix |
+| name | TEXT | University name |
+| country | TEXT | University country |
+| fte_students | TEXT | Full-time equivalent students |
+| students_per_staff | TEXT | Student-to-staff ratio |
+| international_students | TEXT | % of international students |
+| female_male_ratio | TEXT | Female to male ratio |
 
 #### Impact Overall Table
 
 | Column | Type | Description |
 |--------|------|-------------|
-| year | INT | Ranking year (2019-2026) |
-| rank | INT | Overall impact rank |
-| rank_prefix | VARCHAR | Rank prefix (e.g., '=' for ties) |
-| name | VARCHAR | University name |
-| overall | FLOAT | Overall impact score |
-| sdg17_score | FLOAT | Score for SDG 17 (Partnerships) |
-| location | VARCHAR | University country |
-| fte_students | INT | Full-time equivalent students |
-| students_per_staff | FLOAT | Student-to-staff ratio |
-| international_students | VARCHAR | % of international students |
-| female_male_ratio | VARCHAR | Female to male ratio |
+| year | INTEGER | Ranking year (2019-2026) |
+| rank | TEXT | Overall impact rank |
+| rank_prefix | TEXT | Rank prefix (e.g., '=' for ties) |
+| name | TEXT | University name |
+| overall | TEXT | Overall impact score |
+| sdg17_score | TEXT | Score for SDG 17 (Partnerships) |
+| location | TEXT | University country |
+| fte_students | TEXT | Full-time equivalent students |
+| students_per_staff | TEXT | Student-to-staff ratio |
+| international_students | TEXT | % of international students |
+| female_male_ratio | TEXT | Female to male ratio |
 
 #### Impact SDG Table
 
+Each row retains its SDG identity.
+
 | Column | Type | Description |
 |--------|------|-------------|
-| year | INT | Ranking year (2019-2026) |
-| rank | INT | Rank within this SDG |
-| rank_prefix | VARCHAR | Rank prefix |
-| name | VARCHAR | University name |
-| overall | FLOAT | Overall impact score |
-| sdg_score | FLOAT | Score for this specific SDG |
-| sdg_rank | INT | Rank for this specific SDG |
-| location | VARCHAR | University country |
-| fte_students | INT | Full-time equivalent students |
-| students_per_staff | FLOAT | Student-to-staff ratio |
-| international_students | VARCHAR | % of international students |
-| female_male_ratio | VARCHAR | Female to male ratio |
+| year | INTEGER | Ranking year (2019-2026) |
+| sdg_number | INTEGER | Required SDG number, 1–17 |
+| rank | TEXT | Rank within this SDG |
+| rank_prefix | TEXT | Rank prefix |
+| name | TEXT | University name |
+| overall | TEXT | Overall impact score |
+| sdg_score | TEXT | Score for this specific SDG |
+| sdg_rank | TEXT | Rank for this specific SDG |
+| location | TEXT | University country |
+| fte_students | TEXT | Full-time equivalent students |
+| students_per_staff | TEXT | Student-to-staff ratio |
+| international_students | TEXT | % of international students |
+| female_male_ratio | TEXT | Female to male ratio |
+
+#### Subject Tables and Import Behavior
+
+`Subject_Rankings` and `Subject_Key_Statistics` use the corresponding general
+schemas plus a required `subject` slug. General data comes from
+`outputs/csv/general/`, with a per-filename fallback to legacy files directly
+under `outputs/csv/`; when both exist, the current file wins.
+
+Ranks and scores are stored as TEXT to preserve ranges, ties, and source labels.
+Each table also has an auto-incrementing `id` and a `created_at` timestamp.
+CSV/JSON column names retain their display labels (`Name`, `Rank`, `Overall`,
+`Country`); SQL uses the lowercase names shown above. The combined impact CSV
+contains overall participants with their available SDG scores, ranks and tie
+prefixes. Individual SDG files also include SDG-only participants. A year
+with no overall impact response skips that consolidated file and still saves
+the individual SDG files. The `Impact_Overall` SQL table stores SDG 17's score;
+all per-SDG records are stored in `Impact_SDG`.
+
+Generate and import into a **new SQLite database** when adopting this schema.
+`CREATE TABLE IF NOT EXISTS` does not migrate existing tables. Old `Impact_SDG`
+rows have no recoverable SDG identity; rebuild them from the individual CSVs.
+Imports append records, so importing the same SQL twice duplicates rows.
+Malformed CSVs stop generation instead of silently producing a partial export.
 
 ### 💡 Usage Examples
 
@@ -158,36 +185,40 @@ outputs/
 import pandas as pd
 
 # Load ranking data
-df = pd.read_csv('outputs/csv/THE_2026_rankings.csv')
+df = pd.read_csv('outputs/csv/general/THE_2026_rankings.csv')
 
 # Top 10 universities in 2026
-top_10 = df[df['year'] == 2026].nsmallest(10, 'rank')
-print(top_10[['rank', 'name', 'overall']])
+df['numeric_rank'] = pd.to_numeric(df['Rank'], errors='coerce')
+top_10 = df.nsmallest(10, 'numeric_rank')
+print(top_10[['Rank', 'Name', 'Overall']])
 
 # Find Turkish universities
-turkish_unis = df[df['name'].str.contains('Turkey|Turkish', case=False)]
-print(turkish_unis[['year', 'rank', 'name', 'overall']])
+turkish_unis = df[df['Country'].isin(['Turkey', 'Türkiye'])]
+print(turkish_unis[['year', 'Rank', 'Name', 'Overall']])
 
-# Trend analysis: Oxford over years
-oxford = df[df['name'].str.contains('Oxford', case=False)]
-print(oxford[['year', 'rank', 'overall']])
+# Oxford in the selected year (combine yearly files for a trend)
+oxford = df[df['Name'].str.contains('Oxford', case=False, na=False)]
+print(oxford[['year', 'Rank', 'Overall']])
 
 # Load impact data
 impact = pd.read_csv('outputs/csv/impact/THE_2026_impact_overall.csv')
-top_impact = impact.nsmallest(10, 'rank')
-print(top_impact[['rank', 'name', 'overall']])
+impact['numeric_rank'] = pd.to_numeric(impact['Rank'], errors='coerce')
+top_impact = impact.nsmallest(10, 'numeric_rank')
+print(top_impact[['Rank', 'Name', 'Overall']])
 ```
 
 #### Visualization Example
+
+This optional example requires `pip install matplotlib`.
 
 ```python
 import matplotlib.pyplot as plt
 
 # Visualize top 20 universities
-top_20 = df[df['year'] == 2026].nsmallest(20, 'rank')
+top_20 = df[df['year'] == 2026].nsmallest(20, 'numeric_rank')
 
 plt.figure(figsize=(12, 8))
-plt.barh(top_20['name'], top_20['overall'])
+plt.barh(top_20['Name'], pd.to_numeric(top_20['Overall'], errors='coerce'))
 plt.xlabel('Overall Score')
 plt.title('Top 20 Universities - THE 2026')
 plt.gca().invert_yaxis()
@@ -197,7 +228,7 @@ plt.show()
 
 ### 🔧 Advanced Usage: SQL Import
 
-Converts all CSV outputs (general, key stats, impact overall, impact SDG)
+Converts all CSV outputs (general, subject, key stats, impact overall, impact SDG)
 into a SQLite database.
 
 ```bash
@@ -208,7 +239,7 @@ python db_insert_generator.py
 sqlite3 university_rankings.db < outputs/the_rankings_insert.sql
 
 # Query example
-sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=2026 ORDER BY rank LIMIT 10;"
+sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=2026 AND rank <> '' AND rank NOT GLOB '*[^0-9]*' ORDER BY CAST(rank AS INTEGER) LIMIT 10;"
 ```
 
 ### ⚙️ Technical Details
@@ -216,7 +247,7 @@ sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=20
 #### Data Processing Pipeline
 1. **Fetch**: Direct HTTP GET requests to THE API (general, subject, and impact endpoints)
 2. **Parse**: JSON response parsing with error handling
-3. **Clean**: Remove null values, standardize rank formats
+3. **Clean**: Preserve missing values and zero scores, separate tie prefixes from display ranks
 4. **Export**: Dual format (CSV + JSON) with year-based naming and category folders (general / subject / impact)
 
 #### Interactive CLI
@@ -228,7 +259,7 @@ sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=20
 
 | Rankings | Subject Slugs (11) | SDG Slugs (17) |
 |----------|-------------------|----------------|
-| General | arts-and-humanities, business-and-economics, clinical-and-health, computer-science, education, engineering, law, life-sciences, physical-sciences, psychology, social-sciences | sdg1 – sdg17 |
+| General | arts-and-humanities, business-and-economics, clinical-pre-clinical-health, computer-science, education, engineering, law, life-sciences, physical-sciences, psychology, social-sciences | sdg1_rankings – sdg17_rankings |
 
 Each SDG slug maps to readable columns in the output: e.g. `sdg3_rankings` → `SDG3_Score`, `sdg3_rankings_rank` → `SDG3_Rank`.
 
@@ -236,7 +267,7 @@ Each SDG slug maps to readable columns in the output: e.g. `sdg3_rankings` → `
 
 - **Data Source**: Official THE JSON API endpoints
 - **Rate Limiting**: Built-in delays to respect API limits
-- **Execution Time**: Each year takes 30 seconds to 1 minute
+- **Execution Time**: Depends on selected datasets, years, response times, and request delays
 - **Update Frequency**: THE updates rankings annually in September
 
 ### 📈 Use Cases
@@ -255,7 +286,16 @@ Each SDG slug maps to readable columns in the output: e.g. `sdg3_rankings` → `
 | Connection timeout | Check your internet connection and retry |
 | Empty CSV files | THE API might be down, try later |
 | Invalid JSON | API structure may have changed, open an issue |
-| Import error | Ensure you're using Python 3.7+ |
+| Import error | Ensure you're using Python 3.9+ |
+| `NotOpenSSLWarning` | Recreate the virtual environment using a Python build linked to OpenSSL 1.1.1+ rather than LibreSSL |
+
+### Tests
+
+Run the offline regression checks:
+
+```bash
+python -m unittest discover -s tests -v
+```
 
 ### 🤝 Contributing
 
