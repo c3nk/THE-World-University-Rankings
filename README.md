@@ -15,7 +15,8 @@ The sample data is updated with **World University Rankings 2027**. This edition
 ### 🌟 Key Features
 
 - **Official JSON API Integration**: Connects to THE’s published ranking endpoints without browser automation
-- **Year Selection**: A blank answer uses 2011 through the latest world/subject edition the endpoint serves (currently 2027), and 2019 through the latest impact edition (currently 2026). The end year is detected at startup
+- **Year Selection**: A blank answer uses 2011 through the latest world edition the endpoint serves (currently 2027), and 2019 through the latest impact edition (currently 2026). The end year is detected at startup. Subject tables are published later in the year and start in different years per subject; years THE has not published are reported and skipped
+- **Combined Files**: Each subject run also writes one file for all selected subjects and years with a `Subject` column, and each impact run writes one file for all selected SDGs and years with `SDG` and `SDG Name` columns
 - **Dual Output Format**: Clean CSV files + filtered JSON copies
 - **Database Ready**: Optional SQL generation included
 - **Three Data Types**: Rankings scores, Key statistics tables, and UN SDG Impact Ratings
@@ -60,30 +61,36 @@ outputs/
 │   │   ├── THE_2027_key_statistics.csv
 │   │   └── ... (general rankings per year)
 │   ├── subject/
-│   │   ├── THE_2027_arts-and-humanities_rankings.csv
-│   │   ├── THE_2027_arts-and-humanities_key_statistics.csv
+│   │   ├── THE_2026_arts-and-humanities_rankings.csv
+│   │   ├── THE_2026_arts-and-humanities_key_statistics.csv
 │   │   └── ... (subject + year combinations)
-│   └── impact/
-│       ├── THE_2026_impact_overall.csv
-│       └── sdg/
-│           ├── THE_2026_impact_sdg1_rankings.csv
-│           ├── THE_2026_impact_sdg2_rankings.csv
-│           └── ... (17 SDGs per year)
+│   ├── impact/
+│   │   ├── THE_2026_impact_overall.csv
+│   │   └── sdg/
+│   │       ├── THE_2026_impact_sdg1_rankings.csv
+│   │       ├── THE_2026_impact_sdg2_rankings.csv
+│   │       └── ... (17 SDGs per year)
+│   └── combined/
+│       ├── THE_2011-2026_subject_rankings.csv        # All selected subjects + years, Subject column
+│       ├── THE_2011-2026_subject_key_statistics.csv
+│       └── THE_2019-2026_impact_sdg_rankings.csv     # All selected SDGs + years, SDG / SDG Name columns
 ├── json/
 │   ├── general/
 │   │   ├── THE_2027_rankings.json
 │   │   ├── THE_2027_key_statistics.json
 │   │   └── ... (general rankings per year)
 │   ├── subject/
-│   │   ├── THE_2027_arts-and-humanities_rankings.json
-│   │   ├── THE_2027_arts-and-humanities_key_statistics.json
+│   │   ├── THE_2026_arts-and-humanities_rankings.json
+│   │   ├── THE_2026_arts-and-humanities_key_statistics.json
 │   │   └── ... (subject + year combinations)
-│   └── impact/
-│       ├── THE_2026_impact_overall.json
-│       └── sdg/
-│           ├── THE_2026_impact_sdg1_rankings.json
-│           ├── THE_2026_impact_sdg2_rankings.json
-│           └── ... (17 SDGs per year)
+│   ├── impact/
+│   │   ├── THE_2026_impact_overall.json
+│   │   └── sdg/
+│   │       ├── THE_2026_impact_sdg1_rankings.json
+│   │       ├── THE_2026_impact_sdg2_rankings.json
+│   │       └── ... (17 SDGs per year)
+│   └── combined/
+│       └── ... (same files as csv/combined)
 ├── THE_2026_impact_data.csv          # Consolidated overall + SDG scores/ranks
 └── the_rankings_insert.sql           # (Optional) SQL script
 ```
@@ -155,6 +162,19 @@ Each row retains its SDG identity.
 | students_per_staff | TEXT | Student-to-staff ratio |
 | international_students | TEXT | % of international students |
 | female_male_ratio | TEXT | Female to male ratio |
+
+#### Combined Subject and SDG Files
+
+The files in `outputs/csv/combined/` are named after the years requested,
+for example `THE_2011-2027_subject_rankings.csv`, and hold only the subject
+or SDG tables THE has published in that span.
+
+| File | Added columns |
+|------|---------------|
+| `THE_<years>_subject_rankings.csv`, `THE_<years>_subject_key_statistics.csv` | `Subject`: display name, e.g. `Computer Science`, `Medical and Health` |
+| `THE_<years>_impact_sdg_rankings.csv` | `SDG`: number 1–17; `SDG Name`: e.g. `Climate Action`. Each file's `SDG<n>_Score` and `SDG<n>_Rank` become `SDG_Score` and `SDG_Rank` |
+
+The SQL generator reads the per-subject and per-SDG files, not these.
 
 #### Subject Tables and Import Behavior
 
@@ -256,6 +276,7 @@ sqlite3 university_rankings.db "SELECT name, overall FROM rankings WHERE year=20
 - Prompts whether to retrieve general rankings, subject rankings, both, or Sustainability Impact Ratings
 - Requests a year or year range. Leaving it blank selects 2011 through the newest world ranking the endpoint returns, or 2019 through the newest impact ranking. World University Rankings 2027 is included; impact rankings still end at 2026
 - Offers optional filtering to a subset of subject slugs or SDG slugs while preserving slug-based filenames
+- Writes the selected subjects or SDGs to one combined file per dataset as well as one file per subject or SDG and year
 
 #### Available Slugs
 

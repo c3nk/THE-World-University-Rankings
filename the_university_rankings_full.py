@@ -80,6 +80,22 @@ SUBJECT_DISPLAY_NAMES = {
     "social-sciences": "Social Sciences",
 }
 
+# Subject tables live under their own ranking_tables names, which differ from
+# the website slugs. A subject-ranking path under BASE_URL returns the general table.
+SUBJECT_ENDPOINT_NAMES = {
+    "arts-and-humanities": "arts_humanities_rankings",
+    "business-and-economics": "business_economics_rankings",
+    "computer-science": "computer_science_rankings",
+    "education": "education_rankings",
+    "engineering": "engineering_technology_rankings",
+    "law": "law_rankings",
+    "life-sciences": "life_sciences_rankings",
+    "clinical-pre-clinical-health": "clinical_pre_clinical_health_ran",
+    "physical-sciences": "physical_sciences_rankings",
+    "psychology": "psychology_rankings",
+    "social-sciences": "social_sciences_rankings",
+}
+
 IMPACT_BASE_URL = "https://www.timeshighereducation.com/json/ranking_tables/world_impact_rankings"
 
 SDG_SLUGS = [
@@ -123,6 +139,26 @@ IMPACT_SDG_FIELDS = {
     'stats_student_staff_ratio': 'No. of students per staff',
     'stats_pc_intl_students': 'International students',
     'stats_female_male_ratio': 'Female:Male ratio',
+}
+
+SDG_NAMES = {
+    1: "No Poverty",
+    2: "Zero Hunger",
+    3: "Good Health and Well-being",
+    4: "Quality Education",
+    5: "Gender Equality",
+    6: "Clean Water and Sanitation",
+    7: "Affordable and Clean Energy",
+    8: "Decent Work and Economic Growth",
+    9: "Industry, Innovation and Infrastructure",
+    10: "Reduced Inequalities",
+    11: "Sustainable Cities and Communities",
+    12: "Responsible Consumption and Production",
+    13: "Climate Action",
+    14: "Life Below Water",
+    15: "Life on Land",
+    16: "Peace, Justice and Strong Institutions",
+    17: "Partnerships for the Goals",
 }
 
 SDG_COLUMN_NAMES = {slug: f"SDG{slug.split('_')[0][3:]}_Score" for slug in SDG_SLUGS}
@@ -262,6 +298,41 @@ def save_outputs(year, data, name, category: str = "general"):
     print(f"[DONE] {year} {name}: {len(df)} rows → {csv_path}")
 
 
+def year_label(years: list[int]) -> str:
+    """Name a run's year span for combined filenames, e.g. 2011-2027."""
+    if min(years) == max(years):
+        return str(years[0])
+    return f"{min(years)}-{max(years)}"
+
+
+def save_combined(label: str, rows: list, name: str) -> None:
+    """Save rows gathered across subjects or SDGs as one dataset."""
+    if rows:
+        save_outputs(label, {"data": rows}, name, category="combined")
+
+
+def tag_subject_rows(data, subject_slug: str) -> list:
+    """Copy subject rows with a Subject column after the year."""
+    subject = get_subject_display_name(subject_slug)
+    return [{'year': row['year'], 'Subject': subject, **row} for row in data["data"]]
+
+
+def tag_sdg_rows(data, sdg_slug: str) -> list:
+    """Copy SDG rows with SDG number and name columns and shared score/rank names."""
+    number = int(sdg_slug.split('_')[0][3:])
+    renames = {
+        SDG_COLUMN_NAMES[sdg_slug]: 'SDG_Score',
+        SDG_RANK_COLUMN_NAMES[sdg_slug]: 'SDG_Rank',
+    }
+    tagged = []
+    for row in data["data"]:
+        entry = {'year': row['year'], 'SDG': number, 'SDG Name': SDG_NAMES[number]}
+        for column, value in row.items():
+            entry[renames.get(column, column)] = value
+        tagged.append(entry)
+    return tagged
+
+
 def process_year(year):
     """Fetch and save both tables for a single year."""
     print(f"\n=== YEAR {year} ===")
@@ -283,38 +354,45 @@ def process_year(year):
     time.sleep(1)
 
 
-def _build_subject_url(year: int, subject_slug: str, suffix: Optional[str] = None) -> str:
+def _build_subject_url(year: int, subject_slug: str) -> str:
     """Construct subject-specific THE API endpoint."""
-    subject_base = f"{BASE_URL}/{year}/subject-ranking/{subject_slug}"
-    if suffix:
-        return f"{subject_base}/{suffix}"
-    return subject_base
+    return (
+        "https://www.timeshighereducation.com/json/ranking_tables/"
+        f"{SUBJECT_ENDPOINT_NAMES[subject_slug]}/{year}"
+    )
 
 
-def process_subject(year: int, subject_slug: str) -> None:
-    """Fetch rankings and key statistics for a subject in a given year."""
+def process_subject(year: int, subject_slug: str, collected: Optional[dict] = None) -> None:
+    """Fetch rankings and key statistics for a subject in a given year.
+
+    When ``collected`` is given, rows are also appended to its "rankings" and
+    "key_statistics" lists with a Subject column for the combined files.
+    """
     print(f"\n=== SUBJECT {year} – {subject_slug} ===")
 
-    rankings_url = _build_subject_url(year, subject_slug)
-    rankings_data = fetch_json(rankings_url)
-    if rankings_data:
-        filtered_rankings = filter_data_for_db(rankings_data, year, RANKINGS_FIELDS)
+    # One response carries both the scores and the key statistics.
+    subject_data = fetch_json(_build_subject_url(year, subject_slug))
+    if subject_data:
+        filtered_rankings = filter_data_for_db(subject_data, year, RANKINGS_FIELDS)
         save_outputs(year, filtered_rankings, f"{subject_slug}_rankings", category="subject")
-    time.sleep(1)
-
-    key_stats_url = _build_subject_url(year, subject_slug, "key_statistics")
-    key_stats_data = fetch_json(key_stats_url)
-    if key_stats_data:
-        filtered_key_stats = filter_data_for_db(key_stats_data, year, KEY_STATISTICS_FIELDS)
+        if collected is not None and filtered_rankings:
+            collected["rankings"].extend(tag_subject_rows(filtered_rankings, subject_slug))
+        filtered_key_stats = filter_data_for_db(subject_data, year, KEY_STATISTICS_FIELDS)
         save_outputs(year, filtered_key_stats, f"{subject_slug}_key_statistics", category="subject")
+        if collected is not None and filtered_key_stats:
+            collected["key_statistics"].extend(tag_subject_rows(filtered_key_stats, subject_slug))
     time.sleep(1)
 
 
-def process_subjects_for_year(year: int, subject_slugs: Optional[Iterable[str]] = None) -> None:
+def process_subjects_for_year(
+    year: int,
+    subject_slugs: Optional[Iterable[str]] = None,
+    collected: Optional[dict] = None,
+) -> None:
     """Batch processor for several subject slugs."""
     slugs = list(subject_slugs or SUBJECT_SLUGS)
     for slug in slugs:
-        process_subject(year, slug)
+        process_subject(year, slug, collected)
 
 
 def filter_impact_overall_data(data, year):
@@ -435,7 +513,7 @@ def _save_impact_overview(year, data, slugs):
     print(f"[DONE] {year} impact_data: {len(filtered['data'])} rows → {impact_path}")
 
 
-def process_impact_year(year, sdg_slugs=None) -> bool:
+def process_impact_year(year, sdg_slugs=None, collected: Optional[list] = None) -> bool:
     """Fetch overall Impact Ratings, then save individual SDG files when the edition exists."""
     global _last_fetch_status
     print(f"\n=== IMPACT OVERALL {year} ===")
@@ -461,13 +539,17 @@ def process_impact_year(year, sdg_slugs=None) -> bool:
         _save_impact_overview(year, data, slugs)
         saved = True
     for slug in slugs:
-        if process_impact_sdg(year, slug):
+        if process_impact_sdg(year, slug, collected):
             saved = True
     return saved
 
 
-def process_impact_sdg(year: int, sdg_slug: str) -> bool:
-    """Fetch and save an individual SDG ranking for a year."""
+def process_impact_sdg(year: int, sdg_slug: str, collected: Optional[list] = None) -> bool:
+    """Fetch and save an individual SDG ranking for a year.
+
+    When ``collected`` is given, rows are also appended to it with SDG columns
+    for the combined file.
+    """
     print(f"\n=== IMPACT SDG {year} – {sdg_slug} ===")
     url = f"https://www.timeshighereducation.com/json/ranking_tables/{sdg_slug}/{year}"
     data = fetch_json(url)
@@ -476,6 +558,8 @@ def process_impact_sdg(year: int, sdg_slug: str) -> bool:
         filtered = filter_impact_sdg_data(data, year, sdg_slug)
         save_outputs(year, filtered, f"impact_{sdg_slug}", category="impact/sdg")
         saved = bool(filtered and filtered.get("data"))
+        if collected is not None and saved:
+            collected.extend(tag_sdg_rows(filtered, sdg_slug))
     time.sleep(1)
     return saved
 
@@ -581,8 +665,10 @@ def run_interactive() -> None:
         years = ask_years_range(default_range=default_year_range(IMPACT_BASE_URL, IMPACT_RANKINGS_START_YEAR))
         sdg_slugs = ask_sdg_slugs()
         performed_impact = True
+        sdg_rows = []
         for year in years:
-            impact_saved = process_impact_year(year, sdg_slugs) or impact_saved
+            impact_saved = process_impact_year(year, sdg_slugs, sdg_rows) or impact_saved
+        save_combined(year_label(years), sdg_rows, "impact_sdg_rankings")
     else:
         years = ask_years_range(default_range=default_year_range(BASE_URL, WORLD_RANKINGS_START_YEAR))
         if mode in {"general", "both"}:
@@ -593,8 +679,12 @@ def run_interactive() -> None:
         if mode in {"subject", "both"}:
             subject_slugs = ask_subject_slugs()
             performed_subject = True
+            subject_rows = {"rankings": [], "key_statistics": []}
             for year in years:
-                process_subjects_for_year(year, subject_slugs)
+                process_subjects_for_year(year, subject_slugs, subject_rows)
+            label = year_label(years)
+            save_combined(label, subject_rows["rankings"], "subject_rankings")
+            save_combined(label, subject_rows["key_statistics"], "subject_key_statistics")
 
     print("\n✅ Processing complete.")
     parts = []
