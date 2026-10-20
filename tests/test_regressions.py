@@ -44,7 +44,7 @@ class RegressionTests(unittest.TestCase):
                      patch.object(scraper, 'process_impact_sdg') as process_sdg:
                     scraper.process_impact_year(2025, ['sdg4_rankings'])
                 self.assertFalse(Path('outputs/THE_2025_impact_data.csv').exists())
-                process_sdg.assert_called_once_with(2025, 'sdg4_rankings')
+                process_sdg.assert_called_once_with(2025, 'sdg4_rankings', None)
             finally:
                 os.chdir(original)
 
@@ -87,6 +87,57 @@ class RegressionTests(unittest.TestCase):
                     self.assertEqual(conn.execute(f'SELECT subject FROM {table}').fetchone()[0], 'computer-science')
                 self.assertEqual(conn.execute('SELECT sdg_number, sdg_score, sdg_rank FROM Impact_SDG ORDER BY sdg_number').fetchall(),
                                  [(4, '4', '001'), (13, '13', '001')])
+
+    def test_subjects_and_sdgs_combine_into_one_file_each(self):
+        def fake_fetch(url, quiet=False):
+            slug = url.split('/ranking_tables/')[-1].split('/')[0]
+            return {'data': [{'rank': '=2', 'name': f'Uni {slug}', 'location': 'UK',
+                              'scores_overall': '50', slug: '70'}]}
+        original = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                subject_rows = {'rankings': [], 'key_statistics': []}
+                sdg_rows = []
+                with patch.object(scraper, 'fetch_json', side_effect=fake_fetch), \
+                     patch.object(scraper.time, 'sleep'), \
+                     contextlib.redirect_stdout(io.StringIO()):
+                    for year in (2026, 2027):
+                        scraper.process_subjects_for_year(year, ['law', 'computer-science'], subject_rows)
+                        for slug in ('sdg3_rankings', 'sdg17_rankings'):
+                            scraper.process_impact_sdg(year, slug, sdg_rows)
+                    label = scraper.year_label([2026, 2027])
+                    scraper.save_combined(label, subject_rows['rankings'], 'subject_rankings')
+                    scraper.save_combined(label, sdg_rows, 'impact_sdg_rankings')
+                    scraper.save_combined(label, [], 'subject_key_statistics')
+                subjects = pd.read_csv('outputs/csv/combined/THE_2026-2027_subject_rankings.csv', dtype=str)
+                sdgs = pd.read_csv('outputs/csv/combined/THE_2026-2027_impact_sdg_rankings.csv', dtype=str)
+                self.assertTrue(Path('outputs/json/combined/THE_2026-2027_subject_rankings.json').exists())
+                self.assertFalse(Path('outputs/csv/combined/THE_2026-2027_subject_key_statistics.csv').exists())
+                self.assertTrue(Path('outputs/csv/subject/THE_2027_law_rankings.csv').exists())
+            finally:
+                os.chdir(original)
+        self.assertEqual(list(subjects.columns[:2]), ['year', 'Subject'])
+        self.assertEqual(subjects['Subject'].tolist(),
+                         ['Law', 'Computer Science', 'Law', 'Computer Science'])
+        self.assertEqual(subjects['year'].tolist(), ['2026', '2026', '2027', '2027'])
+        self.assertEqual(list(sdgs.columns[:3]), ['year', 'SDG', 'SDG Name'])
+        self.assertEqual(sdgs['SDG'].tolist(), ['3', '17', '3', '17'])
+        self.assertEqual(sdgs['SDG Name'].iloc[1], 'Partnerships for the Goals')
+        self.assertEqual(sdgs['SDG_Score'].tolist(), ['70'] * 4)
+        self.assertEqual(sdgs['SDG_Rank'].tolist(), ['2'] * 4)
+        self.assertEqual(sdgs['rank_prefix'].tolist(), ['='] * 4)
+        self.assertFalse(any(column.startswith(('SDG3_', 'SDG17_')) for column in sdgs.columns))
+        self.assertEqual(scraper.year_label([2027]), '2027')
+        self.assertEqual(subjects['Name'].tolist()[:2], ['Uni law_rankings', 'Uni computer_science_rankings'])
+
+    def test_subject_urls_use_subject_tables(self):
+        self.assertEqual(set(scraper.SUBJECT_ENDPOINT_NAMES), set(scraper.SUBJECT_SLUGS))
+        self.assertEqual(
+            scraper._build_subject_url(2026, 'engineering'),
+            'https://www.timeshighereducation.com/json/ranking_tables/engineering_technology_rankings/2026',
+        )
+        self.assertNotIn('world_university_rankings', scraper._build_subject_url(2026, 'law'))
 
     def test_invalid_sdg_is_rejected(self):
         for number in (0, 18):
